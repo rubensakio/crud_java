@@ -14,8 +14,13 @@
     <body>
         <form action="#" method="post">
             <p>Código:</p>
-            <input type="text" size="6" readonly="true" name="">    
+            <input type="text" size="6" readonly="true" name="codAluno" value="${aluno.codAluno}">
+            <p>Nome: </p>
+            <input type="text" name="nome" value="${aluno.nome}">
+            
+            
+            <p> Nome: </p>
         </form>
-        
+
     </body>
 </html>
