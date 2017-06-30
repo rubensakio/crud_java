@@ -43,7 +43,7 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
     @Override
     public void atualizar(Aluno aluno) {
         try {
-            String sql = "UPDATE NOME_DA_TABELA SET campo1 = valor1, campo2 = valor2.";
+            String sql = "UPDATE NOME_DA_TABELA SET nome=?, email=?, telefone=? where idAluno=?";
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, aluno.getNome());

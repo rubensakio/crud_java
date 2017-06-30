@@ -59,6 +59,19 @@ public class AlunoController extends HttpServlet {
                 request.setAttribute("aluno", aluno);
                 request.getRequestDispatcher("WEB-INF/jsp/aluno/validarAluno.jsp").forward(request, response);
             }
+
+            if ("aluno.validar-atualizacao".equalsIgnoreCase(request.getParameter("command"))) {
+
+                Aluno aluno = new Aluno();
+                aluno.setCodAluno(Integer.parseInt(request.getParameter("codAluno")));
+                aluno.setNome(request.getParameter("nome"));
+                aluno.setEmail(request.getParameter("email"));
+                aluno.setTelefone(request.getParameter("telefone"));
+                new AlunoDAO().atualizar(aluno);
+                request.setAttribute("alunos", new AlunoDAO().consultar());
+                request.getRequestDispatcher("WEB-INF/jsp/aluno/consultarClientes.jsp").forward(request, response);
+            }
+
             if ("aluno.inserir".equals(request.getParameter("command"))) {
                 Aluno aluno = new Aluno();
                 aluno.setNome(request.getParameter("nome"));
