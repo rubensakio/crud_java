@@ -17,9 +17,12 @@
             <input type="text" size="6" readonly="true" name="codAluno" value="${aluno.codAluno}">
             <p>Nome: </p>
             <input type="text" name="nome" value="${aluno.nome}">
+            <p>Email </p>
+            <input type="text" name="nome" value="${aluno.email}">
+            <p>Telefone </p>
+            <input type="text" name="nome" value="${aluno.telefone}">
+
             
-            
-            <p> Nome: </p>
         </form>
 
     </body>
