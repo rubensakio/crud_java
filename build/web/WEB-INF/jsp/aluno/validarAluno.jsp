@@ -13,7 +13,7 @@
     </head>
     <body>
         <form action="#" method="post">
-            <p>Código:/p>
+            <p>Código:</p>
                 <input type="text" size="6" readonly="true" name=    
         </form>
         
