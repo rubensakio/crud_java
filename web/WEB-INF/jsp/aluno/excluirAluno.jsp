@@ -12,6 +12,6 @@
         <title> Exclusão de alunos na lista </title>
     </head>
     <body>
-        <h1> Excluindo </h1>
+        <h1> Excluindo aluno </h1>
     </body>
 </html>
