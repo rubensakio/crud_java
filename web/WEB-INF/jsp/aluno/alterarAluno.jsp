@@ -34,6 +34,15 @@
 
         </style>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            .all-content{
+                padding: 10px;
+                position: absolute;
+                left: 490px;
+                top: 25px;
+            }
+            #title h1{font-family: arial; color: #2E8B57;}
+        </style>
         <title> Alterar cadastro de alunos </title>
     </head>
     <body>
