@@ -16,7 +16,8 @@
     </head>
     <body>
 
-        <div class="all-contebnt">
+        <div class="all-content">
+            
             <div id="title">
                 <h1> Cadastre-se </h1>
             </div>
