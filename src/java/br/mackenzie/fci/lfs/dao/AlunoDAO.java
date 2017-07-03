@@ -86,7 +86,18 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
 
     @Override
     public void remover(Aluno aluno) {
-        String sql = "";
+        try {
+            String sql = "DELETE FROM lfs.aluno where idAluno=?";
+            Connection c = Conexao.getInstance().getConnection();
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setInt(1, aluno.getCodAluno());
+            ps.execute();
+            c.close();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AlunoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AlunoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
