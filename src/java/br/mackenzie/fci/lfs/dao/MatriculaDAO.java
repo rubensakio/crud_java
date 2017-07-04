@@ -46,7 +46,7 @@ public class MatriculaDAO implements GenericoDAO<Matricula> {
 
             Connection c = Conexao.getInstance().getConnection();
             Statement stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT m.idMatricula, m.numMatricula, a.nome, a.telefone"
+            ResultSet rs = stmt.executeQuery("SELECT *"
                     + "FROM lfs.matricula AS m "
                     + "INNER JOIN lfs.aluno AS a "
                     + "ON m.idAluno = a.idAluno");

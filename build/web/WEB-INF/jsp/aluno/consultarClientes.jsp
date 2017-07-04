@@ -117,13 +117,13 @@
 
                     <c:forEach var="aluno" items="${alunos}">
                         <tr>
-                            <td>  <c:out value="${aluno.codAluno}"/> </td>
+                            <!--<td>  <c:out value="${aluno.codAluno}"/> </td> -->
 
                             <td> <c:out value="${aluno.nome}"/> </td>
 
-                            <td> <c:out value="${aluno.email}"/> </td>
+                            <!--<td> <c:out value="${aluno.email}"/> </td> -->
 
-                            <td> <c:out value="${aluno.telefone}"/> </td>
+                            <!--<td> <c:out value="${aluno.telefone}"/> </td> -->
 
                         <br>
                         </tr>
@@ -133,9 +133,9 @@
             </div>
 
             <br><br>
-           
-            
-           
+
+
+
 
             <div id="button">
 
