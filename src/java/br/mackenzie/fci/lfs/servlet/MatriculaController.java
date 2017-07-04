@@ -33,6 +33,10 @@ public class MatriculaController extends HttpServlet {
             throws ServletException, IOException {
 
         if (request != null && request.getParameter("command") != null) {
+
+            if ("matricula.consultarMatricula".equalsIgnoreCase(request.getParameter("command"))) {
+                request.getRequestDispatcher("WEB-INF/jsp/matricula/consultarMatricula.jsp").forward(request, response);
+            }
         }
 
     }

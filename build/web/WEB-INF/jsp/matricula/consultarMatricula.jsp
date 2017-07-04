@@ -118,12 +118,10 @@
                           <tr>
                               <td>  <c:out value="${matricula.codMatricula}"/> </td>
       
-                          <td> <c:out value="${aluno.nome}"/> </td>
+                          <td> <c:out value="${matricula.numMatricula}"/> </td>
       
-                          <td> <c:out value="${aluno.email}"/> </td>
-      
-                          <td> <c:out value="${aluno.telefone}"/> </td>
-      
+                          <td> <c:out value="${matricula.aluno.nome}"/> </td>
+                                     
                           <br>
                           </tr>
                       </c:forEach>
