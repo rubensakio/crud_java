@@ -10,12 +10,13 @@ package br.mackenzie.fci.lfs.model;
  * @author LFS
  */
 public class Matricula {
-    
+
     private Integer codMatricula;
     private Integer numMatricula;
     private Aluno aluno;
 
     public Matricula() {
+
     }
 
     public Matricula(Integer codMatricula, Integer numMatricula, Aluno aluno) {
@@ -29,6 +30,7 @@ public class Matricula {
     }
 
     public void setCodMatricula(Integer codMatricula) {
+
         this.codMatricula = codMatricula;
     }
 
@@ -47,7 +49,5 @@ public class Matricula {
     public void setAluno(Aluno aluno) {
         this.aluno = aluno;
     }
-    
-      
-    
+
 }
