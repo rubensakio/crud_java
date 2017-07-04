@@ -4,7 +4,7 @@
     Author     : LFS
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,12 +18,12 @@
 
         </style>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title> Validando Exclus√£o </title>
+        <title> Validando Exclus„o </title>
     </head>
     <body>
         <div class="all-content">
             <form action="${pageContext.request.contextPath}/controller?command=aluno.validar-exclusao" method="post">
-                <p>C√≥digo:</p>
+                <p>CÛdigo:</p>
                 <input type="text" size="6" readonly="true" name="codAluno" value="${aluno.codAluno}">
                 <p>Nome: </p>
                 <input type="text" name="nome" readonly="true" value="${aluno.nome}">

@@ -4,12 +4,12 @@
     Author     : LFS
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title> Validando atualizaÃ§Ã£o </title>
+        <title> Validando atualização </title>
         <style>
             .all-content{
                 padding: 10px;
@@ -23,7 +23,7 @@
     <body>
         <div class="all-content">
             <form action="${pageContext.request.contextPath}/controller?command=aluno.validar-atualizacao" method="post">
-                <p>CÃ³digo:</p>
+                <p>Código:</p>
                 <input type="text" size="6" readonly="true" name="codAluno" value="${aluno.codAluno}">
                 <p>Nome: </p>
                 <input type="text" name="nome" value="${aluno.nome}">
