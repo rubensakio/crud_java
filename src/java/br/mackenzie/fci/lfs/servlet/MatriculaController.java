@@ -5,6 +5,7 @@
  */
 package br.mackenzie.fci.lfs.servlet;
 
+import br.mackenzie.fci.lfs.dao.MatriculaDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -35,6 +36,7 @@ public class MatriculaController extends HttpServlet {
         if (request != null && request.getParameter("command") != null) {
 
             if ("matricula.consultarMatricula".equalsIgnoreCase(request.getParameter("command"))) {
+                request.setAttribute("matriculas", new MatriculaDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/matricula/consultarMatricula.jsp").forward(request, response);
             }
         }

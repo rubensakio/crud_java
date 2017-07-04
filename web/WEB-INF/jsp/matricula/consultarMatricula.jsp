@@ -3,13 +3,13 @@
     Created on : 04/07/2017, 10:05:35
     Author     : LFS
 --%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <!-- <style>
+        <!--<style>
              *{padding:0; margin:0;}
  
  
@@ -93,56 +93,56 @@
     </head>
 
     <body>
-        <!--  <div class="menu1">
-              <ul class="menu">
-                  <li/><a href="${pageContext.request.contextPath}/controller?command=matricula.formulario"> Novo  </a>
-                  <li/><a href="${pageContext.request.contextPath}/controller?command=matricula.atualizar"> Atualizar </a>
-                  <li/><a href="${pageContext.request.contextPath}/controller?command=matricula.excluir"> Remover </a>
-              </ul>
-          </div>
-          <div class="all-content">  
-      
-      
-              <div id="table1">
-                  <table width="50%">
-                      <tr>
-                          <th> ID </th>
-                          <th> Nome do Aluno</th>
-                          <th> Email </th>
-                          <th>Telefone</th>
-      
-                      </tr>
-      
-      
-                      <c:forEach var="aluno" items="${matriculas}">
-                          <tr>
-                              <td>  <c:out value="${matricula.codMatricula}"/> </td>
-      
-                          <td> <c:out value="${matricula.numMatricula}"/> </td>
-      
-                          <td> <c:out value="${matricula.aluno.nome}"/> </td>
-                          
-        <td> <c:out value="${matricula.aluno.telefone}"/> </td>
-      
-                                
-                          <br>
-                          </tr>
-                      </c:forEach>
-      
-                  </table>
-              </div>
-      
-              <br><br>
-      
-      
-      
-      
-              <div id="button">
-      
-                  <a href="${pageContext.request.contextPath}"> Voltar </a>
-      
-              </div> <br><br>
-          </div> -->
+        <div class="menu1">
+            <ul class="menu">
+                <li/><a href="${pageContext.request.contextPath}/controller?command=matricula.formulario"> Novo  </a>
+                <li/><a href="${pageContext.request.contextPath}/controller?command=matricula.atualizar"> Atualizar </a>
+                <li/><a href="${pageContext.request.contextPath}/controller?command=matricula.excluir"> Remover </a>
+            </ul>
+        </div>
+        <div class="all-content">  
+
+
+            <div id="table1">
+                <table width="50%">
+                    <tr>
+                        <th> ID </th>
+                        <th> Numero da matricula</th>
+                        <th> Aluno </th>
+                        <th>Telefone</th>
+
+                    </tr>
+
+
+                    <c:forEach var="matricula" items="${matriculas}">
+                        <tr>
+                            <td>  <c:out value="${matricula.codMatricula}"/> </td>
+
+
+                            <td> <c:out value="${matricula.numMatricula}"/> </td>
+
+                            <td> <c:out value="${matricula.aluno.nome}"/> </td>
+
+                            <td> <c:out value="${matricula.aluno.telefone}"/> </td>
+
+
+                        <br>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </div>
+
+            <br><br> 
+
+
+
+
+            <div id="button">
+
+                <a href="${pageContext.request.contextPath}"> Voltar </a>
+
+            </div> <br><br>
+        </div> 
     </body>
 
 </html>
