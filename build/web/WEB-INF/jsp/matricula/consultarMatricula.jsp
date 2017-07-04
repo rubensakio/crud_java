@@ -9,86 +9,86 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <!--<style>
-             *{padding:0; margin:0;}
- 
- 
-             .all-content{
- 
-                 margin-top: 60px;
-                 margin-left: 400px;
- 
-             }
-             .all-content table td{
- 
-                 text-align: center;
-                 padding: 10px;
-             }
-             .menu1{
- 
-                 padding:10px;
-             }
-             #button a{
- 
-                 text-decoration: none;
-                 color: blue;
-                 font-family: Verdana;
-                 background: -webkit-linear-gradient(#00FF7F,#00FF00 100%);
-                 border: 1px solid black;
-                 border-radius: 3px;
-                 display: block;
-                 color: #ffffff;
-                 font-family: "Trebuchet MS";
-                 text-align: center;
-                 font-size: 24px;
-                 font-weight: bold;
-                 line-height: 35px;
-                 position:  relative;
-                 width: 80px;
-                 padding: 5px 15px;
-             }
- 
-             .all-content #button{
- 
-                 margin-left: 170px;
-             }
- 
-             .menu{
- 
- 
-                 list-style: none;
-                 border: 1px solid #c0c0c0;
-                 float:left; 
- 
-             }
-             .menu li{
- 
-                 position:relative; 
-                 float:left; 
-                 border-right:1px solid #c0c0c0; 
-             }
-             .menu li a{
-                 color:#333;
-                 text-decoration:none;
-                 padding:5px 10px;
-                 display:block;
-             }
-             .menu li a:hover{
-                 background:#333; 
-                 color:#fff; 
-                 -webkit-box-shadow:0 3px 10px 0 #ccc; 
-                 text-shadow:0px 0px 5px #fff; 
-             }
-             .menu li  ul{
-                 position:absolute; 
-                 top:25px; 
-                 left:0;
-                 background-color:#fff; 
-                 display:none;
-             }
- 
- 
-         </style> -->
+        <style>
+            *{padding:0; margin:0;}
+
+
+            .all-content{
+
+                margin-top: 60px;
+                margin-left: 400px;
+
+            }
+            .all-content table td{
+
+                text-align: center;
+                padding: 10px;
+            }
+            .menu1{
+
+                padding:10px;
+            }
+            #button a{
+
+                text-decoration: none;
+                color: blue;
+                font-family: Verdana;
+                background: -webkit-linear-gradient(#00FF7F,#00FF00 100%);
+                border: 1px solid black;
+                border-radius: 3px;
+                display: block;
+                color: #ffffff;
+                font-family: "Trebuchet MS";
+                text-align: center;
+                font-size: 24px;
+                font-weight: bold;
+                line-height: 35px;
+                position:  relative;
+                width: 80px;
+                padding: 5px 15px;
+            }
+
+            .all-content #button{
+
+                margin-left: 170px;
+            }
+
+            .menu{
+
+
+                list-style: none;
+                border: 1px solid #c0c0c0;
+                float:left; 
+
+            }
+            .menu li{
+
+                position:relative; 
+                float:left; 
+                border-right:1px solid #c0c0c0; 
+            }
+            .menu li a{
+                color:#333;
+                text-decoration:none;
+                padding:5px 10px;
+                display:block;
+            }
+            .menu li a:hover{
+                background:#333; 
+                color:#fff; 
+                -webkit-box-shadow:0 3px 10px 0 #ccc; 
+                text-shadow:0px 0px 5px #fff; 
+            }
+            .menu li  ul{
+                position:absolute; 
+                top:25px; 
+                left:0;
+                background-color:#fff; 
+                display:none;
+            }
+
+
+        </style> 
         <title> Lista de matriculas </title>
     </head>
 
@@ -106,7 +106,7 @@
             <div id="table1">
                 <table width="50%">
                     <tr>
-                        <th> ID </th>
+                        
                         <th> Numero da matricula</th>
                         <th> Aluno </th>
                         <th>Telefone</th>
@@ -116,9 +116,7 @@
 
                     <c:forEach var="matricula" items="${matriculas}">
                         <tr>
-                            <td>  <c:out value="${matricula.codMatricula}"/> </td>
-
-
+                           
                             <td> <c:out value="${matricula.numMatricula}"/> </td>
 
                             <td> <c:out value="${matricula.aluno.nome}"/> </td>

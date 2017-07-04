@@ -36,7 +36,7 @@
                     <p>Email:</p>
                     <input type="text" name="email"  required>
                     <p>Telefone:</p>
-                    <input type="text" name="telefone" maxlength="9" required>
+                    <input type="text" maxlength="9" name="telefone" required>
                     <p><input type="submit"></p>
                     <p><input type="button" value="Voltar para lista" onclick="location.href = '${pageContext.request.contextPath}/controller?command=aluno.consultarClientes'"></p>
 

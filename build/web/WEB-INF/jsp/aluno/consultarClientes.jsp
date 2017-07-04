@@ -107,9 +107,9 @@
             <div id="table1">
                 <table width="50%">
                     <tr>
-                        <th> ID </th>
+                      
                         <th> Nome do Aluno</th>
-                        <th> Email </th>
+                        <th> Usuário </th>
                         <th>Telefone</th>
 
                     </tr>
@@ -117,13 +117,12 @@
 
                     <c:forEach var="aluno" items="${alunos}">
                         <tr>
-                            <!--<td>  <c:out value="${aluno.codAluno}"/> </td> -->
-
+                            
                             <td> <c:out value="${aluno.nome}"/> </td>
 
-                            <!--<td> <c:out value="${aluno.email}"/> </td> -->
+                            <td> <c:out value="${aluno.email}"/> </td> 
 
-                            <!--<td> <c:out value="${aluno.telefone}"/> </td> -->
+                            <td> <c:out value="${aluno.telefone}"/> </td> 
 
                         <br>
                         </tr>
