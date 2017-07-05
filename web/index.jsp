@@ -4,12 +4,12 @@
     Author     : LFS
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
     <head>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <title>JSP Page</title>
         <style>
 
@@ -33,7 +33,7 @@
         <div class="all-content">
 
             <div id="title">
-                <h1> Ol√° bem vindo √† p√°gina de cadastro </h1> 
+                <h1> Ol· bem vindo ‡ p·gina de cadastro </h1> 
             </div>
 
             <br><br>
