@@ -1,5 +1,5 @@
 <%-- 
-    Document   : consultarMatricula
+    Document   : consultarCurso
     Created on : 04/07/2017, 10:05:35
     Author     : LFS
 --%>
@@ -89,7 +89,7 @@
 
 
         </style> 
-        <title> Lista de matriculas </title>
+        <title> Lista de cursos </title>
     </head>
 
     <body>
@@ -107,21 +107,20 @@
                 <table width="50%">
                     <tr>
                         
-                        <th> Numero da matricula</th>
-                        <th> Aluno </th>
-                        <th>Telefone</th>
+                        <th> ID do Curso</th>
+                        <th> Curso </th>
+                        
 
                     </tr>
 
 
-                    <c:forEach var="matricula" items="${matriculas}">
+                    <c:forEach var="curso" items="${cursos}">
                         <tr>
                            
-                            <td> <c:out value="${matricula.numMatricula}"/> </td>
+                            <td> <c:out value="${curso.idCurso}"/> </td>
+                            <td> <c:out value="${curso.nomeCurso}"/> </td>
 
-                            <td> <c:out value="${matricula.aluno.nome}"/> </td>
 
-                            <td> <c:out value="${matricula.aluno.telefone}"/> </td>
 
 
                         <br>

@@ -42,9 +42,9 @@ public class Controller extends HttpServlet {
 
             }
 
-            if (request.getParameter("command").startsWith("matricula.")) {
+            if (request.getParameter("command").startsWith("curso.")) {
 
-                request.getRequestDispatcher("/matricula").forward(request, response);
+                request.getRequestDispatcher("/curso").forward(request, response);
 
             }
         }

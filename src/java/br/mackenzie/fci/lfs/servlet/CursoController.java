@@ -35,9 +35,9 @@ public class CursoController extends HttpServlet {
 
         if (request != null && request.getParameter("command") != null) {
 
-            if ("matricula.consultarMatricula".equalsIgnoreCase(request.getParameter("command"))) {
-                request.setAttribute("matriculas", new CursoDAO().consultar());
-                request.getRequestDispatcher("WEB-INF/jsp/matricula/consultarMatricula.jsp").forward(request, response);
+            if ("curso.consultarCurso".equalsIgnoreCase(request.getParameter("command"))) {
+                request.setAttribute("cursos", new CursoDAO().consultar());
+                request.getRequestDispatcher("WEB-INF/jsp/curso/consultarCurso.jsp").forward(request, response);
             }
         }
 
