@@ -44,11 +44,8 @@ public class CursoDAO implements GenericoDAO<Curso> {
             String sql = "UPDATE lfs.curso SET nomeCurso=? where idCurso=?";
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
-            ps.setString(1, aluno.getNome());
-            ps.setString(2, aluno.getEmail());
-            ps.setString(3, aluno.getTelefone());
-            ps.setInt(4, aluno.getNumMatricula());
-            ps.setInt(5, aluno.getCodAluno());
+            ps.setString(1, curso.getNomeCurso());
+            ps.setInt(2, curso.getIdCurso());
             ps.execute();
             c.close();
         } catch (ClassNotFoundException | SQLException ex) {
