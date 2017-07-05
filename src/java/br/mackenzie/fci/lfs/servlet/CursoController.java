@@ -54,7 +54,7 @@ public class CursoController extends HttpServlet {
             if ("curso.atualizar".equalsIgnoreCase(request.getParameter("command"))) {
                 
                 request.setAttribute("cursos", new CursoDAO().consultar());
-                request.getRequestDispatcher("WEB-INF/jsp/curso/validarCurso.jsp").forward(request, response);
+                request.getRequestDispatcher("WEB-INF/jsp/curso/atualizarCurso.jsp").forward(request, response);
             }
         }
 
