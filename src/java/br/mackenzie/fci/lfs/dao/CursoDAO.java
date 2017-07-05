@@ -9,6 +9,7 @@ import br.mackenzie.fci.lfs.exception.PersistenciaException;
 import br.mackenzie.fci.lfs.model.Aluno;
 import br.mackenzie.fci.lfs.model.Curso;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -24,17 +25,26 @@ import java.util.logging.Logger;
 public class CursoDAO implements GenericoDAO<Curso> {
     
     @Override
-    public void inserir(Curso matricula) {
+    public void inserir(Curso curso) {
+        try {
+            String sql= "INSERT INTO lfs.curso(nomeCurso) values (?)";
+            Connection c = Conexao.getInstance().getConnection();
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setString(1, curso.getNomeCurso());
+            ps.execute();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @Override
+    public void atualizar(Curso curso) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     @Override
-    public void atualizar(Curso matricula) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    @Override
-    public void remover(Curso matricula) {
+    public void remover(Curso curso) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
