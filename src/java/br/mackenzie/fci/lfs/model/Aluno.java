@@ -17,22 +17,27 @@ public class Aluno implements Serializable {
     private String nome;
     private String email;
     private String telefone;
+    private Integer numMatricula;
 
     public Aluno() {
     }
 
-    public Aluno(Integer codAluno, String nome, String email, String telefone) {
+    public Aluno(Integer codAluno, String nome, String email, String telefone, Integer numMatricula) {
         this.codAluno = codAluno;
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
+        this.numMatricula = numMatricula;
     }
 
-    public Aluno(Integer codAluno, String nome, String telefone) {
-        this.codAluno = codAluno;
-        this.nome = nome;
-        this.telefone = telefone;
+    public Integer getNumMatricula() {
+        return numMatricula;
     }
+
+    public void setNumMatricula(Integer numMatricula) {
+        this.numMatricula = numMatricula;
+    }
+
 
     public Aluno(Integer codAluno) {
         this.codAluno = codAluno;
