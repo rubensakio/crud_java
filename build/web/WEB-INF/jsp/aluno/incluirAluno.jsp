@@ -18,6 +18,19 @@
             }
             #title h1{font-family: arial; color: #2E8B57;}
         </style>
+
+        <script>
+            function formatar(mascara, documento) {
+                var i = documento.value.length;
+                var saida = mascara.substring(0, 1);
+                var texto = mascara.substring(i);
+
+                if (texto.substring(0, 1) !== saida) {
+                    documento.value += texto.substring(0, 1);
+                }
+
+            }
+        </script>
         <title> Cadastro </title>
     </head>
     <body>
@@ -32,13 +45,13 @@
                 <form method="post" action="${pageContext.request.contextPath}/controller?command=aluno.inserir">
 
                     <p>Nome:</p>
-                    <input type="text" name="nome" required>
+                    <input type="text" name="nome" placeholder="your name" required>
                     <p>Email:</p>
-                    <input type="text" name="email"  required>
+                    <input type="email" name="email" placeholder="your emal"  required>
                     <p>Telefone:</p>
-                    <input type="text" maxlength="9" name="telefone" required>
+                    <input type="tel" required="required" maxlength="15" placeholder="(00)0000-0000"  name="telefone" pattern="\([0-9]{2}\)[0-9]{4}-[0-9]{4}$" />
                     <p>Matricula:</p>
-                    <input type="text" maxlength="8" name="numMatricula" required>
+                    <input type="text" maxlength="8" placeholder="your enrollment" name="numMatricula" required>
                     <p><input type="submit"></p>
                     <p><input type="button" value="Voltar para lista" onclick="location.href = '${pageContext.request.contextPath}/controller?command=aluno.consultarClientes'"></p>
 
