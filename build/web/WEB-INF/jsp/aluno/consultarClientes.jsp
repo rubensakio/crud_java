@@ -111,6 +111,7 @@
                         <th> Nome do Aluno</th>
                         <th> Usuário </th>
                         <th>Telefone</th>
+                        <th>Matricula</th>
 
                     </tr>
 
@@ -123,6 +124,8 @@
                             <td> <c:out value="${aluno.email}"/> </td> 
 
                             <td> <c:out value="${aluno.telefone}"/> </td> 
+                            
+                            <td> <c:out value="${aluno.numMatricula}"/> </td> 
 
                         <br>
                         </tr>
