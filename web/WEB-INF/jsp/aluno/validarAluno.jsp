@@ -31,6 +31,8 @@
                 <input type="text" name="email" value="${aluno.email}">
                 <p>Telefone </p>
                 <input type="text" name="telefone" value="${aluno.telefone}">
+                <p>Matrícula </p>
+                <input type="text" name="numMatricula" value="${aluno.numMatricula}">
                 <br><br>
                 <input type="submit" value="Confirmar">
 
