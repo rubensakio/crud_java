@@ -57,12 +57,8 @@
                     <select name="cursos" onchange="this.form.submit()">
                         <option value=""> --Selecione-- </option>
                         <c:forEach var="curso" items="${cursos}">
-                            <option value="${curso.codAluno}">
-
-                                <c:out value="${aluno.nome}"/> &nbsp;
-                                <c:out value="${aluno.email}"/> &nbsp;
-                                <c:out value="${aluno.telefone}"/> &nbsp;
-
+                            <option value="${curso.idCurso}">
+                                <c:out value="${curso.nomeCurso}"/> 
                             </option>
                         </c:forEach>
 

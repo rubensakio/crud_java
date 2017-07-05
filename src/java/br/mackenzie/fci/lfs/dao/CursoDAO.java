@@ -6,7 +6,6 @@
 package br.mackenzie.fci.lfs.dao;
 
 import br.mackenzie.fci.lfs.exception.PersistenciaException;
-import br.mackenzie.fci.lfs.model.Aluno;
 import br.mackenzie.fci.lfs.model.Curso;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -41,6 +40,28 @@ public class CursoDAO implements GenericoDAO<Curso> {
     @Override
     public void atualizar(Curso curso) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+        public Curso listarPorId(Curso curso) {
+        
+        try {
+            String sql = "SELECT * FROM lfs.curso  WHERE idCurso = ?";
+            Connection c = Conexao.getInstance().getConnection();
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setInt(1, curso.getIdCurso());
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                
+                curso.setIdCurso(rs.getInt("idCurso"));
+                curso.setNomeCurso(rs.getString("nomeCurso"));
+                
+            }
+            
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(AlunoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return curso;
     }
     
     @Override

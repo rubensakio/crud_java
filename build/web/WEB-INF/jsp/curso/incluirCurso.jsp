@@ -34,7 +34,7 @@
                     <p>Nome:</p>
                     <input type="text" name="nomeCurso" required>
                     <p><input type="submit"></p>
-                    <p><input type="button" value="Voltar para lista" onclick="location.href = '${pageContext.request.contextPath}/controller?command=aluno.consultarClientes'"></p>
+                    <p><input type="button" value="Voltar para lista" onclick="location.href = '${pageContext.request.contextPath}/controller?command=curso.consultarCurso'"></p>
 
 
 
