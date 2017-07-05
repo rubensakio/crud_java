@@ -58,6 +58,7 @@
                                 <c:out value="${aluno.nome}"/> &nbsp;
                                 <c:out value="${aluno.email}"/> &nbsp;
                                 <c:out value="${aluno.telefone}"/> &nbsp;
+                                <c:out value="${aluno.numMatricula}"/> &nbsp;
 
                             </option>
                         </c:forEach>

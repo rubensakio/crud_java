@@ -92,6 +92,7 @@ public class AlunoController extends HttpServlet {
                 aluno.setNome(request.getParameter("nome"));
                 aluno.setEmail(request.getParameter("email"));
                 aluno.setTelefone(request.getParameter("telefone"));
+                aluno.setNumMatricula(Integer.parseInt(request.getParameter("numMatricula")));
                 new AlunoDAO().atualizar(aluno);
                 request.setAttribute("alunos", new AlunoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/aluno/consultarClientes.jsp").forward(request, response);

@@ -31,6 +31,8 @@
                 <input type="text" name="email" readonly="true" value="${aluno.email}">
                 <p>Telefone </p>
                 <input type="text" name="telefone" readonly="true" value="${aluno.telefone}">
+                <p> Matricula </p>
+                <input type="text" name="numMatricula" readonly="true" value="${aluno.numMatricula}">
                 <br><br>
                 <input type="submit" value="Excluir">
 
