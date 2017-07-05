@@ -22,11 +22,11 @@ import java.util.logging.Logger;
  * @author LFS
  */
 public class CursoDAO implements GenericoDAO<Curso> {
-    
+
     @Override
     public void inserir(Curso curso) {
         try {
-            String sql= "INSERT INTO lfs.curso(nomeCurso) values (?)";
+            String sql = "INSERT INTO lfs.curso(nomeCurso) values (?)";
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, curso.getNomeCurso());
@@ -36,14 +36,29 @@ public class CursoDAO implements GenericoDAO<Curso> {
             Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @Override
     public void atualizar(Curso curso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        try {
+            String sql = "UPDATE lfs.curso SET nomeCurso=? where idCurso=?";
+            Connection c = Conexao.getInstance().getConnection();
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setString(1, aluno.getNome());
+            ps.setString(2, aluno.getEmail());
+            ps.setString(3, aluno.getTelefone());
+            ps.setInt(4, aluno.getNumMatricula());
+            ps.setInt(5, aluno.getCodAluno());
+            ps.execute();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(AlunoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
-    
-        public Curso listarPorId(Curso curso) {
-        
+
+    public Curso listarPorId(Curso curso) {
+
         try {
             String sql = "SELECT * FROM lfs.curso  WHERE idCurso = ?";
             Connection c = Conexao.getInstance().getConnection();
@@ -51,42 +66,42 @@ public class CursoDAO implements GenericoDAO<Curso> {
             ps.setInt(1, curso.getIdCurso());
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                
+
                 curso.setIdCurso(rs.getInt("idCurso"));
                 curso.setNomeCurso(rs.getString("nomeCurso"));
-                
+
             }
-            
+
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(AlunoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return curso;
     }
-    
+
     @Override
     public void remover(Curso curso) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     @Override
     public List<Curso> consultar() {
-        
+
         List<Curso> cursos = new ArrayList<Curso>();
         try {
-            
+
             Connection c = Conexao.getInstance().getConnection();
             Statement stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM lfs.curso");
             while (rs.next()) {
-                
+
                 cursos.add(new Curso(rs.getInt("idCurso"), rs.getString("nomeCurso")));
-                
+
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return cursos;
     }
-    
+
 }
