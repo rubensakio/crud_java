@@ -95,9 +95,9 @@
     <body>
         <div class="menu1">
             <ul class="menu">
-                <li/><a href="${pageContext.request.contextPath}/controller?command=matricula.formulario"> Novo  </a>
-                <li/><a href="${pageContext.request.contextPath}/controller?command=matricula.atualizar"> Atualizar </a>
-                <li/><a href="${pageContext.request.contextPath}/controller?command=matricula.excluir"> Remover </a>
+                <li/><a href="${pageContext.request.contextPath}/controller?command=curso.formulario"> Novo  </a>
+                <li/><a href="${pageContext.request.contextPath}/controller?command=curso.atualizar"> Atualizar </a>
+                <li/><a href="${pageContext.request.contextPath}/controller?command=curso.excluir"> Remover </a>
             </ul>
         </div>
         <div class="all-content">  
@@ -106,31 +106,25 @@
             <div id="table1">
                 <table width="50%">
                     <tr>
-                        
                         <th> ID do Curso</th>
                         <th> Curso </th>
-                        
-
                     </tr>
 
 
                     <c:forEach var="curso" items="${cursos}">
+                    
                         <tr>
-                           
                             <td> <c:out value="${curso.idCurso}"/> </td>
                             <td> <c:out value="${curso.nomeCurso}"/> </td>
 
-
-
-
-                        <br>
-                        </tr>
+                        </tr> 
+                    
                     </c:forEach>
+
                 </table>
             </div>
 
             <br><br> 
-
 
 
 
