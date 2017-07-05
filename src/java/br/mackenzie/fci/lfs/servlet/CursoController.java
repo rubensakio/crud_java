@@ -5,7 +5,7 @@
  */
 package br.mackenzie.fci.lfs.servlet;
 
-import br.mackenzie.fci.lfs.dao.MatriculaDAO;
+import br.mackenzie.fci.lfs.dao.CursoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author LFS
  */
-@WebServlet(name = "MatriculaController", urlPatterns = {"/matricula"})
-public class MatriculaController extends HttpServlet {
+@WebServlet(name = "CursoController", urlPatterns = {"/curso"})
+public class CursoController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,7 +36,7 @@ public class MatriculaController extends HttpServlet {
         if (request != null && request.getParameter("command") != null) {
 
             if ("matricula.consultarMatricula".equalsIgnoreCase(request.getParameter("command"))) {
-                request.setAttribute("matriculas", new MatriculaDAO().consultar());
+                request.setAttribute("matriculas", new CursoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/matricula/consultarMatricula.jsp").forward(request, response);
             }
         }

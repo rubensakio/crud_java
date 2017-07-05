@@ -7,7 +7,7 @@ package br.mackenzie.fci.lfs.dao;
 
 import br.mackenzie.fci.lfs.exception.PersistenciaException;
 import br.mackenzie.fci.lfs.model.Aluno;
-import br.mackenzie.fci.lfs.model.Matricula;
+import br.mackenzie.fci.lfs.model.Curso;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,47 +21,41 @@ import java.util.logging.Logger;
  *
  * @author LFS
  */
-public class MatriculaDAO implements GenericoDAO<Matricula> {
-
+public class CursoDAO implements GenericoDAO<Curso> {
+    
     @Override
-    public void inserir(Matricula matricula) {
+    public void inserir(Curso matricula) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @Override
-    public void atualizar(Matricula matricula) {
+    public void atualizar(Curso matricula) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @Override
-    public void remover(Matricula matricula)  {
+    public void remover(Curso matricula) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @Override
-    public List<Matricula> consultar()  {
-
-        List<Matricula> matriculas = new ArrayList<Matricula>();
+    public List<Curso> consultar() {
+        
+        List<Curso> cursos = new ArrayList<Curso>();
         try {
-
+            
             Connection c = Conexao.getInstance().getConnection();
             Statement stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT *"
-                    + "FROM lfs.matricula AS m "
-                    + "INNER JOIN lfs.aluno AS a "
-                    + "ON m.idAluno = a.idAluno");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM lfs.curso");
             while (rs.next()) {
-
-                matriculas.add(new Matricula(rs.getInt("idMatricula"),
-                        rs.getInt("numMatricula"),
-                        new Aluno(rs.getInt("idAluno"),
-                                rs.getString("nome"),
-                                rs.getString("telefone"))));
+                
+                cursos.add(new Curso(rs.getInt("idCurso"), rs.getString("nomeCurso")));
+                
             }
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(MatriculaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return matriculas;
+        return cursos;
     }
-
+    
 }
