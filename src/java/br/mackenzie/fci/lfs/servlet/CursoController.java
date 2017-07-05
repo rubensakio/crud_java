@@ -33,9 +33,9 @@ public class CursoController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
         if (request != null && request.getParameter("command") != null) {
-
+            
             if ("curso.consultarCurso".equalsIgnoreCase(request.getParameter("command"))) {
                 request.setAttribute("cursos", new CursoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/curso/consultarCurso.jsp").forward(request, response);
@@ -56,8 +56,28 @@ public class CursoController extends HttpServlet {
                 request.setAttribute("cursos", new CursoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/curso/atualizarCurso.jsp").forward(request, response);
             }
+            if ("curso.validarCurso".equalsIgnoreCase(request.getParameter("command"))) {
+                
+                Curso curso = new Curso();
+                curso.setIdCurso(Integer.parseInt(request.getParameter("cursos")));
+                curso = new CursoDAO().listarPorId(curso);
+                request.setAttribute("curso", curso);
+                request.getRequestDispatcher("WEB-INF/jsp/curso/validarCurso.jsp").forward(request, response);
+                
+            }
+            if ("curso.validar-atualizacao".equalsIgnoreCase(request.getParameter("command"))) {
+                
+                Curso curso = new Curso();
+                curso.setIdCurso(Integer.parseInt(request.getParameter("idCurso")));
+                curso.setNomeCurso(request.getParameter("nomeCurso"));
+                new CursoDAO().atualizar(curso);
+                request.setAttribute("cursos", new CursoDAO().consultar());
+                request.getRequestDispatcher("WEB-INF/jsp/curso/consultarCurso.jsp").forward(request, response);
+                
+                
+            }
         }
-
+        
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
