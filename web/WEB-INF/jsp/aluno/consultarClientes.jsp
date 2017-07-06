@@ -23,7 +23,12 @@
 
                 text-align: center;
                 padding: 10px;
+                font-size: 14px;
+                 
+               
             }
+          
+            
             .menu1{
 
                 padding:10px;
@@ -107,7 +112,7 @@
             <div id="table1">
                 <table width="50%">
                     <tr>
-                      
+
                         <th> Nome do Aluno</th>
                         <th> Usuário </th>
                         <th>Telefone</th>
@@ -118,13 +123,13 @@
 
                     <c:forEach var="aluno" items="${alunos}">
                         <tr>
-                            
-                            <td> <c:out value="${aluno.nome}"/> </td>
 
-                            <td> <c:out value="${aluno.email}"/> </td> 
+                            <td> <c:out value="${aluno.nome}"/> </td> 
+
+                            <td> <c:out value="${aluno.email}"/> </td>  
 
                             <td> <c:out value="${aluno.telefone}"/> </td> 
-                            
+
                             <td> <c:out value="${aluno.numMatricula}"/> </td> 
 
                         <br>
