@@ -47,6 +47,11 @@ public class Controller extends HttpServlet {
                 request.getRequestDispatcher("/curso").forward(request, response);
 
             }
+            if (request.getParameter("command").startsWith("semestre.")) {
+
+                request.getRequestDispatcher("/semestre").forward(request, response);
+
+            }
         }
 
     }
