@@ -5,13 +5,60 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title> Exclusão de alunos </title>
+        <style>
+
+            #button a{
+
+                text-decoration: none;
+                color: blue;
+                font-family: Verdana;
+                background: -webkit-linear-gradient(#00FF7F,#00FF00 100%);
+                border: 1px solid black;
+                border-radius: 3px;
+                display: block;
+                color: #ffffff;
+                font-family: "Trebuchet MS";
+                text-align: center;
+                font-size: 20px;
+                font-weight: bold;
+                line-height: 35px;
+                position:  relative;
+                width: 80px;
+                padding: 0px 0px;
+            }
+            .all-content{
+                padding: 10px;
+                position: absolute;
+                left: 490px;
+                top: 25px;
+            }
+            #title h1{font-family: arial; color: #2E8B57;}
+
+        </style>
     </head>
     <body>
-        <h1></h1>
+        <div class="all-content">
+            <div id="title">
+                <h1> Excluindo curso </h1>
+            </div>
+            <form method="post" action="#">
+
+                <select name="cursos" onchange="this.form.submit()">
+                    <option value=""> --Selecione--</option>
+
+
+
+
+                </select>
+
+            </form>
+        </div>
+
     </body>
 </html>
