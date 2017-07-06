@@ -78,7 +78,16 @@ public class CursoDAO implements GenericoDAO<Curso> {
 
     @Override
     public void remover(Curso curso) {
-        String sql = "DELETE FROM lfs.curso";
+        try {
+            String sql = "DELETE FROM lfs.curso WHERE idCurso=?";
+            Connection c = Conexao.getInstance().getConnection();
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setInt(1, curso.getIdCurso());
+            ps.execute();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
