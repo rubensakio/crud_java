@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title> Exclusão de alunosdsdsd </title>
+        <title> Exclusão de alunos </title>
         <style>
 
             #button a{
