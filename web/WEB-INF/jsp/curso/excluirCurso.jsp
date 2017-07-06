@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -47,17 +47,26 @@
             <div id="title">
                 <h1> Excluindo curso </h1>
             </div>
-            <form method="post" action="#">
+            <form method="post" action="${pageContext.request.contextPath}/controller?command=curso.validarExclusaoCurso">
 
                 <select name="cursos" onchange="this.form.submit()">
-                    <option value=""> --Selecione--</option>
+                    <option value=""> --Selecione-- </option>
+                    <c:forEach var="curso" items="${cursos}">
+                        <option value="${curso.idCurso}">
+
+                            <c:out value="${curso.nomeCurso}"/> &nbsp;
 
 
-
+                        </option>
+                    </c:forEach>
 
                 </select>
 
             </form>
+            
+            <div id="button">
+                <a href="${pageContext.request.contextPath}/controller?command=curso.consultarCurso"> Voltar </a>
+            </div> 
         </div>
 
     </body>
