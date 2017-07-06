@@ -96,9 +96,7 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
             ps.setInt(1, aluno.getCodAluno());
             ps.execute();
             c.close();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AlunoDAO.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(AlunoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

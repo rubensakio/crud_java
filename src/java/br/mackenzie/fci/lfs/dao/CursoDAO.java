@@ -78,7 +78,7 @@ public class CursoDAO implements GenericoDAO<Curso> {
 
     @Override
     public void remover(Curso curso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "DELETE FROM lfs.curso";
     }
 
     @Override
