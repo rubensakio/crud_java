@@ -13,6 +13,58 @@ import java.io.Serializable;
  */
 public class Semestre implements Serializable {
     
+    private Integer idSemestre;
+    private Integer semestreAtual;
+    private Aluno aluno;
+    private Curso curso;
+
+    public Semestre() {
+    }
+
+    public Semestre(Integer idSemestre, Integer semestreAtual, Aluno aluno, Curso curso) {
+        this.idSemestre = idSemestre;
+        this.semestreAtual = semestreAtual;
+        this.aluno = aluno;
+        this.curso = curso;
+    }
+
+    public Integer getIdSemestre() {
+        return idSemestre;
+    }
+
+    public void setIdSemestre(Integer idSemestre) {
+        this.idSemestre = idSemestre;
+    }
+
+    public Integer getSemestreAtual() {
+        return semestreAtual;
+    }
+
+    public void setSemestreAtual(Integer semestreAtual) {
+        this.semestreAtual = semestreAtual;
+    }
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+    
+    
+    
+    
+    
+    
     
     
 }
