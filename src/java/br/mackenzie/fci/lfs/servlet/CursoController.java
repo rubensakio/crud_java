@@ -90,6 +90,16 @@ public class CursoController extends HttpServlet {
                 request.getRequestDispatcher("WEB-INF/jsp/curso/validarExclusaoCurso.jsp").forward(request, response);
 
             }
+            if ("curso.validar-exclusao".equalsIgnoreCase(request.getParameter("command"))) {
+
+                Curso curso = new Curso();
+                curso.setIdCurso(Integer.parseInt(request.getParameter("idCurso")));
+                curso.setNomeCurso(request.getParameter("nomeCurso"));
+                new CursoDAO().remover(curso);
+                request.setAttribute("cursos", new CursoDAO().consultar());
+                request.getRequestDispatcher("WEB-INF/jsp/curso/consultarCurso.jsp").forward(request, response);
+
+            }
         }
 
     }
