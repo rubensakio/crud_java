@@ -106,19 +106,17 @@
             <div id="table1">
                 <table width="50%">
                     <tr>
-                        <th> ID do Curso</th>
                         <th> Curso </th>
                     </tr>
 
 
                     <c:forEach var="curso" items="${cursos}">
-                    
+
                         <tr>
-                            <td> <c:out value="${curso.idCurso}"/> </td>
-                            <td> <c:out value="${curso.nomeCurso}"/> </td>
+                            <td><a href="#"> <c:out value="${curso.nomeCurso}"/></a></td>
 
                         </tr> 
-                    
+
                     </c:forEach>
 
                 </table>
