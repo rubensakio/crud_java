@@ -5,11 +5,13 @@
  */
 package br.mackenzie.fci.lfs.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author LFS
  */
-public class Curso {
+public class Curso implements Serializable {
 
     private Integer idCurso;
     private String nomeCurso;
