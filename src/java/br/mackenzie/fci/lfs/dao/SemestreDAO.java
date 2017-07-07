@@ -42,28 +42,36 @@ public class SemestreDAO implements GenericoDAO<Semestre> {
     @Override
     public List<Semestre> consultar() {
         List<Semestre> semestres = new ArrayList<Semestre>();
+
         try {
 
-            Connection c = Conexao.getInstance().getConnection();
-            Statement stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM lfs.semestre as s"
-                    + "INNER JOIN lfs.aluno as a"
-                    + "s.idAluno = a.idAluno"
-                    + "INNER JOIN lfs.curso as c"
-                    + "ON s.idCurso = c.idCurso");
+            Connection connection = Conexao.getInstance().getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet result = statement.executeQuery("SELECT *"
+                    + "FROM lfs.semestre AS R"
+                    + "INNER JOIN lfs.aluno AS C"
+                    + "ON R.idAluno = C.idAluno"
+                    + "INNER JOIN AS lfs.curso Q"
+                    + "ON R.idCurso = Q.idCurso");
 
-            while (rs.next()) {
+            while (result.next()) {
 
-                semestres.add(new Semestre(rs.getInt("idSemestre"),
-                        rs.getInt("semestreAtual"),
-                        new Aluno(rs.getInt("idAluno"), rs.getString("nome")),
-                        new Curso(rs.getInt("idCurso"), rs.getString("nomeCurso"))));
+                semestres.add(new Semestre(result.getInt("idSemestre"),
+                        result.getInt("semestreAtual"),
+                        new Aluno(result.getInt("idAluno"),
+                                result.getString("nome"),
+                                result.getString("email"),
+                                result.getString("telefone"),
+                                result.getInt("numMatricula")),
+                        new Curso(result.getInt("idCurso"),
+                                result.getString("nomeCurso"))));
+
             }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(SemestreDAO.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(SemestreDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+
         return semestres;
     }
 

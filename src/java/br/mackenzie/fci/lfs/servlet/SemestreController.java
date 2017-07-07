@@ -5,6 +5,7 @@
  */
 package br.mackenzie.fci.lfs.servlet;
 
+import br.mackenzie.fci.lfs.dao.SemestreDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -35,12 +36,13 @@ public class SemestreController extends HttpServlet {
         if (request != null && request.getParameter("command") != null) {
 
             if ("semestre.consultarSemestre".equalsIgnoreCase(request.getParameter("command"))) {
-
+                
+                request.setAttribute("semestres", new SemestreDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/semestre/consultarSemestre.jsp").forward(request, response);
             }
         }
-
     }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

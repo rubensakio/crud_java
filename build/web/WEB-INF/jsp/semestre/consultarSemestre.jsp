@@ -4,6 +4,7 @@
     Author     : LFS
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,5 +14,15 @@
     </head>
     <body>
         <h1> Lista de semestre </h1>
+
+
+        <c:forEach var="semestre" items="${semestres}">
+
+
+            <c:out value="${semestre.aluno.nome}"/>
+
+
+        </c:forEach>
+
     </body>
 </html>
