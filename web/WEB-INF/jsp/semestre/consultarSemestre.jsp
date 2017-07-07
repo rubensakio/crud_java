@@ -19,6 +19,7 @@
         <c:forEach var="semestre" items="${semestres}">
 
 
+            <c:out value="${semestre.semestreAtual}"/>
             <c:out value="${semestre.aluno.nome}"/>
 
 

@@ -65,7 +65,7 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
     public Aluno listarPorId(Aluno aluno) {
         
         try {
-            String sql = "SELECT * FROM lfs.aluno  WHERE idAluno = ?";
+            String sql = "SELECT * FROM lfs.aluno as A  WHERE A.idAluno = ?";
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setInt(1, aluno.getCodAluno());

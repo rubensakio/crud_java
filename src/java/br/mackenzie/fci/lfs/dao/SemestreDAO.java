@@ -47,12 +47,8 @@ public class SemestreDAO implements GenericoDAO<Semestre> {
 
             Connection connection = Conexao.getInstance().getConnection();
             Statement statement = connection.createStatement();
-            ResultSet result = statement.executeQuery("SELECT *"
-                    + "FROM lfs.semestre AS R"
-                    + "INNER JOIN lfs.aluno AS C"
-                    + "ON R.idAluno = C.idAluno"
-                    + "INNER JOIN AS lfs.curso Q"
-                    + "ON R.idCurso = Q.idCurso");
+            ResultSet result = statement.executeQuery("SELECT * FROM lfs.semestre AS R INNER JOIN lfs.aluno AS C "
+                    + "ON C.idAluno = R.idAluno INNER JOIN lfs.curso AS Q ON Q.idCurso = R.idCurso");
 
             while (result.next()) {
 
