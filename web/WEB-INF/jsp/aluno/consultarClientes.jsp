@@ -45,7 +45,7 @@
                 color: #ffffff;
                 font-family: "Trebuchet MS";
                 text-align: center;
-                font-size: 24px;
+                font-size: 14px;
                 font-weight: bold;
                 line-height: 35px;
                 position:  relative;

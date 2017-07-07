@@ -32,7 +32,7 @@
                 <p>Telefone </p>
                 <input type="text" name="telefone" value="${aluno.telefone}">
                 <p>Matrícula </p>
-                <input type="text" name="numMatricula" value="${aluno.numMatricula}">
+                <input type="text" name="numMatricula" maxlength="8" value="${aluno.numMatricula}">
                 <br><br>
                 <input type="submit" value="Confirmar">
 
