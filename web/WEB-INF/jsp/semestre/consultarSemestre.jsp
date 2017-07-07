@@ -95,7 +95,7 @@
     <body>
         <div class="menu1">
             <ul class="menu">
-                <li/><a href="#"> Novo  </a>
+                <li/><a href="${pageContext.request.contextPath}/controller?command=semestre.formulario"> Novo  </a>
                 <li/><a href="#"> Atualizar </a>
                 <li/><a href="#"> Remover </a>
             </ul>

@@ -36,13 +36,16 @@ public class SemestreController extends HttpServlet {
         if (request != null && request.getParameter("command") != null) {
 
             if ("semestre.consultarSemestre".equalsIgnoreCase(request.getParameter("command"))) {
-                
+
                 request.setAttribute("semestres", new SemestreDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/semestre/consultarSemestre.jsp").forward(request, response);
             }
+            if ("semestre.formulario".equalsIgnoreCase(request.getParameter("command"))) {
+
+                request.getRequestDispatcher("WEB-INF/jsp/semestre/incluirSemestre.jsp").forward(request, response);
+            }
         }
     }
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
