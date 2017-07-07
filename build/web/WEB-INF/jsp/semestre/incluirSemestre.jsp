@@ -4,6 +4,7 @@
     Author     : LFS
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -35,9 +36,27 @@
                     <p>Em que semestre você está?</p>
                     <input type="text" size="8" name="semestreAtual"  pattern="[0-9]+$" required>
                     <p>Aluno:</p>
-                    <input type="email" name="email" placeholder="your emal"  required>
+                    <select name="alunos">
+                        <option value="">--Selecione--</option>
+                        <c:forEach var="aluno" items="${alunos}">
+                            <option value="${aluno.codAluno}">
+                                <c:out value="${aluno.numMatricula}"/>
+                                <c:out value="${aluno.nome}"/>
+                            </option>
+                        </c:forEach>
+                    </select>
                     <p>Curso:</p>
-                    <input type="text" maxlength="8" placeholder="your enrollment" name="numMatricula" required>
+
+                    <select name="cursos">
+                        <option value="">--Selecione--</option>
+                        <c:forEach var="curso" items="${cursos}">
+                            <option value="${curso.idCurso}">
+                                <c:out value="${curso.nomeCurso}"/>
+
+                            </option>
+                        </c:forEach>
+                    </select>
+
                     <p><input type="submit"></p>
                     <p><input type="button" value="Voltar para lista" onclick="location.href = '${pageContext.request.contextPath}/controller?command=semestre.consultarSemestre'"></p>
 
