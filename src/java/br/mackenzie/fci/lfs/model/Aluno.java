@@ -30,6 +30,12 @@ public class Aluno implements Serializable {
         this.numMatricula = numMatricula;
     }
 
+    public Aluno(Integer codAluno, String nome) {
+        this.codAluno = codAluno;
+        this.nome = nome;
+
+    }
+
     public Integer getNumMatricula() {
         return numMatricula;
     }
@@ -37,7 +43,6 @@ public class Aluno implements Serializable {
     public void setNumMatricula(Integer numMatricula) {
         this.numMatricula = numMatricula;
     }
-
 
     public Aluno(Integer codAluno) {
         this.codAluno = codAluno;

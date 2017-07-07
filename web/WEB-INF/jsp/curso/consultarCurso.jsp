@@ -113,7 +113,11 @@
                     <c:forEach var="curso" items="${cursos}">
 
                         <tr>
+<<<<<<< HEAD
                             <td> <c:out value="${curso.nomeCurso}"/></a>
+=======
+                            <td> <c:out value="${curso.nomeCurso}"/></td>
+>>>>>>> 5aaef82eacb21954571889b9b364ea70e5b41639
 
                         </tr> 
 
