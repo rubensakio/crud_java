@@ -48,6 +48,11 @@ public class SemestreController extends HttpServlet {
                 request.setAttribute("cursos", new CursoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/semestre/incluirSemestre.jsp").forward(request, response);
             }
+            if ("semestre.inserir".equalsIgnoreCase(request.getParameter("command"))) {
+                
+
+                request.getRequestDispatcher("WEB-INF/jsp/semestre/consultarSemestre.jsp").forward(request, response);
+            }
         }
     }
 
