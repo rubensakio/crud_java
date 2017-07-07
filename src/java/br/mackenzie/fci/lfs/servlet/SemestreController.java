@@ -7,7 +7,6 @@ package br.mackenzie.fci.lfs.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,10 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Rubens
+ * @author LFS
  */
-@WebServlet(name = "Controller", urlPatterns = {"/controller"})
-public class Controller extends HttpServlet {
+@WebServlet(name = "SemestreController", urlPatterns = {"/semestre"})
+public class SemestreController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,22 +34,9 @@ public class Controller extends HttpServlet {
 
         if (request != null && request.getParameter("command") != null) {
 
-            if (request.getParameter("command").startsWith("aluno.")) {
+            if ("semestre.consultarSemestre".equalsIgnoreCase(request.getParameter("command"))) {
 
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/aluno");
-                dispatcher.forward(request, response);
-
-            }
-
-            if (request.getParameter("command").startsWith("curso.")) {
-
-                request.getRequestDispatcher("/curso").forward(request, response);
-
-            }
-            if (request.getParameter("command").startsWith("semestre.")) {
-
-                request.getRequestDispatcher("/semestre").forward(request, response);
-
+                request.getRequestDispatcher("WEB-INF/jsp/semestre/consultarSemestre.jsp").forward(request, response);
             }
         }
 
