@@ -31,7 +31,7 @@
             </div>
 
             <div id="form-cad">
-                <form method="post" action="#">
+                <form method="post" action="${pageContext.request.contextPath}/controller?command=semestre.inserir">
 
                     <p>Em que semestre você está?</p>
                     <input type="text" size="8" name="semestreAtual"  pattern="[0-9]+$" required>
