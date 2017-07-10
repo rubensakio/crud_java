@@ -76,6 +76,6 @@
                 <a href="${pageContext.request.contextPath}/controller?command=aluno.consultarClientes"> Voltar </a>
             </div> 
         </div>
-    </div>
-</body>
+
+    </body>
 </html>
