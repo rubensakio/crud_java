@@ -53,6 +53,31 @@ public class SemestreDAO implements GenericoDAO<Semestre> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public Semestre listarPorId(Semestre semestre) {
+
+        try {
+            String sql = "SELECT * FROM lfs.semestre WHERE idSemestre=?";
+            Connection c = Conexao.getInstance().getConnection();
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setInt(1, semestre.getIdSemestre());
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                semestre.setIdSemestre(rs.getInt("idSemestre"));
+                semestre.setAluno(new Aluno(rs.getInt("idAluno")));
+                semestre.setCurso(new Curso(rs.getInt("idCurso")));
+
+            }
+
+            c.close();
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(SemestreDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return semestre;
+    }
+
     @Override
     public List<Semestre> consultar() {
         List<Semestre> semestres = new ArrayList<Semestre>();
