@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
  * @author LFS
  */
 public class Conexao {
-
+//Bundle: ferramenta utilizada para adicionar arquivo cujo conteúdo é um texto que relata dados possíveis da conexão com o banco de dados - java.  
     private static ResourceBundle bundle;
     private static Conexao conexao;
 
