@@ -63,7 +63,7 @@
                 </select>
 
             </form>
-            
+            <br><br>
             <div id="button">
                 <a href="${pageContext.request.contextPath}/controller?command=curso.consultarCurso"> Voltar </a>
             </div> 

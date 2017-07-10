@@ -20,6 +20,10 @@ public class Curso implements Serializable {
 
     }
 
+    public Curso(Integer idCurso) {
+        this.idCurso = idCurso;
+    }
+
     public Curso(Integer idCurso, String nomeCurso) {
         this.idCurso = idCurso;
         this.nomeCurso = nomeCurso;

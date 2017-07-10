@@ -17,7 +17,7 @@
                 left: 490px;
                 top: 25px;
             }
-            
+
         </style>
     </head>
     <body>
@@ -26,11 +26,11 @@
                 <p>Código:</p>
                 <input type="text" size="6" readonly="true" name="codAluno" value="${aluno.codAluno}">
                 <p>Nome: </p>
-                <input type="text" name="nome" maxlength="15" placeholder="(00)0000-0000"  name="telefone" pattern="\([0-9]{2}\)[0-9]{4}-[0-9]{4}$" required value="${aluno.nome}">
+                <input type="text" name="nome"  required value="${aluno.nome}">
                 <p>Email </p>
                 <input type="text" name="email" value="${aluno.email}" required>
                 <p>Telefone </p>
-                <input type="text" name="telefone" value="${aluno.telefone}" required>
+                <input type="text" name="telefone" maxlength="15" placeholder="(00)0000-0000"  name="telefone" pattern="\([0-9]{2}\)[0-9]{4}-[0-9]{4}$" value="${aluno.telefone}" required>
                 <p>Matrícula </p>
                 <input type="text" name="numMatricula" maxlength="8" value="${aluno.numMatricula}" required>
                 <br><br>

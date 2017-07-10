@@ -8,6 +8,9 @@ package br.mackenzie.fci.lfs.servlet;
 import br.mackenzie.fci.lfs.dao.AlunoDAO;
 import br.mackenzie.fci.lfs.dao.CursoDAO;
 import br.mackenzie.fci.lfs.dao.SemestreDAO;
+import br.mackenzie.fci.lfs.model.Aluno;
+import br.mackenzie.fci.lfs.model.Curso;
+import br.mackenzie.fci.lfs.model.Semestre;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -43,14 +46,18 @@ public class SemestreController extends HttpServlet {
                 request.getRequestDispatcher("WEB-INF/jsp/semestre/consultarSemestre.jsp").forward(request, response);
             }
             if ("semestre.formulario".equalsIgnoreCase(request.getParameter("command"))) {
-                
+
                 request.setAttribute("alunos", new AlunoDAO().consultar());
                 request.setAttribute("cursos", new CursoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/semestre/incluirSemestre.jsp").forward(request, response);
             }
             if ("semestre.inserir".equalsIgnoreCase(request.getParameter("command"))) {
-                
-
+                Semestre semestre = new Semestre();
+                semestre.setSemestreAtual(Integer.parseInt(request.getParameter("semestreAtual")));
+                semestre.setAluno(new Aluno(Integer.parseInt(request.getParameter("alunos"))));
+                semestre.setCurso(new Curso(Integer.parseInt(request.getParameter("cursos"))));
+                new SemestreDAO().inserir(semestre);
+                request.setAttribute("semestres", new SemestreDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/semestre/consultarSemestre.jsp").forward(request, response);
             }
         }
