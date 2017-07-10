@@ -45,7 +45,19 @@ public class SemestreDAO implements GenericoDAO<Semestre> {
 
     @Override
     public void atualizar(Semestre semestre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            String sql = "UPDATE lfs.semestre SET semestreAtual=? idALUNO=?, idCurso=?";
+            Connection c= Conexao.getInstance().getConnection();
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setInt(1, semestre.getSemestreAtual());
+            ps.setInt(2, semestre.getAluno().getCodAluno());
+            ps.setInt(3, semestre.getCurso().getIdCurso());
+            ps.execute();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(SemestreDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     @Override
