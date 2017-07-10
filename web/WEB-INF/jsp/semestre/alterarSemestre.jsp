@@ -3,8 +3,9 @@
     Created on : 10/07/2017, 10:29:29
     Author     : LFS
 --%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,7 +21,8 @@
             <div id="form-select">
                 <form method="post" action="${pageContext.request.contextPath}/controller?command=semestre.validarSemestre">
                     <select name="semestres" onchange="this.form.submit()">
-                        <option value=""> --Selecione-- </option>
+                        <option value=""> <c:out value="--Selecione--"/> </option>
+                        
                         <c:forEach var="semestre" items="${semestres}">
                             <option value="${semestre.idSemestre}">
 
@@ -39,7 +41,7 @@
             </div>
             <br><br>
             <div id="button">
-                <a href="${pageContext.request.contextPath}/controller?command=aluno.consultarClientes"> Voltar </a>
+                <a href="${pageContext.request.contextPath}/controller?command=semestre.consultarSemestre"> Voltar </a>
             </div> 
         </div>
     </body>
