@@ -19,7 +19,7 @@
             </div>
             <div id="form-select">
                 <form method="post" action="${pageContext.request.contextPath}/controller?command=semestre.validarSemestre">
-                    <select name="alunos" onchange="this.form.submit()">
+                    <select name="semestres" onchange="this.form.submit()">
                         <option value=""> --Selecione-- </option>
                         <c:forEach var="semestre" items="${semestres}">
                             <option value="${semestre.idSemestre}">

@@ -61,9 +61,20 @@ public class SemestreController extends HttpServlet {
                 request.getRequestDispatcher("WEB-INF/jsp/semestre/consultarSemestre.jsp").forward(request, response);
             }
             if ("semestre.atualizar".equalsIgnoreCase(request.getParameter("command"))) {
-                
+
                 request.setAttribute("semestres", new SemestreDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/semestre/alterarSemestre.jsp").forward(request, response);
+            }
+            if ("semestre.validarSemestre".equalsIgnoreCase(request.getParameter("command"))) {
+
+                Semestre semestre = new Semestre();
+                semestre.setIdSemestre(Integer.parseInt(request.getParameter("semestres")));
+                semestre = new SemestreDAO().listarPorId(semestre);
+                request.setAttribute("alunos", new AlunoDAO().consultar());
+                request.setAttribute("cursos", new CursoDAO().consultar());
+                request.setAttribute("semestre", semestre);
+                request.getRequestDispatcher("WEB-INF/jsp/semestre/validarSemestre.jsp").forward(request, response);
+
             }
         }
     }
