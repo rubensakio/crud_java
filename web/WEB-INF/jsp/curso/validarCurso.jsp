@@ -27,7 +27,7 @@
                 <p>Código:</p>
                 <input type="text" size="6" readonly="true" name="idCurso" value="${curso.idCurso}">
                 <p>Curso: </p>
-                <input type="text" name="nomeCurso" value="${curso.nomeCurso}">
+                <input type="text" name="nomeCurso" value="${curso.nomeCurso}" required>
                 <br><br>
                 <input type="submit" value="Confirmar">
 
