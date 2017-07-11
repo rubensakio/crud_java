@@ -69,8 +69,10 @@ public class AlunoController extends HttpServlet {
                 Aluno aluno = new Aluno();
                 aluno.setCodAluno(Integer.parseInt(request.getParameter("codAluno")));
                 aluno.setNome(request.getParameter("nome"));
+                aluno.setCpf(request.getParameter("cpf"));
                 aluno.setEmail(request.getParameter("email"));
-                aluno.setTelefone(request.getParameter("telefone"));
+                aluno.setCelular(request.getParameter("celular"));
+                aluno.setTelefone(request.getParameter("telcomercial"));
                 aluno.setNumMatricula(Integer.parseInt(request.getParameter("numMatricula")));
                 new AlunoDAO().remover(aluno);
                 request.setAttribute("alunos", new AlunoDAO().consultar());
@@ -90,8 +92,10 @@ public class AlunoController extends HttpServlet {
                 Aluno aluno = new Aluno();
                 aluno.setCodAluno(Integer.parseInt(request.getParameter("codAluno")));
                 aluno.setNome(request.getParameter("nome"));
+                aluno.setCpf(request.getParameter("cpf"));
                 aluno.setEmail(request.getParameter("email"));
-                aluno.setTelefone(request.getParameter("telefone"));
+                aluno.setCelular(request.getParameter("celular"));
+                aluno.setTelefone(request.getParameter("telcomercial"));
                 aluno.setNumMatricula(Integer.parseInt(request.getParameter("numMatricula")));
                 new AlunoDAO().atualizar(aluno);
                 request.setAttribute("alunos", new AlunoDAO().consultar());

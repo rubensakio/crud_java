@@ -30,9 +30,11 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, aluno.getNome());
-            ps.setString(2, aluno.getEmail());
-            ps.setString(3, aluno.getTelefone());
-            ps.setInt(4, aluno.getNumMatricula());
+            ps.setString(2, aluno.getCpf());
+            ps.setString(3, aluno.getEmail());
+            ps.setString(4, aluno.getCelular());
+            ps.setString(5, aluno.getTelefone());
+            ps.setInt(6, aluno.getNumMatricula());
             ps.execute();
             c.close();
         } catch (SQLException | ClassNotFoundException ex) {

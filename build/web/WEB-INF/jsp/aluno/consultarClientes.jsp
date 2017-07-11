@@ -22,8 +22,9 @@
             .all-content table td{
 
                 text-align: center;
-
-                font-size: 14px;
+                padding:10px;
+                font-size: 15px;
+                
 
 
             }
@@ -62,7 +63,7 @@
 
             .all-content #button{
 
-                margin-left: 170px;
+                margin-left: 270px;
             }
 
             .menu{
@@ -117,7 +118,7 @@
 
 
             <div id="table1">
-                <table>
+                <table width="750px" cellspacing="2">
                     <tr>
 
                         <th> Nome do Aluno</th> 

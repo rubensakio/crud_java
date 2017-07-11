@@ -56,7 +56,9 @@
                             <option value="${aluno.codAluno}">
 
                                 <c:out value="${aluno.nome}"/> &nbsp;
+                                <c:out value="${aluno.cpf}"/> &nbsp;
                                 <c:out value="${aluno.email}"/> &nbsp;
+                                <c:out value="${aluno.celular}"/> &nbsp;
                                 <c:out value="${aluno.telefone}"/> &nbsp;
                                 <c:out value="${aluno.numMatricula}"/> &nbsp;
 
