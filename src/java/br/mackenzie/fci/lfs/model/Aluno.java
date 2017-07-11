@@ -37,6 +37,12 @@ public class Aluno implements Serializable {
 
     }
 
+    public Aluno(Integer codAluno) {
+        this.codAluno = codAluno;
+    }
+    
+    
+
     public Aluno() {
     }
 

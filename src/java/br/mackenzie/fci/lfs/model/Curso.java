@@ -15,18 +15,18 @@ public class Curso implements Serializable {
 
     private Integer idCurso;
     private String nomeCurso;
+    private Integer semestreAtual;
+    private Aluno aluno;
+
+    public Curso(Integer idCurso, String nomeCurso, Integer semestreAtual, Aluno aluno) {
+        this.idCurso = idCurso;
+        this.nomeCurso = nomeCurso;
+        this.semestreAtual = semestreAtual;
+        this.aluno = aluno;
+    }
 
     public Curso() {
 
-    }
-
-    public Curso(Integer idCurso) {
-        this.idCurso = idCurso;
-    }
-
-    public Curso(Integer idCurso, String nomeCurso) {
-        this.idCurso = idCurso;
-        this.nomeCurso = nomeCurso;
     }
 
     public Integer getIdCurso() {
@@ -43,6 +43,22 @@ public class Curso implements Serializable {
 
     public void setNomeCurso(String nomeCurso) {
         this.nomeCurso = nomeCurso;
+    }
+
+    public Integer getSemestreAtual() {
+        return semestreAtual;
+    }
+
+    public void setSemestreAtual(Integer semestreAtual) {
+        this.semestreAtual = semestreAtual;
+    }
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
     }
 
 }

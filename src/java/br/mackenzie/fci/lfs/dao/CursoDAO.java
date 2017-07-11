@@ -6,6 +6,7 @@
 package br.mackenzie.fci.lfs.dao;
 
 import br.mackenzie.fci.lfs.exception.PersistenciaException;
+import br.mackenzie.fci.lfs.model.Aluno;
 import br.mackenzie.fci.lfs.model.Curso;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -66,6 +67,8 @@ public class CursoDAO implements GenericoDAO<Curso> {
 
                 curso.setIdCurso(rs.getInt("idCurso"));
                 curso.setNomeCurso(rs.getString("nomeCurso"));
+                curso.setSemestreAtual(rs.getInt("semestreAtual"));
+                curso.setAluno(new Aluno(rs.getInt("idAluno")));
 
             }
 
@@ -98,10 +101,20 @@ public class CursoDAO implements GenericoDAO<Curso> {
 
             Connection c = Conexao.getInstance().getConnection();
             Statement stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM lfs.curso");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM lfs.curso as c INNER JOIN lfs.aluno as a"
+                    + "ON c.idAluno = a.idAluno");
             while (rs.next()) {
 
-                cursos.add(new Curso(rs.getInt("idCurso"), rs.getString("nomeCurso")));
+                cursos.add(new Curso(rs.getInt("idCurso"),
+                        rs.getString("nomeCurso"),
+                        rs.getInt("semestreAtual"),
+                        new Aluno(rs.getInt("idAluno"),
+                                rs.getString("nome"),
+                                rs.getString("cpf"),
+                                rs.getString("email"),
+                                rs.getString("celular"),
+                                rs.getString("telefone"),
+                                rs.getInt("numMatricula"))));
 
             }
         } catch (ClassNotFoundException | SQLException ex) {
