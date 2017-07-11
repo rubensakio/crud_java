@@ -106,14 +106,21 @@
             <div id="table1">
                 <table width="50%">
                     <tr>
+                        <th> Matrícula </th>
+                        <th> Nome do aluno </th>
                         <th> Curso </th>
+                        <th> Semestre Atual </th>
+
                     </tr>
 
 
                     <c:forEach var="curso" items="${cursos}">
 
                         <tr>
+                            <td> <c:out value="${curso.aluno.numMatricula}"/></td>
+                            <td> <c:out value="${curso.aluno.nome}"/></td>
                             <td> <c:out value="${curso.nomeCurso}"/></td>
+                            <td> <c:out value="${curso.semestreAtual}"/></td>
 
                         </tr> 
 
