@@ -22,14 +22,15 @@
                 <form method="post" action="${pageContext.request.contextPath}/controller?command=semestre.validarSemestre">
                     <select name="semestres" onchange="this.form.submit()">
                         <option value=""> <c:out value="--Selecione--"/> </option>
-                        
+
                         <c:forEach var="semestre" items="${semestres}">
                             <option value="${semestre.idSemestre}">
 
-                            <c:out value="${semestre.aluno.numMatricula}"/> &nbsp;
-                            <c:out value="${semestre.aluno.nome}"/> &nbsp;
-                            <c:out value="${semestre.curso.nomeCurso}"/> &nbsp;
-                            <c:out value="${semestre.semestreAtual}"/> &nbsp;
+                                <c:out value="${semestre.aluno.numMatricula}"/> &nbsp;
+                                <c:out value="${semestre.aluno.nome}"/> &nbsp;
+                                <c:out value="${semestre.curso.nomeCurso}"/> &nbsp;
+                                <c:out value="${semestre.semestreAtual}"/> &nbsp;
+
 
                             </option>
                         </c:forEach>

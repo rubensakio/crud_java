@@ -18,7 +18,6 @@
             }
             #title h1{font-family: arial; color: #2E8B57;}
         </style>
-
         <script>
             function formatar(mascara, documento) {
                 var i = documento.value.length;
@@ -31,6 +30,7 @@
 
             }
         </script>
+
         <title> Cadastro </title>
     </head>
     <body>
@@ -45,13 +45,17 @@
                 <form method="post" action="${pageContext.request.contextPath}/controller?command=aluno.inserir">
 
                     <p>Nome:</p>
-                    <input type="text" name="nome" placeholder="your name" required>
+                    <input type="text" name="nome" required>
+                    <p>CPF:</p>
+                    <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>
                     <p>Email:</p>
-                    <input type="email" name="email" placeholder="your emal"  required>
+                    <input type="email" name="email" required>
+                    <p>Celular:</p>
+                    <input type="text" name="celular" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}$"  maxlength="13" OnKeyPress="formatar('## #####-####', this)" required>
                     <p>Telefone:</p>
-                    <input type="tel" required="required" maxlength="15" placeholder="(00)0000-0000"  name="telefone" pattern="\([0-9]{2}\)[0-9]{4}-[0-9]{4}$" />
+                    <input type="text" name="telcomercial" pattern="[0-9]{2} [0-9]{4}-[0-9]{4}$" maxlength="12" OnKeyPress="formatar('## ####-####', this)" required>
                     <p>Matricula:</p>
-                    <input type="text" maxlength="8" placeholder="your enrollment" name="numMatricula" required>
+                    <input type="text" maxlength="8" name="numMatricula" pattern="[0-9]+$" required>
                     <p><input type="submit"></p>
                     <p><input type="button" value="Voltar para lista" onclick="location.href = '${pageContext.request.contextPath}/controller?command=aluno.consultarClientes'"></p>
 

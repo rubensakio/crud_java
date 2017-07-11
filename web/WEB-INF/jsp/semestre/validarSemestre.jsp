@@ -22,7 +22,7 @@
 
         </style>
     </head>
-    <body onload="document.getElementById('alunos').selectedIndex = ${semestre.aluno.codAluno}" onload="document.getElementById('cursos').selectedIndex =${semestre.curso.idCurso}">
+    <body onload="document.getElementById('alunos').selectedIndex = ${semestre.aluno.codAluno}">
         <div class="all-content">
             <form action="${pageContext.request.contextPath}/controller?command=semestre.validar-atualizacao" method="post">
 
@@ -44,7 +44,7 @@
 
                 <p>Curso </p>
                 <select name="cursos" id="cursos">
-
+                    <option value=""> <c:out value="--Selecione--"/> </option>
                     <c:forEach var="curso" items="${cursos}">
                         <option value="${curso.idCurso}">
                             <c:out value="${curso.nomeCurso}"/> 

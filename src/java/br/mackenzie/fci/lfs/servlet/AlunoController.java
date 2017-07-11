@@ -101,8 +101,10 @@ public class AlunoController extends HttpServlet {
             if ("aluno.inserir".equals(request.getParameter("command"))) {
                 Aluno aluno = new Aluno();
                 aluno.setNome(request.getParameter("nome"));
+                aluno.setCpf(request.getParameter("cpf"));
                 aluno.setEmail(request.getParameter("email"));
-                aluno.setTelefone(request.getParameter("telefone"));
+                aluno.setCelular(request.getParameter("celular"));
+                aluno.setTelefone(request.getParameter("telcomercial"));
                 aluno.setNumMatricula(Integer.parseInt(request.getParameter("numMatricula")));
 
                 new AlunoDAO().inserir(aluno);

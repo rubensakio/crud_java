@@ -15,17 +15,18 @@ public class Aluno implements Serializable {
 
     private Integer codAluno;
     private String nome;
+    private String cpf;
     private String email;
+    private String celular;
     private String telefone;
     private Integer numMatricula;
 
-    public Aluno() {
-    }
-
-    public Aluno(Integer codAluno, String nome, String email, String telefone, Integer numMatricula) {
+    public Aluno(Integer codAluno, String nome, String cpf, String email, String celular, String telefone, Integer numMatricula) {
         this.codAluno = codAluno;
         this.nome = nome;
+        this.cpf = cpf;
         this.email = email;
+        this.celular = celular;
         this.telefone = telefone;
         this.numMatricula = numMatricula;
     }
@@ -36,16 +37,7 @@ public class Aluno implements Serializable {
 
     }
 
-    public Integer getNumMatricula() {
-        return numMatricula;
-    }
-
-    public void setNumMatricula(Integer numMatricula) {
-        this.numMatricula = numMatricula;
-    }
-
-    public Aluno(Integer codAluno) {
-        this.codAluno = codAluno;
+    public Aluno() {
     }
 
     public Integer getCodAluno() {
@@ -64,12 +56,28 @@ public class Aluno implements Serializable {
         this.nome = nome;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
     }
 
     public String getTelefone() {
@@ -79,5 +87,15 @@ public class Aluno implements Serializable {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    public Integer getNumMatricula() {
+        return numMatricula;
+    }
+
+    public void setNumMatricula(Integer numMatricula) {
+        this.numMatricula = numMatricula;
+    }
+
+   
 
 }

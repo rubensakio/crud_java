@@ -22,13 +22,20 @@
             .all-content table td{
 
                 text-align: center;
-                padding: 10px;
+
                 font-size: 14px;
-                 
-               
+
+
             }
-          
-            
+            .all-content table{
+
+                text-align: center;
+                font-size: 14px;
+
+
+
+            }
+
             .menu1{
 
                 padding:10px;
@@ -110,13 +117,15 @@
 
 
             <div id="table1">
-                <table width="50%">
+                <table>
                     <tr>
 
-                        <th> Nome do Aluno</th>
-                        <th> Usuário </th>
-                        <th>Telefone</th>
-                        <th>Matricula</th>
+                        <th> Nome do Aluno</th> 
+                        <th> CPF</th>  
+                        <th> Usuário </th> 
+                        <th>Telefone</th> 
+                        <th>Celular</th> 
+                        <th>Matricula</th> 
 
                     </tr>
 
@@ -126,9 +135,13 @@
 
                             <td> <c:out value="${aluno.nome}"/> </td> 
 
-                            <td> <c:out value="${aluno.email}"/> </td>  
+                            <td> <c:out value="${aluno.cpf}"/> </td>  
+
+                            <td> <c:out value="${aluno.email}"/> </td>    
 
                             <td> <c:out value="${aluno.telefone}"/> </td> 
+
+                            <td> <c:out value="${aluno.celular}"/> </td> 
 
                             <td> <c:out value="${aluno.numMatricula}"/> </td> 
 
