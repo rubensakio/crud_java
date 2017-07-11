@@ -15,13 +15,38 @@ public class Curso implements Serializable {
 
     private Integer idCurso;
     private String nomeCurso;
+    private Integer semestreAtual;
+    private Aluno aluno;
 
     public Curso() {
 
     }
 
+    public Integer getSemestreAtual() {
+        return semestreAtual;
+    }
+
+    public void setSemestreAtual(Integer semestreAtual) {
+        this.semestreAtual = semestreAtual;
+    }
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
+
     public Curso(Integer idCurso) {
         this.idCurso = idCurso;
+    }
+
+    public Curso(Integer idCurso, String nomeCurso, Integer semestreAtual, Aluno aluno) {
+        this.idCurso = idCurso;
+        this.nomeCurso = nomeCurso;
+        this.semestreAtual = semestreAtual;
+        this.aluno = aluno;
     }
 
     public Curso(Integer idCurso, String nomeCurso) {
