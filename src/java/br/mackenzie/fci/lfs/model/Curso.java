@@ -19,10 +19,10 @@ public class Curso implements Serializable {
     private Aluno aluno;
 
     public Curso(Integer idCurso, String nomeCurso, Integer semestreAtual, Aluno aluno) {
+    }
+
+    public Curso(Integer idCurso) {
         this.idCurso = idCurso;
-        this.nomeCurso = nomeCurso;
-        this.semestreAtual = semestreAtual;
-        this.aluno = aluno;
     }
 
     public Curso() {
@@ -60,5 +60,7 @@ public class Curso implements Serializable {
     public void setAluno(Aluno aluno) {
         this.aluno = aluno;
     }
+
+   
 
 }

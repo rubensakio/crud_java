@@ -42,11 +42,12 @@ public class CursoDAO implements GenericoDAO<Curso> {
     public void atualizar(Curso curso) {
 
         try {
-            String sql = "UPDATE lfs.curso SET nomeCurso=? where idCurso=?";
+            String sql = "UPDATE lfs.curso SET nomeCurso=?, semestreAtual=?, idAluno=? where idCurso=?";
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, curso.getNomeCurso());
-            ps.setInt(2, curso.getIdCurso());
+            
+            ps.setInt(3, curso.getIdCurso());
             ps.execute();
             c.close();
         } catch (ClassNotFoundException | SQLException ex) {
