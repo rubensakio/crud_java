@@ -105,10 +105,8 @@ public class CursoDAO implements GenericoDAO<Curso> {
 
             Connection c = Conexao.getInstance().getConnection();
             Statement stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * "
-                    + "FROM lfs.curso c "
-                    + "INNER JOIN lfs.aluno a "
-                    + "ON a.idAluno = c.idAluno");
+            ResultSet rs = stmt.executeQuery("SELECT  FROM lfs.curso AS R "
+                    + "INNER JOIN lfs.aluno AS C ON C.idAluno = R.idAluno");
             while (rs.next()) {
 
                 cursos.add(new Curso(rs.getInt("idCurso"),
