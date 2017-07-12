@@ -5,6 +5,7 @@
  */
 package br.mackenzie.fci.lfs.servlet;
 
+import br.mackenzie.fci.lfs.dao.EnderecoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -31,14 +32,19 @@ public class EnderecoController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         if (request != null && request.getParameter("command") != null) {
-            
+
             if ("endereco.consultarEndereco".equalsIgnoreCase(request.getParameter("command"))) {
+                request.setAttribute("enderecos", new EnderecoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/endereco/consultarEndereco.jsp").forward(request, response);
             }
+            /*            if ("endereco.consultarEndereco".equalsIgnoreCase(request.getParameter("command"))) {
+                request.getRequestDispatcher("WEB-INF/jsp/endereco/consultarEndereco.jsp").forward(request, response);
+            } */
+
         }
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
