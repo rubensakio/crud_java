@@ -117,9 +117,7 @@
                     <c:forEach var="curso" items="${cursos}">
 
                         <tr>
-                            <td> <c:out value="${curso.aluno.numMatricula}"/></td>
-                            <td> <c:out value="${curso.aluno.nome}"/></td>
-                            <td> <c:out value="${curso.nomeCurso}"/></td>
+
                             <td> <c:out value="${curso.semestreAtual}"/></td>
 
                         </tr> 

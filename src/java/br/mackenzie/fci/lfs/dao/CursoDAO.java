@@ -27,10 +27,12 @@ public class CursoDAO implements GenericoDAO<Curso> {
     @Override
     public void inserir(Curso curso) {
         try {
-            String sql = "INSERT INTO lfs.curso(nomeCurso) values (?)";
+            String sql = "INSERT INTO lfs.curso(nomeCurso,semestreAtual,idAluno) values (?,?,?)";
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, curso.getNomeCurso());
+            ps.setInt(2, curso.getSemestreAtual());
+            ps.setInt(3, curso.getAluno().getCodAluno());
             ps.execute();
             c.close();
         } catch (ClassNotFoundException | SQLException ex) {
@@ -46,8 +48,9 @@ public class CursoDAO implements GenericoDAO<Curso> {
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, curso.getNomeCurso());
-            
-            ps.setInt(3, curso.getIdCurso());
+            ps.setInt(2, curso.getSemestreAtual());
+            ps.setInt(3, curso.getAluno().getCodAluno());
+            ps.setInt(4, curso.getIdCurso());
             ps.execute();
             c.close();
         } catch (ClassNotFoundException | SQLException ex) {
@@ -102,8 +105,10 @@ public class CursoDAO implements GenericoDAO<Curso> {
 
             Connection c = Conexao.getInstance().getConnection();
             Statement stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM lfs.curso as c INNER JOIN lfs.aluno as a"
-                    + "ON c.idAluno = a.idAluno");
+            ResultSet rs = stmt.executeQuery("SELECT * "
+                    + "FROM lfs.curso c "
+                    + "INNER JOIN lfs.aluno a "
+                    + "ON a.idAluno = c.idAluno");
             while (rs.next()) {
 
                 cursos.add(new Curso(rs.getInt("idCurso"),

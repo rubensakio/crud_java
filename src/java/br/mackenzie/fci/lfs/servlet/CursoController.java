@@ -5,7 +5,9 @@
  */
 package br.mackenzie.fci.lfs.servlet;
 
+import br.mackenzie.fci.lfs.dao.AlunoDAO;
 import br.mackenzie.fci.lfs.dao.CursoDAO;
+import br.mackenzie.fci.lfs.model.Aluno;
 import br.mackenzie.fci.lfs.model.Curso;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -42,12 +44,16 @@ public class CursoController extends HttpServlet {
             }
             if ("curso.formulario".equalsIgnoreCase(request.getParameter("command"))) {
 
+                request.setAttribute("alunos", new AlunoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/curso/incluirCurso.jsp").forward(request, response);
             }
             if ("curso.inserir".equalsIgnoreCase(request.getParameter("command"))) {
                 Curso curso = new Curso();
                 curso.setNomeCurso(request.getParameter("nomeCurso"));
-                new CursoDAO().inserir(curso);
+                curso.setSemestreAtual(Integer.parseInt(request.getParameter("semestreAtual")));
+                curso.setAluno(new Aluno(Integer.parseInt(request.getParameter("alunos"))));
+                CursoDAO cursoDAO = new CursoDAO();
+                cursoDAO.inserir(curso);
                 request.setAttribute("cursos", new CursoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/curso/consultarCurso.jsp").forward(request, response);
             }
