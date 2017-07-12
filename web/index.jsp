@@ -41,8 +41,8 @@
             <div id="link">
                 <ul>
                     <li/><a href="/projLFS/controller?command=aluno.consultarClientes"> Aluno </a><br><br>
-                    <li/><a href="/projLFS/controller?command=aluno.consultarEndereco"> Curso </a><br><br>
-                    <li/><a href="#"> Endereço </a><br><br>
+                    <li/><a href="#"> Curso </a><br><br>
+                    <li/><a href="/projLFS/controller?command=endereco.consultarEndereco"> Endereço </a><br><br>
                 </ul>  
             </div>
         </div>
