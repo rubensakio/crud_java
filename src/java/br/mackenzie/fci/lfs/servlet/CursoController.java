@@ -5,10 +5,6 @@
  */
 package br.mackenzie.fci.lfs.servlet;
 
-import br.mackenzie.fci.lfs.dao.AlunoDAO;
-import br.mackenzie.fci.lfs.dao.CursoDAO;
-import br.mackenzie.fci.lfs.model.Aluno;
-import br.mackenzie.fci.lfs.model.Curso;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -35,82 +31,22 @@ public class CursoController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        if (request != null && request.getParameter("command") != null) {
-
-            if ("curso.consultarCurso".equalsIgnoreCase(request.getParameter("command"))) {
-                request.setAttribute("cursos", new CursoDAO().consultar());
-                request.getRequestDispatcher("WEB-INF/jsp/curso/consultarCurso.jsp").forward(request, response);
-            }
-            if ("curso.formulario".equalsIgnoreCase(request.getParameter("command"))) {
-
-                request.setAttribute("alunos", new AlunoDAO().consultar());
-                request.getRequestDispatcher("WEB-INF/jsp/curso/incluirCurso.jsp").forward(request, response);
-            }
-            if ("curso.inserir".equalsIgnoreCase(request.getParameter("command"))) {
-                Curso curso = new Curso();
-                curso.setNomeCurso(request.getParameter("nomeCurso"));
-                curso.setSemestreAtual(Integer.parseInt(request.getParameter("semestreAtual")));
-                curso.setAluno(new Aluno(Integer.parseInt(request.getParameter("alunos"))));
-                CursoDAO cursoDAO = new CursoDAO();
-                cursoDAO.inserir(curso);
-                request.setAttribute("cursos", new CursoDAO().consultar());
-                request.getRequestDispatcher("WEB-INF/jsp/curso/consultarCurso.jsp").forward(request, response);
-            }
-            if ("curso.atualizar".equalsIgnoreCase(request.getParameter("command"))) {
-
-                request.setAttribute("cursos", new CursoDAO().consultar());
-                request.getRequestDispatcher("WEB-INF/jsp/curso/atualizarCurso.jsp").forward(request, response);
-            }
-            if ("curso.validarCurso".equalsIgnoreCase(request.getParameter("command"))) {
-
-                Curso curso = new Curso();
-                curso.setIdCurso(Integer.parseInt(request.getParameter("cursos")));
-                curso = new CursoDAO().listarPorId(curso);
-                request.setAttribute("curso", curso);
-                request.getRequestDispatcher("WEB-INF/jsp/curso/validarCurso.jsp").forward(request, response);
-
-            }
-            if ("curso.validar-atualizacao".equalsIgnoreCase(request.getParameter("command"))) {
-
-                Curso curso = new Curso();
-                curso.setIdCurso(Integer.parseInt(request.getParameter("idCurso")));
-                curso.setNomeCurso(request.getParameter("nomeCurso"));
-                new CursoDAO().atualizar(curso);
-                request.setAttribute("cursos", new CursoDAO().consultar());
-                request.getRequestDispatcher("WEB-INF/jsp/curso/consultarCurso.jsp").forward(request, response);
-
-            }
-
-            if ("curso.excluir".equalsIgnoreCase(request.getParameter("command"))) {
-                request.setAttribute("cursos", new CursoDAO().consultar());
-                request.getRequestDispatcher("WEB-INF/jsp/curso/excluirCurso.jsp").forward(request, response);
-            }
-
-            if ("curso.validarExclusaoCurso".equalsIgnoreCase(request.getParameter("command"))) {
-
-                Curso curso = new Curso();
-                curso.setIdCurso(Integer.parseInt(request.getParameter("cursos")));
-                curso = new CursoDAO().listarPorId(curso);
-                request.setAttribute("curso", curso);
-                request.getRequestDispatcher("WEB-INF/jsp/curso/validarExclusaoCurso.jsp").forward(request, response);
-
-            }
-            if ("curso.validar-exclusao".equalsIgnoreCase(request.getParameter("command"))) {
-
-                Curso curso = new Curso();
-                curso.setIdCurso(Integer.parseInt(request.getParameter("idCurso")));
-                curso.setNomeCurso(request.getParameter("nomeCurso"));
-                new CursoDAO().remover(curso);
-                request.setAttribute("cursos", new CursoDAO().consultar());
-                request.getRequestDispatcher("WEB-INF/jsp/curso/consultarCurso.jsp").forward(request, response);
-
-            }
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet CursoController</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet CursoController at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-
     }
 
-// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
