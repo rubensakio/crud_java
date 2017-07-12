@@ -107,64 +107,64 @@
     </head>
     <body>
 
-        <!-- <div class="menu1">
-             <ul class="menu">
-                 <li/><a href="${pageContext.request.contextPath}/controller?command=endereco.formulario"> Novo  </a>
-                 <li/><a href="${pageContext.request.contextPath}/controller?command=endereco.atualizar"> Atualizar </a>
-                 <li/><a href="${pageContext.request.contextPath}/controller?command=endereco.excluir"> Remover </a>
-             </ul>
-         </div>
-         <div class="all-content">  
- 
- 
-             <div id="table1">
-                 <table width="750px" cellspacing="2">
-                     <tr>
- 
-                         <th> Nome do Aluno</th> 
-                         <th> Endereço </th>  
-                         <th> Número  </th> 
-                         <th> Bairro </th> 
-                         <th> Cidade </th> 
-                         <th> UF </th> 
- 
-                     </tr>
- 
- 
-        <c:forEach var="endereco" items="${enderecos}">
-            <tr>
-
-                <td> <c:out value="${endereco.aluno.nome}"/> </td> 
-
-                <td> <c:out value="${endereco.nomeEndereco}"/> </td>  
-
-                <td> <c:out value="${endereco.numero}"/> </td>    
-
-                <td> <c:out value="${endereco.bairro}"/> </td> 
-
-                <td> <c:out value="${endereco.cidade}"/> </td> 
-
-                <td> <c:out value="${endereco.uf}"/> </td> 
-
-            <br>
-            </tr>
-        </c:forEach>
-
-    </table>
-</div>
-
-<br><br>
+        <div class="menu1">
+            <ul class="menu">
+                <li/><a href="${pageContext.request.contextPath}/controller?command=endereco.formulario"> Novo  </a>
+                <li/><a href="${pageContext.request.contextPath}/controller?command=endereco.atualizar"> Atualizar </a>
+                <li/><a href="${pageContext.request.contextPath}/controller?command=endereco.excluir"> Remover </a>
+            </ul>
+        </div>
+        <div class="all-content">  
 
 
+            <div id="table1">
+                <table width="750px" cellspacing="2">
+                    <tr>
+
+                        <th> Nome do Aluno</th> 
+                        <th> Endereço </th>  
+                        <th> Número  </th> 
+                        <th> Bairro </th> 
+                        <th> Cidade </th> 
+                        <th> UF </th> 
+
+                    </tr>
 
 
-<div id="button">
+                    <c:forEach var="endereco" items="${enderecos}">
+                        <tr>
 
-    <a href="${pageContext.request.contextPath}"> Voltar </a>
+                            <td> <c:out value="${endereco.aluno.nome}"/> </td> 
 
-</div> <br><br>
-</div>
+                            <td> <c:out value="${endereco.nomeEndereco}"/> </td>  
+
+                            <td> <c:out value="${endereco.numero}"/> </td>    
+
+                            <td> <c:out value="${endereco.bairro}"/> </td> 
+
+                            <td> <c:out value="${endereco.cidade}"/> </td> 
+
+                            <td> <c:out value="${endereco.uf}"/> </td> 
+
+                        <br>
+                        </tr>
+                    </c:forEach>
+
+                </table>
+            </div>
+
+            <br><br>
 
 
-</body> -->
+
+
+            <div id="button">
+
+                <a href="${pageContext.request.contextPath}"> Voltar </a>
+
+            </div> <br><br>
+        </div>
+
+
+    </body>
 </html>
