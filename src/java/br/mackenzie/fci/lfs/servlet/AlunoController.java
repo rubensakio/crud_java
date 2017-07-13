@@ -8,6 +8,7 @@ package br.mackenzie.fci.lfs.servlet;
 import br.mackenzie.fci.lfs.dao.AlunoDAO;
 import br.mackenzie.fci.lfs.dao.SexoDAO;
 import br.mackenzie.fci.lfs.model.Aluno;
+import br.mackenzie.fci.lfs.model.Sexo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -43,7 +44,7 @@ public class AlunoController extends HttpServlet {
 
             }
             if ("aluno.formulario".equalsIgnoreCase(request.getParameter("command"))) {
-                
+
                 request.setAttribute("sexos", new SexoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/aluno/incluirAluno.jsp").forward(request, response);
 
@@ -107,7 +108,10 @@ public class AlunoController extends HttpServlet {
             if ("aluno.inserir".equals(request.getParameter("command"))) {
                 Aluno aluno = new Aluno();
                 aluno.setNome(request.getParameter("nome"));
+                aluno.setDtNascimento(request.getParameter("dtNascimento"));
                 aluno.setCpf(request.getParameter("cpf"));
+                aluno.setRg(request.getParameter("rg"));
+                aluno.setSexo(new Sexo(Integer.parseInt(request.getParameter("gender"))));
                 aluno.setEmail(request.getParameter("email"));
                 aluno.setCelular(request.getParameter("celular"));
                 aluno.setTelefone(request.getParameter("telcomercial"));

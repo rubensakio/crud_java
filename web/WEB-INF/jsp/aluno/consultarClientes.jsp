@@ -30,7 +30,7 @@
             }
             .all-content table{
 
-                text-align: center;
+                text-align: left;
                 font-size: 14px;
 
 
@@ -118,7 +118,7 @@
 
 
             <div id="table1">
-                <table width="750px" cellspacing="2">
+                <table width="1000px" cellspacing="5">
                     <tr>
 
                         <th> Nome do Aluno</th>
