@@ -6,6 +6,7 @@
 package br.mackenzie.fci.lfs.dao;
 
 import br.mackenzie.fci.lfs.model.Aluno;
+import br.mackenzie.fci.lfs.model.Sexo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,15 +27,18 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
     public void inserir(Aluno aluno) {
 
         try {
-            String sql = "INSERT INTO lfs.aluno (nome,cpf,email,celular,telefone,numMatricula) values(?,?,?,?,?,?)";
+            String sql = "INSERT INTO lfs.aluno (nome,dtNascimento,cpf,rg,email,celular,telefone,numMatricula,idSexo) values(?,?,?,?,?,?,?,?,?)";
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, aluno.getNome());
-            ps.setString(2, aluno.getCpf());
-            ps.setString(3, aluno.getEmail());
-            ps.setString(4, aluno.getCelular());
-            ps.setString(5, aluno.getTelefone());
-            ps.setInt(6, aluno.getNumMatricula());
+            ps.setString(2, aluno.getDtNascimento());
+            ps.setString(3, aluno.getCpf());
+            ps.setString(4, aluno.getRg());
+            ps.setString(5, aluno.getEmail());
+            ps.setString(6, aluno.getCelular());
+            ps.setString(7, aluno.getTelefone());
+            ps.setInt(8, aluno.getNumMatricula());
+            ps.setInt(9, aluno.getSexo().getIdSexo());
             ps.execute();
             c.close();
         } catch (SQLException | ClassNotFoundException ex) {
@@ -46,16 +50,19 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
     @Override
     public void atualizar(Aluno aluno) {
         try {
-            String sql = "UPDATE lfs.aluno SET nome=?, cpf=?, email=?, celular=?, telefone=?, numMatricula=? where idAluno=?";
+            String sql = "UPDATE lfs.aluno SET nome=?, dtNascimento=?, cpf=?, rg=?, email=?, celular=?, telefone=?, numMatricula=?, idSexo=? where idAluno=?";
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, aluno.getNome());
-            ps.setString(2, aluno.getCpf());
-            ps.setString(3, aluno.getEmail());
-            ps.setString(4, aluno.getCelular());
-            ps.setString(5, aluno.getTelefone());
-            ps.setInt(6, aluno.getNumMatricula());
-            ps.setInt(7, aluno.getCodAluno());
+            ps.setString(2, aluno.getDtNascimento());
+            ps.setString(3, aluno.getCpf());
+            ps.setString(4, aluno.getCpf());
+            ps.setString(5, aluno.getEmail());
+            ps.setString(6, aluno.getCelular());
+            ps.setString(7, aluno.getTelefone());
+            ps.setInt(8, aluno.getNumMatricula());
+            ps.setInt(9, aluno.getSexo().getIdSexo());
+            ps.setInt(10, aluno.getCodAluno());
             ps.execute();
             c.close();
         } catch (ClassNotFoundException | SQLException ex) {
@@ -76,12 +83,14 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
 
                 aluno.setCodAluno(rs.getInt("idAluno"));
                 aluno.setNome(rs.getString("nome"));
+                aluno.setDtNascimento("dtNascimento");
                 aluno.setCpf(rs.getString("cpf"));
+                aluno.setRg("rg");
                 aluno.setEmail(rs.getString("email"));
                 aluno.setCelular(rs.getString("celular"));
                 aluno.setTelefone(rs.getString("telefone"));
                 aluno.setNumMatricula(rs.getInt("numMatricula"));
-
+                aluno.setSexo(new Sexo(rs.getInt("idSexo")));
             }
 
         } catch (SQLException | ClassNotFoundException ex) {
@@ -112,14 +121,17 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
         try {
             Connection connection = Conexao.getInstance().getConnection();
             Statement statement = connection.createStatement();
-            ResultSet result = statement.executeQuery("select * from lfs.aluno "
-                    + "as a");
+            ResultSet result = statement.executeQuery("select * from lfs.aluno as a INNER JOIN lfs.sexo as s ON a.idSexo = s.idSexo");
 
             while (result.next()) {
 
                 alunos.add(new Aluno(result.getInt("idAluno"),
                         result.getString("nome"),
+                        result.getString("dtNascimento"),
+                        new Sexo(result.getInt("idSexo"),
+                                result.getString("sexo")),
                         result.getString("cpf"),
+                        result.getString("rg"),
                         result.getString("email"),
                         result.getString("celular"),
                         result.getString("telefone"),

@@ -4,6 +4,7 @@
     Author     : LFS
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -45,12 +46,20 @@
             <div id="form-cad">
                 <form method="post" action="${pageContext.request.contextPath}/controller?command=aluno.inserir">
 
+
                     <p>Nome:</p>
                     <input type="text" name="nome" required>
                     <p>Data de Nascimento:</p>
-                    <input type="text" pattern="\d{2}\/\d{2}\/\d{4}" name="dtNascimento" OnKeyPress="formatar('##/##/####', this)" required>
+                    <input type="text" pattern="\d{2}\/\d{2}\/\d{4}" name="dtNascimento" maxlength="10" OnKeyPress="formatar('##/##/####', this)" required> 
                     <p>CPF:</p>
                     <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>
+                    <p>RG:</p>
+                    <input type="text" name="rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" maxlength="12" OnKeyPress="formatar('##.###.###-#', this)" required>
+                    <p>Sexo:
+                        <c:forEach var="sexo" items="${sexos}">
+                            <input type="radio" name="gender" value="${sexo.idSexo}"> ${sexo.sexo}
+                        </c:forEach>
+                    </p>
                     <p>Email:</p>
                     <input type="email" name="email" required>
                     <p>Celular:</p>
