@@ -121,12 +121,15 @@
                 <table width="750px" cellspacing="2">
                     <tr>
 
-                        <th> Nome do Aluno</th> 
-                        <th> CPF</th>  
+                        <th> Nome do Aluno</th>
+                        <th> Data de nascimento</th>
+                        <th> CPF</th>
+                        <th> R.G.</th>
                         <th> Usuário </th> 
                         <th>Telefone</th> 
                         <th>Celular</th> 
-                        <th>Matricula</th> 
+                        <th>Matricula</th>
+                        <th> Sexo </th>
 
                     </tr>
 
@@ -135,8 +138,12 @@
                         <tr>
 
                             <td> <c:out value="${aluno.nome}"/> </td> 
+                            
+                            <td> <c:out value="${aluno.dtNascimento}"/> </td> 
 
                             <td> <c:out value="${aluno.cpf}"/> </td>  
+                            
+                            <td> <c:out value="${aluno.rg}"/> </td>  
 
                             <td> <c:out value="${aluno.email}"/> </td>    
 
@@ -145,6 +152,8 @@
                             <td> <c:out value="${aluno.celular}"/> </td> 
 
                             <td> <c:out value="${aluno.numMatricula}"/> </td> 
+                            
+                            <td> <c:out value="${aluno.sexo.sexo}"/> </td> 
 
                         <br>
                         </tr>

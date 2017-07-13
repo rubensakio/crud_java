@@ -6,6 +6,7 @@
 package br.mackenzie.fci.lfs.servlet;
 
 import br.mackenzie.fci.lfs.dao.AlunoDAO;
+import br.mackenzie.fci.lfs.dao.SexoDAO;
 import br.mackenzie.fci.lfs.model.Aluno;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -42,7 +43,8 @@ public class AlunoController extends HttpServlet {
 
             }
             if ("aluno.formulario".equalsIgnoreCase(request.getParameter("command"))) {
-
+                
+                request.setAttribute("sexos", new SexoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/aluno/incluirAluno.jsp").forward(request, response);
 
             }

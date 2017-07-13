@@ -15,7 +15,10 @@ public class Aluno implements Serializable {
 
     private Integer codAluno;
     private String nome;
+    private String dtNascimento;
+    private Sexo sexo;
     private String cpf;
+    private String rg;
     private String email;
     private String celular;
     private String telefone;
@@ -31,25 +34,28 @@ public class Aluno implements Serializable {
         this.numMatricula = numMatricula;
     }
 
+    public Aluno(Integer codAluno, String nome, String dtNascimento, Sexo sexo, String cpf, String rg, String email, String celular, String telefone, Integer numMatricula) {
+        this.codAluno = codAluno;
+        this.nome = nome;
+        this.dtNascimento = dtNascimento;
+        this.sexo = sexo;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.email = email;
+        this.celular = celular;
+        this.telefone = telefone;
+        this.numMatricula = numMatricula;
+    }
+
     public Aluno(Integer codAluno, String nome) {
         this.codAluno = codAluno;
         this.nome = nome;
 
     }
 
-    public Aluno(Integer codAluno, String nome, Integer numMatricula) {
-        this.codAluno = codAluno;
-        this.nome = nome;
-        this.numMatricula = numMatricula;
-    }
-    
-    
-
     public Aluno(Integer codAluno) {
         this.codAluno = codAluno;
     }
-    
-    
 
     public Aluno() {
     }
@@ -70,12 +76,36 @@ public class Aluno implements Serializable {
         this.nome = nome;
     }
 
+    public String getDtNascimento() {
+        return dtNascimento;
+    }
+
+    public void setDtNascimento(String dtNascimento) {
+        this.dtNascimento = dtNascimento;
+    }
+
+    public Sexo getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(Sexo sexo) {
+        this.sexo = sexo;
+    }
+
     public String getCpf() {
         return cpf;
     }
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
     }
 
     public String getEmail() {
@@ -109,7 +139,7 @@ public class Aluno implements Serializable {
     public void setNumMatricula(Integer numMatricula) {
         this.numMatricula = numMatricula;
     }
-
-   
+    
+    
 
 }
