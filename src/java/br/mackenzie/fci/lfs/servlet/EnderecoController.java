@@ -5,7 +5,10 @@
  */
 package br.mackenzie.fci.lfs.servlet;
 
+import br.mackenzie.fci.lfs.dao.AlunoDAO;
 import br.mackenzie.fci.lfs.dao.EnderecoDAO;
+import br.mackenzie.fci.lfs.model.Aluno;
+import br.mackenzie.fci.lfs.model.Endereco;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -39,9 +42,21 @@ public class EnderecoController extends HttpServlet {
                 request.setAttribute("enderecos", new EnderecoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/endereco/consultarEndereco.jsp").forward(request, response);
             }
-            /*            if ("endereco.consultarEndereco".equalsIgnoreCase(request.getParameter("command"))) {
+            if ("endereco.formulario".equalsIgnoreCase(request.getParameter("command"))) {
+                request.setAttribute("alunos", new AlunoDAO().consultar());
+                request.getRequestDispatcher("WEB-INF/jsp/endereco/incluirEndereco.jsp").forward(request, response);
+            }
+            if ("endereco.inserir".equalsIgnoreCase(request.getParameter("command"))) {
+                Endereco endereco = new Endereco();
+                endereco.setNomeEndereco(request.getParameter("nomeEndereco"));
+                endereco.setNumero(Integer.parseInt(request.getParameter("numero")));
+                endereco.setBairro(request.getParameter("bairro"));
+                endereco.setCidade(request.getParameter("cidade"));
+                endereco.setUf(request.getParameter("uf"));
+                endereco.setAluno(new Aluno(Integer.parseInt(request.getParameter("alunos"))));
+                request.setAttribute("alunos", new EnderecoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/endereco/consultarEndereco.jsp").forward(request, response);
-            } */
+            }
 
         }
 
