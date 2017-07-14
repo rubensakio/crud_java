@@ -27,6 +27,7 @@
                 text-align: center;
                 font-size: 17px;
                 margin-top: 110px;
+                border-collapse: collapse;
 
             }
 
@@ -56,7 +57,7 @@
 
             .all-content #button{
 
-                margin-left: 270px;
+                margin-left: 470px;
             }
 
             .menu{
@@ -111,9 +112,9 @@
 
 
             <div id="table1">
-                <table>
+                <table width="95%" border="1">
                     <tr>
-                        <th>Nome do Aluno&nbsp;</th> 
+                        <th>Nome do Aluno</th> 
                         <th>Data de nascimento</th> 
                         <th>CPF</th> 
                         <th>R.G</th> 

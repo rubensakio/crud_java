@@ -14,8 +14,8 @@
             .all-content{
                 padding: 10px;
                 position: absolute;
-                left: 490px;
-                top: 25px;
+
+
             }
             #title h1{font-family: arial; color: #2E8B57;}
         </style>
@@ -39,43 +39,45 @@
 
         <div class="all-content">
 
-            <div id="title">
+            <!--<div id="title">
                 <h1> Cadastre-se </h1>
+            </div>-->
+
+
+            <div class="conteudoCadastro">
+                <div style="width: 100% !important;">
+                    <form class="form" method="post" action="${pageContext.request.contextPath}/controller?command=aluno.inserir">
+                        <fieldset>
+                            <legend>Cadastre-se</legend>
+
+                            <div id="divNome">
+                                <p> Nome completo </label> <font color="red" size="2">*</font> </p>
+                                <input type="text" name="nome" id="nome" required>
+                                <p>Data de Nascimento <font color="red" size="2">*</font> </p>
+                                <input type="text" pattern="\d{2}\/\d{2}\/\d{4}" name="dtNascimento" maxlength="10" OnKeyPress="formatar('##/##/####', this)" required> 
+                                <p>CPF:</p>
+                                <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>
+                                <p>RG:</p>
+                                <input type="text" name="rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" maxlength="12" OnKeyPress="formatar('##.###.###-#', this)" required>
+                                <p>Sexo:
+                                    <c:forEach var="sexo" items="${sexos}">
+                                        <input type="radio" name="gender" value="${sexo.idSexo}"> ${sexo.sexo}
+                                    </c:forEach>
+                                </p>
+                                <p>Email:</p>
+                                <input type="email" name="email" required>
+                                <p>Celular:</p>
+                                <input type="text" name="celular" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}$"  maxlength="13" OnKeyPress="formatar('## #####-####', this)">
+                                <p>Telefone:</p>
+                                <input type="text" name="telcomercial" pattern="[0-9]{2} [0-9]{4}-[0-9]{4}$" maxlength="12" OnKeyPress="formatar('## ####-####', this)" required>
+                                <p>Matricula:</p>
+                                <input type="text" maxlength="8" name="numMatricula" pattern="[0-9]+$" required>
+                                <p><input type="submit"></p>
+                                <p><input type="button" value="Voltar para lista" onclick="location.href = '${pageContext.request.contextPath}/controller?command=aluno.consultarClientes'"></p>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
-
-            <div id="form-cad">
-                <form method="post" action="${pageContext.request.contextPath}/controller?command=aluno.inserir">
-
-
-                    <p>Nome:</p>
-                    <input type="text" name="nome" required>
-                    <p>Data de Nascimento:</p>
-                    <input type="text" pattern="\d{2}\/\d{2}\/\d{4}" name="dtNascimento" maxlength="10" OnKeyPress="formatar('##/##/####', this)" required> 
-                    <p>CPF:</p>
-                    <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>
-                    <p>RG:</p>
-                    <input type="text" name="rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" maxlength="12" OnKeyPress="formatar('##.###.###-#', this)" required>
-                    <p>Sexo:
-                        <c:forEach var="sexo" items="${sexos}">
-                            <input type="radio" name="gender" value="${sexo.idSexo}"> ${sexo.sexo}
-                        </c:forEach>
-                    </p>
-                    <p>Email:</p>
-                    <input type="email" name="email" required>
-                    <p>Celular:</p>
-                    <input type="text" name="celular" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}$"  maxlength="13" OnKeyPress="formatar('## #####-####', this)" required>
-                    <p>Telefone:</p>
-                    <input type="text" name="telcomercial" pattern="[0-9]{2} [0-9]{4}-[0-9]{4}$" maxlength="12" OnKeyPress="formatar('## ####-####', this)" required>
-                    <p>Matricula:</p>
-                    <input type="text" maxlength="8" name="numMatricula" pattern="[0-9]+$" required>
-                    <p><input type="submit"></p>
-                    <p><input type="button" value="Voltar para lista" onclick="location.href = '${pageContext.request.contextPath}/controller?command=aluno.consultarClientes'"></p>
-
-
-
-                </form>
-            </div>
-
         </div>
 
     </body>
