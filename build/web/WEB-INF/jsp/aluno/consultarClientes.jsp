@@ -16,24 +16,17 @@
             .all-content{
 
                 margin-top: 60px;
-                margin-left: 400px;
+                margin-left: 90px;
 
             }
-            .all-content table td{
+            .all-content #table1 table td{
+
+            }
+            .all-content #table1 table{
 
                 text-align: center;
-                padding:10px;
-                font-size: 15px;
-                
-
-
-            }
-            .all-content table{
-
-                text-align: left;
-                font-size: 14px;
-
-
+                font-size: 17px;
+                margin-top: 110px;
 
             }
 
@@ -118,49 +111,46 @@
 
 
             <div id="table1">
-                <table width="1000px" cellspacing="5">
+                <table>
                     <tr>
-
-                        <th> Nome do Aluno</th>
-                        <th> Data de nascimento</th>
-                        <th> CPF</th>
-                        <th> R.G.</th>
-                        <th> Usuário </th> 
+                        <th>Nome do Aluno&nbsp;</th> 
+                        <th>Data de nascimento</th> 
+                        <th>CPF</th> 
+                        <th>R.G</th> 
+                        <th>Usuário</th>
                         <th>Telefone</th> 
                         <th>Celular</th> 
-                        <th>Matricula</th>
-                        <th> Sexo </th>
-
+                        <th>Matricula</th> 
+                        <th>Sexo</th> 
                     </tr>
-
 
                     <c:forEach var="aluno" items="${alunos}">
                         <tr>
 
-                            <td> <c:out value="${aluno.nome}"/> </td> 
-                            
-                            <td> <c:out value="${aluno.dtNascimento}"/> </td> 
+                            <td><c:out value="${aluno.nome}"/></td> 
 
-                            <td> <c:out value="${aluno.cpf}"/> </td>  
-                            
-                            <td> <c:out value="${aluno.rg}"/> </td>  
+                            <td><c:out value="${aluno.dtNascimento}"/></td> 
 
-                            <td> <c:out value="${aluno.email}"/> </td>    
+                            <td><c:out value="${aluno.cpf}"/></td> 
 
-                            <td> <c:out value="${aluno.telefone}"/> </td> 
+                            <td><c:out value="${aluno.rg}"/> </td>
 
-                            <td> <c:out value="${aluno.celular}"/> </td> 
+                            <td><c:out value="${aluno.email}"/></td> 
 
-                            <td> <c:out value="${aluno.numMatricula}"/> </td> 
-                            
-                            <td> <c:out value="${aluno.sexo.sexo}"/> </td> 
+                            <td><c:out value="${aluno.telefone}"/></td> 
 
-                        <br>
+                            <td><c:out value="${aluno.celular}"/> </td>
+
+                            <td><c:out value="${aluno.numMatricula}"/></td> 
+
+                            <td><c:out value="${aluno.sexo.sexo}"/></td> 
+
                         </tr>
                     </c:forEach>
 
                 </table>
             </div>
+
 
             <br><br>
 
@@ -172,8 +162,8 @@
                 <a href="${pageContext.request.contextPath}"> Voltar </a>
 
             </div> <br><br>
+
+
         </div>
-
-
     </body>
 </html>

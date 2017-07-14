@@ -96,7 +96,10 @@ public class AlunoController extends HttpServlet {
                 Aluno aluno = new Aluno();
                 aluno.setCodAluno(Integer.parseInt(request.getParameter("codAluno")));
                 aluno.setNome(request.getParameter("nome"));
+                aluno.setDtNascimento(request.getParameter("dtNascimento"));
                 aluno.setCpf(request.getParameter("cpf"));
+                aluno.setRg(request.getParameter("rg"));
+                aluno.setSexo(new Sexo(Integer.parseInt(request.getParameter("gender"))));
                 aluno.setEmail(request.getParameter("email"));
                 aluno.setCelular(request.getParameter("celular"));
                 aluno.setTelefone(request.getParameter("telcomercial"));

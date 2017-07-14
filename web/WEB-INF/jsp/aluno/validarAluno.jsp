@@ -48,7 +48,7 @@
             <form action="${pageContext.request.contextPath}/controller?command=aluno.validar-atualizacao" method="post">
 
                 <p>Código:</p>
-                <input type="text" size="6" readonly="true" name="codAluno"/>
+                <input type="text" size="10" readonly="true" value="${aluno.codAluno}" name="codAluno"/>
                 <p>Nome:</p>
                 <input type="text" name="nome" value="${aluno.nome}" required>
                 <p>Data de Nascimento:</p>
