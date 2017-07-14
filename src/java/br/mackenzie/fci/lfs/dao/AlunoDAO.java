@@ -50,7 +50,7 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
     @Override
     public void atualizar(Aluno aluno) {
         try {
-            String sql = "UPDATE lfs.aluno SET nome=?, dtNascimento=?, cpf=?, rg=?, email=?, celular=?, telefone=?, numMatricula=?, idSexo=? where idAluno=?";
+            String sql = "UPDATE lfs.aluno SET nome=?, dtNascimento=?, cpf=?, rg=?, email=?, celular=?, telefone=?, numMatricula=?, idSexo=? WHERE idAluno=?";
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, aluno.getNome());
@@ -85,7 +85,7 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
                 aluno.setNome(rs.getString("nome"));
                 aluno.setDtNascimento("dtNascimento");
                 aluno.setCpf(rs.getString("cpf"));
-                aluno.setRg("rg");
+                aluno.setRg(rs.getString("rg"));
                 aluno.setEmail(rs.getString("email"));
                 aluno.setCelular(rs.getString("celular"));
                 aluno.setTelefone(rs.getString("telefone"));

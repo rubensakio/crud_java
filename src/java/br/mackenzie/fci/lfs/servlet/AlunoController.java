@@ -86,6 +86,7 @@ public class AlunoController extends HttpServlet {
                 Aluno aluno = new Aluno();
                 aluno.setCodAluno(Integer.parseInt(request.getParameter("alunos")));
                 aluno = new AlunoDAO().listarPorId(aluno);
+                request.setAttribute("sexos", new SexoDAO().consultar());
                 request.setAttribute("aluno", aluno);
                 request.getRequestDispatcher("WEB-INF/jsp/aluno/validarAluno.jsp").forward(request, response);
             }

@@ -60,8 +60,14 @@
                             <option value="${aluno.codAluno}">
 
                                 <c:out value="${aluno.nome}"/> &nbsp;
+                                <c:out value="${aluno.dtNascimento}"/> &nbsp;
+                                <c:out value="${aluno.cpf}"/> &nbsp;
+                                <c:out value="${aluno.rg}"/> &nbsp;
                                 <c:out value="${aluno.email}"/> &nbsp;
+                                <c:out value="${aluno.celular}"/> &nbsp;
                                 <c:out value="${aluno.telefone}"/> &nbsp;
+                                <c:out value="${aluno.numMatricula}"/> &nbsp;
+                                <c:out value="${aluno.sexo.sexo}"/> &nbsp;
 
                             </option>
                         </c:forEach>
