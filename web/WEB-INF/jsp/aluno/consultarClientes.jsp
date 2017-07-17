@@ -28,6 +28,7 @@
                 font-size: 17px;
                 margin-top: 110px;
                 border-collapse: collapse;
+                padding: 10px;
 
             }
 

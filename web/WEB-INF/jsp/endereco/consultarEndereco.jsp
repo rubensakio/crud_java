@@ -113,37 +113,33 @@
             <div id="table1">
                 <table width="95%" border="1">
                     <tr>
-                        <th>Nome do Aluno</th> 
-                        <th>Data de nascimento</th> 
-                        <th>CPF</th> 
-                        <th>R.G</th> 
-                        <th>Usuário</th>
-                        <th>Telefone</th> 
-                        <th>Celular</th> 
-                        <th>Matricula</th> 
-                        <th>Sexo</th> 
+                        <th>Aluno</th> 
+                        <th>Endereço</th> 
+                        <th>Número</th> 
+                        <th>Complemento</th> 
+                        <th>Bairro</th>
+                        <th>Cidade</th> 
+                        <th>UF</th> 
                     </tr>
 
-                    <c:forEach var="aluno" items="${alunos}">
+                    <c:forEach var="endereco" items="${enderecos}">
                         <tr>
 
-                            <td><c:out value="${aluno.nome}"/></td> 
+                            <td><c:out value="${endereco.aluno.nome}"/></td> 
 
-                            <td><c:out value="${aluno.dtNascimento}"/></td> 
+                            <td><c:out value="${endereco.nomeEndereco}"/></td> 
 
-                            <td><c:out value="${aluno.cpf}"/></td> 
+                            <td><c:out value="${endereco.numero}"/></td> 
 
-                            <td><c:out value="${aluno.rg}"/> </td>
+                            <td><c:out value="${endereco.complemento}"/> </td>
 
-                            <td><c:out value="${aluno.email}"/></td> 
+                            <td><c:out value="${endereco.bairro}"/></td> 
 
-                            <td><c:out value="${aluno.telefone}"/></td> 
+                            <td><c:out value="${endereco.cidade}"/></td> 
 
-                            <td><c:out value="${aluno.celular}"/> </td>
-
-                            <td><c:out value="${aluno.numMatricula}"/></td> 
-
-                            <td><c:out value="${aluno.sexo.sexo}"/></td> 
+                            <td><c:out value="${endereco.uf}"/> </td>
+                            
+                            <td><c:out value="${endereco.cep}"/> </td>
 
                         </tr>
                     </c:forEach>
