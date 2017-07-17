@@ -51,8 +51,6 @@
                 <input type="text" size="10" readonly="true" value="${aluno.codAluno}" name="codAluno"/>
                 <p>Nome:</p>
                 <input type="text" name="nome" value="${aluno.nome}" required>
-                <p>Data de Nascimento:</p>
-                <input type="text" pattern="\d{2}\/\d{2}\/\d{4}" name="dtNascimento" value="${aluno.dtNascimento}" maxlength="10" OnKeyPress="formatar('##/##/####', this)" required> 
                 <p>CPF:</p>
                 <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" value="${aluno.cpf}" OnKeyPress="formatar('###.###.###-##', this)" required>
                 <p>RG:</p>

@@ -15,7 +15,6 @@ public class Aluno implements Serializable {
 
     private Integer codAluno;
     private String nome;
-    private String dtNascimento;
     private Sexo sexo;
     private String cpf;
     private String rg;
@@ -24,20 +23,9 @@ public class Aluno implements Serializable {
     private String telefone;
     private Integer numMatricula;
 
-    public Aluno(Integer codAluno, String nome, String cpf, String email, String celular, String telefone, Integer numMatricula) {
+    public Aluno(Integer codAluno, String nome, Sexo sexo, String cpf, String rg, String email, String celular, String telefone, Integer numMatricula) {
         this.codAluno = codAluno;
         this.nome = nome;
-        this.cpf = cpf;
-        this.email = email;
-        this.celular = celular;
-        this.telefone = telefone;
-        this.numMatricula = numMatricula;
-    }
-
-    public Aluno(Integer codAluno, String nome, String dtNascimento, Sexo sexo, String cpf, String rg, String email, String celular, String telefone, Integer numMatricula) {
-        this.codAluno = codAluno;
-        this.nome = nome;
-        this.dtNascimento = dtNascimento;
         this.sexo = sexo;
         this.cpf = cpf;
         this.rg = rg;
@@ -74,14 +62,6 @@ public class Aluno implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getDtNascimento() {
-        return dtNascimento;
-    }
-
-    public void setDtNascimento(String dtNascimento) {
-        this.dtNascimento = dtNascimento;
     }
 
     public Sexo getSexo() {
@@ -139,7 +119,5 @@ public class Aluno implements Serializable {
     public void setNumMatricula(Integer numMatricula) {
         this.numMatricula = numMatricula;
     }
-    
-    
 
 }

@@ -53,8 +53,6 @@
                             <div id="divNome">
                                 <p> Nome completo </label> <font color="red" size="2">*</font> </p>
                                 <input type="text" name="nome" id="nome" required>
-                                <p>Data de Nascimento <font color="red" size="2">*</font> </p>
-                                <input type="text" pattern="\d{2}\/\d{2}\/\d{4}" name="dtNascimento" maxlength="10" OnKeyPress="formatar('##/##/####', this)" required> 
                                 <p>CPF:<font color="red" size="2">*</font></p>
                                 <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>
                                 <p>RG:<font color="red" size="2">*</font></p>

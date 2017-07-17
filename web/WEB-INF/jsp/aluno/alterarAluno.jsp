@@ -60,7 +60,6 @@
                             <option value="${aluno.codAluno}">
 
                                 <c:out value="${aluno.nome}"/> &nbsp;
-                                <c:out value="${aluno.dtNascimento}"/> &nbsp;
                                 <c:out value="${aluno.cpf}"/> &nbsp;
                                 <c:out value="${aluno.rg}"/> &nbsp;
                                 <c:out value="${aluno.email}"/> &nbsp;

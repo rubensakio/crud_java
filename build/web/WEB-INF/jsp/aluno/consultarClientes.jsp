@@ -117,7 +117,6 @@
                     <tr>
                         <th>ID</th> 
                         <th>Nome do Aluno</th> 
-                        <th>Data de nascimento</th> 
                         <th>CPF</th> 
                         <th>R.G.</th> 
                         <th>Usuário</th>
@@ -133,8 +132,6 @@
                             <td><b><c:out value="${aluno.codAluno}"/></b></td> 
 
                             <td><c:out value="${aluno.nome}"/></td> 
-
-                            <td><c:out value="${aluno.dtNascimento}"/></td> 
 
                             <td><c:out value="${aluno.cpf}"/></td> 
 
