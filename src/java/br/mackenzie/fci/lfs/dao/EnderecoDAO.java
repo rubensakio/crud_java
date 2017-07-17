@@ -8,6 +8,7 @@ package br.mackenzie.fci.lfs.dao;
 import br.mackenzie.fci.lfs.exception.PersistenciaException;
 import br.mackenzie.fci.lfs.model.Aluno;
 import br.mackenzie.fci.lfs.model.Endereco;
+import br.mackenzie.fci.lfs.model.Sexo;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -53,12 +54,18 @@ public class EnderecoDAO implements GenericoDAO<Endereco> {
                 enderecos.add(new Endereco(rs.getInt("idEndereco"),
                         rs.getString("nomeEndereco"),
                         rs.getInt("numero"),
+                        rs.getString("complemento"),
                         rs.getString("bairro"),
                         rs.getString("cidade"),
                         rs.getString("uf"),
+                        rs.getString("cep"),
                         new Aluno(rs.getInt("idAluno"),
                                 rs.getString("nome"),
+                                rs.getString("dtNascimento"),
+                                new Sexo(rs.getInt("idSexo"),
+                                        rs.getString("sexo")),
                                 rs.getString("cpf"),
+                                rs.getString("rg"),
                                 rs.getString("email"),
                                 rs.getString("celular"),
                                 rs.getString("telefone"),

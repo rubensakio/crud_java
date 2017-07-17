@@ -59,7 +59,7 @@
                                 <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>
                                 <p>RG:<font color="red" size="2">*</font></p>
                                 <input type="text" name="rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" maxlength="12" OnKeyPress="formatar('##.###.###-#', this)" required>
-                                <p>Sexo<font color="red" size="2">*</font>:
+                                <p>Sexo:
                                     <c:forEach var="sexo" items="${sexos}">
                                         <input type="radio" name="gender" value="${sexo.idSexo}" required> ${sexo.sexo}
                                     </c:forEach>

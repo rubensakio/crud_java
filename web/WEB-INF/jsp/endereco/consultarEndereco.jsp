@@ -102,9 +102,9 @@
 
         <div class="menu1">
             <ul class="menu">
-                <li/><a href="${pageContext.request.contextPath}/controller?command=aluno.formulario"> Novo  </a>
-                <li/><a href="${pageContext.request.contextPath}/controller?command=aluno.atualizar"> Atualizar </a>
-                <li/><a href="${pageContext.request.contextPath}/controller?command=aluno.excluir"> Remover </a>
+                <li/><a href="${pageContext.request.contextPath}/controller?command=endereco.formulario"> Novo  </a>
+                <li/><a href="${pageContext.request.contextPath}/controller?command=endereco.atualizar"> Atualizar </a>
+                <li/><a href="${pageContext.request.contextPath}/controller?command=endereco.excluir"> Remover </a>
             </ul>
         </div>
         <div class="all-content">  
@@ -113,17 +113,21 @@
             <div id="table1">
                 <table width="95%" border="1">
                     <tr>
+                        <th>ID</th>
                         <th>Aluno</th> 
                         <th>Endereço</th> 
                         <th>Número</th> 
                         <th>Complemento</th> 
                         <th>Bairro</th>
                         <th>Cidade</th> 
-                        <th>UF</th> 
+                        <th>UF</th>
+                        <th>CEP</th>
                     </tr>
 
                     <c:forEach var="endereco" items="${enderecos}">
                         <tr>
+
+                            <td><b><c:out value="${endereco.idEndereco}"/></b></td> 
 
                             <td><c:out value="${endereco.aluno.nome}"/></td> 
 
@@ -138,7 +142,7 @@
                             <td><c:out value="${endereco.cidade}"/></td> 
 
                             <td><c:out value="${endereco.uf}"/> </td>
-                            
+
                             <td><c:out value="${endereco.cep}"/> </td>
 
                         </tr>
