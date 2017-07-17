@@ -43,40 +43,28 @@
             }
         </script>
     </head>
-    <body onload="document.getElementById('gender').selectedIndex = ${aluno.sexo.idSexo}">
+    <body>
         <div class="all-content">
-            <form action="${pageContext.request.contextPath}/controller?command=aluno.validar-atualizacao" method="post">
+            <form action="${pageContext.request.contextPath}/controller?command=aluno.validar-exclusao" method="post">
 
                 <p>Código:</p>
                 <input type="text" size="10" readonly="true" value="${aluno.codAluno}" name="codAluno"/>
                 <p>Nome:</p>
                 <input type="text" name="nome" value="${aluno.nome}" required>
-                <p>Data de Nascimento:</p>
-                <input type="text" pattern="\d{2}\/\d{2}\/\d{4}" name="dtNascimento" value="${aluno.dtNascimento}" maxlength="10" OnKeyPress="formatar('##/##/####', this)" required> 
                 <p>CPF:</p>
-                <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" value="${aluno.cpf}" OnKeyPress="formatar('###.###.###-##', this)" required>
+                <input type="text" name="cpf" readonly="true" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" value="${aluno.cpf}" OnKeyPress="formatar('###.###.###-##', this)" required>
                 <p>RG:</p>
-                <input type="text" name="rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" maxlength="12" value="${aluno.rg}" OnKeyPress="formatar('##.###.###-#', this)" required>
-                <p>Sexo:
-                    <select name="gender" id="gender">
-                        <option value=""><c:out value="--Selecione--"/></option>
-                        <c:forEach var="sexo" items="${sexos}">
-                            <option  value="${sexo.idSexo}"> 
-                            <c:out value="${sexo.sexo}"/>
-                            </option>
-                        </c:forEach>
-                    </select>
-                </p>
+                <input type="text" name="rg" readonly="true" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" maxlength="12" value="${aluno.rg}" OnKeyPress="formatar('##.###.###-#', this)" required>
                 <p>Email:</p>
-                <input type="email" name="email" value="${aluno.email}" required>
+                <input type="email" name="email" readonly="true" value="${aluno.email}" required>
                 <p>Celular:</p>
-                <input type="text" name="celular" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}$" value="${aluno.celular}" maxlength="13" OnKeyPress="formatar('## #####-####', this)" required>
+                <input type="text" name="celular" readonly="true" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}$" value="${aluno.celular}" maxlength="13" OnKeyPress="formatar('## #####-####', this)" required>
                 <p>Telefone:</p>
-                <input type="text" name="telcomercial" pattern="[0-9]{2} [0-9]{4}-[0-9]{4}$" value="${aluno.telefone}" maxlength="12" OnKeyPress="formatar('## ####-####', this)" required>
+                <input type="text" name="telcomercial" readonly="true" pattern="[0-9]{2} [0-9]{4}-[0-9]{4}$" value="${aluno.telefone}" maxlength="12" OnKeyPress="formatar('## ####-####', this)" required>
                 <p>Matricula:</p>
-                <input type="text" maxlength="8" name="numMatricula" value="${aluno.numMatricula}" pattern="[0-9]+$" required>
+                <input type="text" maxlength="8" readonly="true" name="numMatricula" value="${aluno.numMatricula}" pattern="[0-9]+$" required>
                 <br><br>
-                <input type="submit" value="Confirmar">
+                <input type="submit" value="Excluir">
 
             </form>
         </div>

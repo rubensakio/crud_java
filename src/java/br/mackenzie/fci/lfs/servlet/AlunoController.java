@@ -73,6 +73,7 @@ public class AlunoController extends HttpServlet {
                 aluno.setCodAluno(Integer.parseInt(request.getParameter("codAluno")));
                 aluno.setNome(request.getParameter("nome"));
                 aluno.setCpf(request.getParameter("cpf"));
+                aluno.setRg(request.getParameter("rg"));
                 aluno.setEmail(request.getParameter("email"));
                 aluno.setCelular(request.getParameter("celular"));
                 aluno.setTelefone(request.getParameter("telcomercial"));
@@ -80,6 +81,7 @@ public class AlunoController extends HttpServlet {
                 new AlunoDAO().remover(aluno);
                 request.setAttribute("alunos", new AlunoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/aluno/consultarClientes.jsp").forward(request, response);
+
             }
             if ("aluno.validarAluno".equalsIgnoreCase(request.getParameter("command"))) {
 
