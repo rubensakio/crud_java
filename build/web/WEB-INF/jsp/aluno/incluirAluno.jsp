@@ -55,22 +55,22 @@
                                 <input type="text" name="nome" id="nome" required>
                                 <p>Data de Nascimento <font color="red" size="2">*</font> </p>
                                 <input type="text" pattern="\d{2}\/\d{2}\/\d{4}" name="dtNascimento" maxlength="10" OnKeyPress="formatar('##/##/####', this)" required> 
-                                <p>CPF:</p>
+                                <p>CPF:<font color="red" size="2">*</font></p>
                                 <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>
-                                <p>RG:</p>
+                                <p>RG:<font color="red" size="2">*</font></p>
                                 <input type="text" name="rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" maxlength="12" OnKeyPress="formatar('##.###.###-#', this)" required>
-                                <p>Sexo:
+                                <p>Sexo<font color="red" size="2">*</font>:
                                     <c:forEach var="sexo" items="${sexos}">
-                                        <input type="radio" name="gender" value="${sexo.idSexo}"> ${sexo.sexo}
+                                        <input type="radio" name="gender" value="${sexo.idSexo}" required> ${sexo.sexo}
                                     </c:forEach>
                                 </p>
-                                <p>Email:</p>
+                                <p>Email:<font color="red" size="2">*</font></p>
                                 <input type="email" name="email" required>
                                 <p>Celular:</p>
                                 <input type="text" name="celular" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}$"  maxlength="13" OnKeyPress="formatar('## #####-####', this)">
-                                <p>Telefone:</p>
+                                <p>Telefone:<font color="red" size="2">*</font></p>
                                 <input type="text" name="telcomercial" pattern="[0-9]{2} [0-9]{4}-[0-9]{4}$" maxlength="12" OnKeyPress="formatar('## ####-####', this)" required>
-                                <p>Matricula:</p>
+                                <p>Matricula:<font color="red" size="2">*</font></p>
                                 <input type="text" maxlength="8" name="numMatricula" pattern="[0-9]+$" required>
                                 <p><input type="submit"></p>
                                 <p><input type="button" value="Voltar para lista" onclick="location.href = '${pageContext.request.contextPath}/controller?command=aluno.consultarClientes'"></p>

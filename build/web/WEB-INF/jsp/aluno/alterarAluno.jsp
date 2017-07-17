@@ -38,7 +38,7 @@
             .all-content{
                 padding: 10px;
                 position: absolute;
-                left: 490px;
+                left: 20px;
                 top: 25px;
             }
             #title h1{font-family: arial; color: #2E8B57;}
