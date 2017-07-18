@@ -10,6 +10,7 @@ import br.mackenzie.fci.lfs.model.Aluno;
 import br.mackenzie.fci.lfs.model.Endereco;
 import br.mackenzie.fci.lfs.model.Sexo;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -26,7 +27,23 @@ public class EnderecoDAO implements GenericoDAO<Endereco> {
 
     @Override
     public void inserir(Endereco endereco) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            String sql = "INSERT INTO lfs.endereco (nomeEndereco,numero,complemento,bairro,cidade,uf,cep,idAluno) values(?,?,?,?,?,?,?,?)";
+            Connection c = Conexao.getInstance().getConnection();
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setString(1, endereco.getNomeEndereco());
+            ps.setInt(2, endereco.getNumero());
+            ps.setString(3, endereco.getComplemento());
+            ps.setString(4, endereco.getBairro());
+            ps.setString(5, endereco.getCidade());
+            ps.setString(6, endereco.getUf());
+            ps.setString(7, endereco.getCep());
+            ps.setInt(8, endereco.getAluno().getCodAluno());
+            ps.execute();
+            c.close();
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(AlunoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -60,15 +77,8 @@ public class EnderecoDAO implements GenericoDAO<Endereco> {
                         rs.getString("uf"),
                         rs.getString("cep"),
                         new Aluno(rs.getInt("idAluno"),
-                                rs.getString("nome"),
-                                new Sexo(rs.getInt("idSexo"),
-                                        rs.getString("sexo")),
-                                rs.getString("cpf"),
-                                rs.getString("rg"),
-                                rs.getString("email"),
-                                rs.getString("celular"),
-                                rs.getString("telefone"),
-                                rs.getInt("numMatricula"))));
+                                rs.getString("nome"))));
+
             }
 
         } catch (ClassNotFoundException | SQLException ex) {

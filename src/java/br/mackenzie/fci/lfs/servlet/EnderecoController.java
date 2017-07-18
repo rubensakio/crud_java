@@ -50,11 +50,16 @@ public class EnderecoController extends HttpServlet {
                 Endereco endereco = new Endereco();
                 endereco.setNomeEndereco(request.getParameter("nomeEndereco"));
                 endereco.setNumero(Integer.parseInt(request.getParameter("numero")));
+                endereco.setComplemento(request.getParameter("complemento"));
                 endereco.setBairro(request.getParameter("bairro"));
                 endereco.setCidade(request.getParameter("cidade"));
                 endereco.setUf(request.getParameter("uf"));
+                endereco.setCep(request.getParameter("cep"));
                 endereco.setAluno(new Aluno(Integer.parseInt(request.getParameter("alunos"))));
-                request.setAttribute("alunos", new EnderecoDAO().consultar());
+                
+                new EnderecoDAO().inserir(endereco);
+                
+                request.setAttribute("enderecos", new EnderecoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/endereco/consultarEndereco.jsp").forward(request, response);
             }
 

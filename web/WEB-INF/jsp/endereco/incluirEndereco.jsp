@@ -5,11 +5,11 @@
 --%>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <style>
             .all-content{
                 padding: 10px;
@@ -46,30 +46,36 @@
 
             <div class="conteudoCadastro">
                 <div style="width: 100% !important;">
-                    <form class="form" method="post" action="${pageContext.request.contextPath}/controller?command=aluno.inserir">
+                    <form class="form" method="post" action="${pageContext.request.contextPath}/controller?command=endereco.inserir">
                         <fieldset>
                             <legend>Cadastre-se</legend>
 
                             <div id="divNome">
-                                <p>EndereÃ§o:<font color="red" size="2">*</font> </p>
+                                <p>Endereço<font color="red" size="2">*</font> </p>
                                 <input type="text" name="nomeEndereco" id="nomeEndereco" required>
-                                <p>NÃºmero:<font color="red" size="2">*</font></p>
-                                <input type="text" size="5" name="numero" pattern="[0-9]+$" required>
-                                <p>Complemento:</p>
-                                <input type="text" name="complemento">
-                                <p>Bairro:<font color="red" size="2">*</font></p>
+                                <p>Número<font color="red" size="2">*</font></p>
+                                <input type="text" size="5" name="numero"  pattern="[0-9]+$" required>
+                                <p>Complemento</p>
+                                <input type="text" id="" name="complemento">
+                                <p>Bairro<font color="red" size="2">*</font></p>
                                 <input type="text" name="bairro" required>
-                                <p>Cidade:<font color="red" size="2">*</font></p>
+                                <p>Cidade<font color="red" size="2">*</font></p>
                                 <input type="text" name="cidade" required>
-                                <p>
-                                    UF:<font color="red" size="2">*</font>
-                                    <input type="text" size="4" name="uf" maxlength="2" required>
-                                </p>
-                                
-                                <p>CEP:<font color="red" size="2">*</font></p>
+                                <p>UF<font color="red" size="2">*</font></p>
+                                <input type="text" size="4" name="uf" maxlength="2" required>
+                                <p>CEP<font color="red" size="2">*</font></p>
                                 <input type="text" maxlength="9" name="cep" pattern="[0-9]{5}-[0-9]{3}" OnKeyPress="formatar('#####-###', this)" required>
+                                <p>Aluno</p>
+                                <select name="alunos">
+                                    <option value=""><c:out value="--Selecione--"/></option>
+                                    <c:forEach var="aluno" items="${alunos}">
+                                        <option value="${aluno.codAluno}">
+                                            <c:out value="${aluno.nome}"/>
+                                        </option>
+                                    </c:forEach>
+                                </select>                                
                                 <p><input type="submit"></p>
-                                <p><input type="button" value="Voltar para lista" onclick="location.href = '${pageContext.request.contextPath}/controller?command=aluno.consultarClientes'"></p>
+                                <p><input type="button" value="Voltar para lista" onclick="location.href = '${pageContext.request.contextPath}/controller?command=endereco.consultarEndereco'"></p>
                         </fieldset>
                     </form>
                 </div>
