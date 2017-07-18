@@ -4,7 +4,7 @@
     Author     : LFS
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -51,7 +51,7 @@
                             <legend>Cadastre-se</legend>
 
                             <div id="divNome">
-                                <p> Nome completo </label> <font color="red" size="2">*</font> </p>
+                                <p> Nome completo<font color="red" size="2">*</font> </p>
                                 <input type="text" name="nome" id="nome" required>
                                 <p>CPF:<font color="red" size="2">*</font></p>
                                 <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>

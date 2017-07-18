@@ -10,7 +10,7 @@
     <head>
 
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <title>JSP Page</title>
+        <title>Home</title>
         <style>
 
             .all-content{
@@ -41,7 +41,7 @@
             <div id="link">
                 <ul>
                     <li/><a href="/projLFS/controller?command=aluno.consultarClientes"> Aluno </a><br><br>
-                    <li/><a href="#"> Curso </a><br><br>
+                    <li/><a href="/projLFS/controller?command=curso.consultarCurso"> Curso </a><br><br>
                     <li/><a href="/projLFS/controller?command=endereco.consultarEndereco"> Endereço </a><br><br>
                 </ul>  
             </div>
