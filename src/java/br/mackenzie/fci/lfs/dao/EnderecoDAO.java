@@ -61,7 +61,6 @@ public class EnderecoDAO implements GenericoDAO<Endereco> {
                         rs.getString("cep"),
                         new Aluno(rs.getInt("idAluno"),
                                 rs.getString("nome"),
-                                rs.getString("dtNascimento"),
                                 new Sexo(rs.getInt("idSexo"),
                                         rs.getString("sexo")),
                                 rs.getString("cpf"),
