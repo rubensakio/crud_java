@@ -8,7 +8,6 @@ package br.mackenzie.fci.lfs.dao;
 import br.mackenzie.fci.lfs.exception.PersistenciaException;
 import br.mackenzie.fci.lfs.model.Aluno;
 import br.mackenzie.fci.lfs.model.Endereco;
-import br.mackenzie.fci.lfs.model.Sexo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -49,6 +48,34 @@ public class EnderecoDAO implements GenericoDAO<Endereco> {
     @Override
     public void atualizar(Endereco endereco) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Endereco listarPorId(Endereco endereco) {
+
+        try {
+            String sql = "SELECT * FROM lfs.endereco as E  WHERE E.idEndereco = ?";
+            Connection c = Conexao.getInstance().getConnection();
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setInt(1, endereco.getIdEndereco());
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+                endereco.setIdEndereco(rs.getInt("idEndereco"));
+                endereco.setNomeEndereco(rs.getString("nomeEndereco"));
+                endereco.setNumero(rs.getInt("numero"));
+                endereco.setComplemento(rs.getString("complemento"));
+                endereco.setBairro(rs.getString("bairro"));
+                endereco.setCidade(rs.getString("cidade"));
+                endereco.setUf(rs.getString("uf"));
+                endereco.setCep(rs.getString("cep"));
+                endereco.setAluno(new Aluno(rs.getInt("idAluno")));
+            }
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(AlunoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return endereco;
     }
 
     @Override
