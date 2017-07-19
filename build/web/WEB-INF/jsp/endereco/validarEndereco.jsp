@@ -43,36 +43,35 @@
             }
         </script>
     </head>
-    <body onload="document.getElementById('gender').selectedIndex = ${aluno.sexo.idSexo}">
+    <body onload="document.getElementById('alunos').selectedIndex = ${endereco.aluno.codAluno}">
         <div class="all-content">
-            <form action="${pageContext.request.contextPath}/controller?command=aluno.validar-atualizacao" method="post">
+            <form action="${pageContext.request.contextPath}/controller?command=endereco.validar-atualizacao" method="post">
 
                 <p>Código:</p>
-                <input type="text" size="10" readonly="true" value="${aluno.codAluno}" name="codAluno"/>
-                <p>Nome:</p>
-                <input type="text" name="nome" value="${aluno.nome}" required>
-                <p>CPF:</p>
-                <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" value="${aluno.cpf}" OnKeyPress="formatar('###.###.###-##', this)" required>
-                <p>RG:</p>
-                <input type="text" name="rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" maxlength="12" value="${aluno.rg}" OnKeyPress="formatar('##.###.###-#', this)" required>
-                <p>Sexo:
-                    <select name="gender" id="gender">
-                        <option value=""><c:out value="--Selecione--"/></option>
-                        <c:forEach var="sexo" items="${sexos}">
-                            <option  value="${sexo.idSexo}"> 
-                                <c:out value="${sexo.sexo}"/>
-                            </option>
-                        </c:forEach>
-                    </select>
-                </p>
-                <p>Email:</p>
-                <input type="email" name="email" value="${aluno.email}" required>
-                <p>Celular:</p>
-                <input type="text" name="celular" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}$" value="${aluno.celular}" maxlength="13" OnKeyPress="formatar('## #####-####', this)" required>
-                <p>Telefone:</p>
-                <input type="text" name="telcomercial" pattern="[0-9]{2} [0-9]{4}-[0-9]{4}$" value="${aluno.telefone}" maxlength="12" OnKeyPress="formatar('## ####-####', this)" required>
-                <p>Matricula:</p>
-                <input type="text" maxlength="8" name="numMatricula" value="${aluno.numMatricula}" pattern="[0-9]+$" required>
+                <input type="text" size="10" readonly="true" value="${endereco.idEndereco}" name="idEndereco"/>
+                <p>Endereço:</p>
+                <input type="text" name="nomeEndereco" value="${endereco.nomeEndereco}" required>
+                <p>Número:</p>
+                <input type="text" size="5" name="numero" value="${endereco.numero}" pattern="[0-9]+$" required>
+                <p>Complemento:</p>
+                <input type="text" name="complemento" value="${endereco.complemento}" size="10">
+                <p>Bairro</p>
+                <input type="text" value="${endereco.bairro}" name="bairro" required>
+                <p>Cidade</p>
+                <input type="text" value="${endereco.cidade}" name="cidade" required>
+                <p>UF</p>
+                <input type="text" value="${endereco.uf}" size="4" maxlength="2" name="uf" required>
+                <p>CEP</p>
+                <input type="text" value="${endereco.cep}" name="cep" pattern="[0-9]{5}-[0-9]{3}$" maxlength="9" OnKeyPress="formatar('#####-###', this)" required>
+                <p>Aluno</p>
+                <select name="alunos" id="alunos">
+                    <option value=""><c:out value="--Selecione--"/></option>
+                    <c:forEach var="aluno" items="${alunos}">
+                        <option value="${aluno.codAluno}">
+                            <c:out value="${aluno.nome}"/>
+                        </option>
+                    </c:forEach>
+                </select>
                 <br><br>
                 <input type="submit" value="Confirmar">
 
@@ -80,3 +79,4 @@
         </div>
     </body>
 </html>
+
