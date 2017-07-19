@@ -78,6 +78,12 @@ public class EnderecoController extends HttpServlet {
                 request.getRequestDispatcher("WEB-INF/jsp/endereco/validarEndereco.jsp").forward(request, response);
 
             }
+            if ("endereco.validar-atualizacao".equalsIgnoreCase(request.getParameter("command"))) {
+                Endereco endereco = new Endereco();
+
+                request.getRequestDispatcher("WEB-INF/jsp/endereco/validarEndereco.jsp").forward(request, response);
+
+            }
 
         }
 

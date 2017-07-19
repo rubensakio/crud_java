@@ -47,7 +47,24 @@ public class EnderecoDAO implements GenericoDAO<Endereco> {
 
     @Override
     public void atualizar(Endereco endereco) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            String sql = "UPDATE lfs.endereco SET nomeEndereco=?, numero=?, complemento=?, bairro=?, cidade=?, uf=?, cep=?, idAluno=? WHERE idEndereco=?";
+            Connection c = Conexao.getInstance().getConnection();
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setString(1, endereco.getNomeEndereco());
+            ps.setInt(2, endereco.getNumero());
+            ps.setString(3, endereco.getComplemento());
+            ps.setString(4, endereco.getBairro());
+            ps.setString(5, endereco.getCidade());
+            ps.setString(6, endereco.getUf());
+            ps.setString(7, endereco.getCep());
+            ps.setInt(8, endereco.getAluno().getCodAluno());
+            ps.setInt(9, endereco.getIdEndereco());
+            ps.execute();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(AlunoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public Endereco listarPorId(Endereco endereco) {
