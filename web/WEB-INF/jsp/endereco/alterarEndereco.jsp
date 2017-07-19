@@ -50,11 +50,11 @@
         <div class="all-content">
 
             <div id="title">
-                <h1> Atualizando endereço</h1>
+                <h1> Alterar endereço</h1>
             </div>
             <div id="form-select">
                 <form method="post" action="${pageContext.request.contextPath}/controller?command=endereco.validarEndereco">
-                    <select name="alunos" onchange="this.form.submit()">
+                    <select name="enderecos" onchange="this.form.submit()">
                         <option value=""> --Selecione-- </option>
                         <c:forEach var="endereco" items="${enderecos}">
                             <option value="${endereco.idEndereco}">
