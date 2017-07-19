@@ -118,7 +118,7 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
         try {
             Connection connection = Conexao.getInstance().getConnection();
             Statement statement = connection.createStatement();
-            ResultSet result = statement.executeQuery("select * from lfs.aluno as a INNER JOIN lfs.sexo as s ON a.idSexo = s.idSexo");
+            ResultSet result = statement.executeQuery("select * from lfs.aluno as a INNER JOIN lfs.sexo as s ON a.idSexo = s.idSexo order by a.idAluno");
 
             while (result.next()) {
 
