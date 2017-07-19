@@ -65,7 +65,7 @@ public class EnderecoDAO implements GenericoDAO<Endereco> {
         try {
             Connection c = Conexao.getInstance().getConnection();
             Statement stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM lfs.endereco as e INNER JOIN lfs.aluno as a ON e.idAluno = a.idAluno");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM lfs.endereco as e INNER JOIN lfs.aluno as a ON e.idAluno = a.idAluno order by e.idEndereco");
             while (rs.next()) {
 
                 enderecos.add(new Endereco(rs.getInt("idEndereco"),
