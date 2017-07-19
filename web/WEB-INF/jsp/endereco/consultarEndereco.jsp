@@ -104,9 +104,9 @@
 
         <div class="menu1">
             <ul class="menu">
-                <li/><a href="${pageContext.request.contextPath}/controller?command=aluno.formulario"> Novo  </a>
-                <li/><a href="${pageContext.request.contextPath}/controller?command=aluno.atualizar"> Atualizar </a>
-                <li/><a href="${pageContext.request.contextPath}/controller?command=aluno.excluir"> Remover </a>
+                <li/><a href="${pageContext.request.contextPath}/controller?command=endereco.formulario"> Novo  </a>
+                <li/><a href="${pageContext.request.contextPath}/controller?command=endereco.atualizar"> Atualizar </a>
+                <li/><a href="${pageContext.request.contextPath}/controller?command=endereco.excluir"> Remover </a>
             </ul>
         </div>
         <div class="all-content">  
@@ -133,7 +133,7 @@
 
                             <td><c:out value="${endereco.aluno.nome}"/></td> 
 
-                            <td><c:out value="${endereco.nomEndereco}"/></td> 
+                            <td><c:out value="${endereco.nomeEndereco}"/></td> 
 
                             <td><c:out value="${endereco.numero}"/> </td>
 

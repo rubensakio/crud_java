@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title> Validando atualização </title>
+        <title> Validando exclusão </title>
         <style>
             .all-content{
                 padding: 10px;
