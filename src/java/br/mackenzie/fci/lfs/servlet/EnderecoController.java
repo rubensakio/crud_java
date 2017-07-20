@@ -99,6 +99,10 @@ public class EnderecoController extends HttpServlet {
                 request.setAttribute("enderecos", new EnderecoDAO().consultar());
                 request.getRequestDispatcher("WEB-INF/jsp/endereco/excluirEndereco.jsp").forward(request, response);
             }
+            if ("endereco.validarExclusaoEndereco".equalsIgnoreCase(request.getParameter("command"))) {
+                request.setAttribute("enderecos", new EnderecoDAO().consultar());
+                request.getRequestDispatcher("WEB-INF/jsp/endereco/excluirEndereco.jsp").forward(request, response);
+            }
 
         }
 
