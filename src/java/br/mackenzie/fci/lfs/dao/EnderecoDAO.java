@@ -97,7 +97,16 @@ public class EnderecoDAO implements GenericoDAO<Endereco> {
 
     @Override
     public void remover(Endereco endereco) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            String sql = "DELETE FROM lfs.endereco where idEndereco=?";
+            Connection c = Conexao.getInstance().getConnection();
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setInt(1, endereco.getIdEndereco());
+            ps.execute();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(AlunoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     //public Endereco listarPorId (Endereco endereco){}

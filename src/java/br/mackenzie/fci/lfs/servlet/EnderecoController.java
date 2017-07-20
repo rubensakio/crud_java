@@ -100,10 +100,33 @@ public class EnderecoController extends HttpServlet {
                 request.getRequestDispatcher("WEB-INF/jsp/endereco/excluirEndereco.jsp").forward(request, response);
             }
             if ("endereco.validarExclusaoEndereco".equalsIgnoreCase(request.getParameter("command"))) {
-                request.setAttribute("enderecos", new EnderecoDAO().consultar());
-                request.getRequestDispatcher("WEB-INF/jsp/endereco/excluirEndereco.jsp").forward(request, response);
+                Endereco endereco = new Endereco();
+                endereco.setIdEndereco(Integer.parseInt(request.getParameter("enderecos")));
+                endereco = new EnderecoDAO().listarPorId(endereco);
+                request.setAttribute("alunos", new AlunoDAO().consultar());
+                request.setAttribute("endereco", endereco);
+                request.getRequestDispatcher("WEB-INF/jsp/endereco/validarExclusaoEndereco.jsp").forward(request, response);
+
             }
 
+            if ("endereco.validar-exclusao".equalsIgnoreCase(request.getParameter("command"))) {
+                Endereco endereco = new Endereco();
+                endereco.setIdEndereco(Integer.parseInt(request.getParameter("idEndereco")));
+                endereco.setNomeEndereco(request.getParameter("nomeEndereco"));
+                endereco.setNumero(Integer.parseInt(request.getParameter("numero")));
+                endereco.setComplemento(request.getParameter("complemento"));
+                endereco.setBairro(request.getParameter("bairro"));
+                endereco.setCidade(request.getParameter("cidade"));
+                endereco.setUf(request.getParameter("uf"));
+                endereco.setCep(request.getParameter("cep"));
+                endereco.setAluno(new Aluno(Integer.parseInt(request.getParameter("alunos"))));
+                
+                new EnderecoDAO().remover(endereco);
+                
+                request.setAttribute("enderecos", new EnderecoDAO().consultar());
+                request.getRequestDispatcher("WEB-INF/jsp/endereco/consultarEndereco.jsp").forward(request, response);
+
+            }
         }
 
     }
