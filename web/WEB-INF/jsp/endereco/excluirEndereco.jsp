@@ -53,7 +53,7 @@
                 <h1> Alterar endereço</h1>
             </div>
             <div id="form-select">
-                <form method="post" action="${pageContext.request.contextPath}/controller?command=endereco.validarEndereco">
+                <form method="post" action="${pageContext.request.contextPath}/controller?command=endereco.validarExclusaoEndereco">
                     <select name="enderecos" onchange="this.form.submit()">
                         <option value=""> --Selecione-- </option>
                         <c:forEach var="endereco" items="${enderecos}">
