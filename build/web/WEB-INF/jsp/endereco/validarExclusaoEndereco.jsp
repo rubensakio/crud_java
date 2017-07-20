@@ -28,6 +28,7 @@
                 top: 25px;
             }
             #title h1{font-family: arial; color: #2E8B57;}
+     
         </style>
 
         <script>
@@ -64,9 +65,10 @@
                 <p>CEP</p>
                 <input type="text" readonly="true" value="${endereco.cep}" name="cep" pattern="[0-9]{5}-[0-9]{3}$" maxlength="9" OnKeyPress="formatar('#####-###', this)" required>
                 <p>Aluno</p>
-                <select name="alunos" readonly="true" id="alunos">
+                <select name="alunos" readonly="readonly" id="alunos">
                     <option value=""><c:out value="--Selecione--"/></option>
                     <c:forEach var="aluno" items="${alunos}">
+
                         <option value="${aluno.codAluno}">
                             <c:out value="${aluno.nome}"/>
                         </option>
