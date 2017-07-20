@@ -78,7 +78,7 @@
             </div>
             <br><br>
             <div id="button">
-                <a href="${pageContext.request.contextPath}/controller?command=aluno.consultarClientes"> Voltar </a>
+                <a href="${pageContext.request.contextPath}/controller?command=endereco.consultarEndereco"> Voltar </a>
             </div> 
         </div>
 
