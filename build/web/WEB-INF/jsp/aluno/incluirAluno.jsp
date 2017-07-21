@@ -29,9 +29,8 @@
             }
 
             .all-content{
-
-                height: 100%;
-                min-height: 100%;
+                
+                min-height: 85%;
                 display: -webkit-flex;
                 display: flex;
                 -webkit-align-items: center;
@@ -40,12 +39,7 @@
                 justify-content: center;
 
             }
-            .all-content {
 
-                padding: 5px;
-
-
-            }
             fieldset {
                 border: 0;
             }
@@ -137,15 +131,8 @@
     <body>
 
 
-
-
         <div class="all-content">     
-            
-            <div id="title">
-                <h1> Cadastre-se </h1>
-            </div>
-
-            <br><br>
+          
             <form class="form" method="post" action="${pageContext.request.contextPath}/controller?command=aluno.inserir">
                 <fieldset>
                     <div class="campo">
