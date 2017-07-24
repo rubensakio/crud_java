@@ -26,17 +26,53 @@ public class CursoDAO implements GenericoDAO<Curso> {
 
     @Override
     public void inserir(Curso curso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            String sql = "INSERT INTO lfs.curso(nomeInstituicao,nomeCurso,semestreAtual,idAluno) VALUES(?,?,?,?)";
+            Connection c = Conexao.getInstance().getConnection();
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setString(1, curso.getNomeInstituicao());
+            ps.setString(2, curso.getNomeCurso());
+            ps.setInt(3, curso.getSemestreAtual());
+            ps.setInt(4, curso.getAluno().getCodAluno());
+            ps.execute();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     public void atualizar(Curso curso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            String sql = "UPDATE lfs.curso SET nomeInstituicao=?, nomeCurso=? semestreAtual=? idAluno=? WHERE idCurso=?";
+            Connection c = Conexao.getInstance().getConnection();
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setString(1, curso.getNomeInstituicao());
+            ps.setString(2, curso.getNomeCurso());
+            ps.setInt(3, curso.getSemestreAtual());
+            ps.setInt(4, curso.getAluno().getCodAluno());
+            ps.setInt(5, curso.getIdCurso());
+            ps.execute();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     @Override
     public void remover(Curso curso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            String sql = "DELETE FROM lfs.curso WHERE idCurso=?";
+            Connection c = Conexao.getInstance().getConnection();
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setInt(1, curso.getIdCurso());
+            ps.execute();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     public Curso listarPorID(Curso curso) {
@@ -75,7 +111,8 @@ public class CursoDAO implements GenericoDAO<Curso> {
                         rs.getString("nomeCurso"),
                         rs.getInt("semestreAtual"),
                         new Aluno(rs.getInt("idAluno"),
-                                rs.getString("nome"))));
+                                rs.getString("nome"),
+                                rs.getInt("numMatricula"))));
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
