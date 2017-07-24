@@ -1,11 +1,12 @@
 <%-- 
-    Document   : incluirEndereco
-    Created on : 19/07/2017, 09:24:47
+    Document   : incluirCurso
+    Created on : 24/07/2017, 12:57:02
     Author     : LFS
 --%>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -80,7 +81,7 @@
                 padding-right: 1em;
             }
             campo input:focus, .campo select:focus, .campo textarea:focus {
-                background: #ffffff;
+                background: blue;
             }
             .campo label.checkbox {
                 color: #000;
@@ -130,72 +131,68 @@
     <body>
 
 
-        <div class="all-content">  
+        <div class="all-content">     
 
-            <form class="form" method="post" action="${pageContext.request.contextPath}/controller?command=endereco.inserir">
+            <form class="form" method="post" action="${pageContext.request.contextPath}/controller?command=aluno.inserir">
                 <fieldset>
-
                     <div class="campo">
-                        <label for="nomeEndereco">Endereço</label><font color="red" size="2">*</font> 
-                        <input type="text" name="nomeEndereco" id="nomeEndereco" style="width: 20em" value="" id="nomeEndereco" required>
+                        <label for="nome">Nome completo</label><font color="red" size="2">*</font> 
+                        <input type="text" name="nome" id="nome" style="width: 20em" value="" required>
                     </div>
+
 
                     <fieldset class="grupo">
 
                         <div class="campo">
-                            <label for="numero">Número</label><font color="red" size="2">*</font>
-                            <input type="text" size="5" name="numero" id="numero" pattern="[0-9]+$" required>
+                            <label for="cpf">CPF</label><font color="red" size="2">*</font>
+                            <input type="text" name="cpf" id="cpf" style="width: 10em" value=""  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>
                         </div>
 
                         <div class="campo">
-                            <label for="complemento">Complemento</label>
-                            <input type="text" name="complemento" style="width: 10em" value="" id="complemento" size="10">
+                            <label for="rg">RG</label><font color="red" size="2">*</font>
+                            <input type="text" name="rg" style="width: 10em" value="" id="rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" maxlength="12" OnKeyPress="formatar('##.###.###-#', this)" required>
                         </div>
 
                     </fieldset>
 
                     <div class="campo">
-                        <label for="bairro">Bairro</label><font color="red" size="2">*</font>
-                        <input type="text" name="bairro" id="bairro" style="width: 20em" value="" required>
+                        <label>Sexo</label>
+                        <c:forEach var="sexo" items="${sexos}">
+                            <label class="checkbox">
+                                <input type="radio" name="gender" value="${sexo.idSexo}" required> ${sexo.sexo}
+                            </label>
+                        </c:forEach>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">Email</label><font color="red" size="2">*</font>
+                        <input type="email" name="email" id="email" style="width: 20em" value="" required>
+
                     </div>
 
                     <fieldset class="grupo">
-
                         <div class="campo">
-                            <label for="cidade">Cidade</label><font color="red" size="2">*</font>
-                            <input type="text" name="cidade" id="cidade" required>
+                            <label for="telcomercial">Telefone</label><font color="red" size="2">*</font>
+                            <input type="text" name="telcomercial" id="telcomercial" style="width: 10em" value="" pattern="[0-9]{2} [0-9]{4}-[0-9]{4}$" maxlength="12" OnKeyPress="formatar('## ####-####', this)" required>
+                        </div>
+                        <div class="campo">
+                            <label for="celular">Celular</label>
+                            <input type="text" name="celular" id="celular" style="width: 10em" value="" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}$"  maxlength="13" OnKeyPress="formatar('## #####-####', this)">
                         </div>
 
-                        <div class="campo">
-                            <label for="uf">UF</label><font color="red" size="2">*</font>
-                            <input type="text" size="4" maxlength="2" name="uf" id="uf" required>
-                        </div>
 
                     </fieldset>
-                    <div class="campo">
-                        <label for="cep">CEP</label><font color="red" size="2">*</font>
-                        <input type="text" name="cep" id="cep" pattern="[0-9]{5}-[0-9]{3}$" maxlength="9" OnKeyPress="formatar('#####-###', this)" required>
-                    </div>
 
                     <div class="campo">
-                        <label for="alunos">Aluno</label>
-                        <select name="alunos" id="alunos">
-                            <option value=""><c:out value="--Selecione--"/></option>
-                            <c:forEach var="aluno" items="${alunos}">
-                                <option value="${aluno.codAluno}">
-                                    <c:out value="${aluno.nome}"/>
-                                </option>
-                            </c:forEach>
-                        </select>
+                        <label for="numMatricula">Matricula</label><font color="red" size="2">*</font>
+                        <input type="text" maxlength="8" name="numMatricula" id="numMatricula" pattern="[0-9]+$" required>
                     </div>
-                    <button type="submit" class="btn-send" name="submit"> Enviar </button> &nbsp;
-                    <button class="btn-send" onclick="location.href = '${pageContext.request.contextPath}/controller?command=endereco.consultarEndereco'"> Voltar para lista </button>
+
+                    <button type="submit" class="btn-send" name="submit"> Enviar</button> &nbsp;
+                    <button class="btn-send"  onclick="location.href = '${pageContext.request.contextPath}/controller?command=aluno.consultarClientes'"> Voltar para lista</button>
                 </fieldset>
             </form>
-
-
 
         </div>
     </body>
 </html>
-

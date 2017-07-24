@@ -10,7 +10,15 @@
 <html>
     <head>
         <style>
-            *{padding:0; margin:0;}
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            html, body {
+                height: 100%;
+                min-height: 100%;
+            }
 
 
             .all-content{

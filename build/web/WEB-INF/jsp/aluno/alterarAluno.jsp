@@ -11,7 +11,15 @@
     <head>
 
         <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
 
+            html, body {
+                height: 100%;
+                min-height: 100%;
+            }
             #button a{
 
                 text-decoration: none;
