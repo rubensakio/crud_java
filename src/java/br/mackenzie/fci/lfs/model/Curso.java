@@ -14,19 +14,24 @@ import java.io.Serializable;
 public class Curso implements Serializable {
 
     private Integer idCurso;
+    private String nomeInstituicao;
     private String nomeCurso;
     private Integer semestreAtual;
     private Aluno aluno;
 
-    public Curso(Integer idCurso, String nomeCurso, Integer semestreAtual, Aluno aluno) {
+    public Curso(Integer idCurso, String nomeInstituicao, String nomeCurso, Integer semestreAtual, Aluno aluno) {
+        this.idCurso = idCurso;
+        this.nomeInstituicao = nomeInstituicao;
+        this.nomeCurso = nomeCurso;
+        this.semestreAtual = semestreAtual;
+        this.aluno = aluno;
+    }
+
+    public Curso() {
     }
 
     public Curso(Integer idCurso) {
         this.idCurso = idCurso;
-    }
-
-    public Curso() {
-
     }
 
     public Integer getIdCurso() {
@@ -35,6 +40,14 @@ public class Curso implements Serializable {
 
     public void setIdCurso(Integer idCurso) {
         this.idCurso = idCurso;
+    }
+
+    public String getNomeInstituicao() {
+        return nomeInstituicao;
+    }
+
+    public void setNomeInstituicao(String nomeInstituicao) {
+        this.nomeInstituicao = nomeInstituicao;
     }
 
     public String getNomeCurso() {
@@ -61,6 +74,6 @@ public class Curso implements Serializable {
         this.aluno = aluno;
     }
 
-   
+
 
 }
