@@ -115,7 +115,8 @@
             <div id="table1">
                 <table width="95%" border="1">
                     <tr>
-                        <th>ID</th> 
+                        <th>ID</th>
+                        <th> Matrícula </th>
                         <th>Aluno</th> 
                         <th>Curso</th> 
                         <th>Nome da Instituição</th> 
@@ -128,6 +129,8 @@
 
                             <td><b><c:out value="${curso.idCurso}"/></b></td> 
 
+                            <td><c:out value="${curso.aluno.numMatricula}"/></td> 
+
                             <td><c:out value="${curso.aluno.nome}"/></td> 
 
                             <td><c:out value="${curso.nomeCurso}"/></td> 
@@ -135,14 +138,6 @@
                             <td><c:out value="${curso.nomeInstituicao}"/> </td>
 
                             <td><c:out value="${curso.semestreAtual}"/></td> 
-
-                            <td><c:out value="${endereco.bairro}"/></td> 
-
-                            <td><c:out value="${endereco.cidade}"/> </td>
-
-                            <td><c:out value="${endereco.uf}"/></td> 
-
-                            <td><c:out value="${endereco.cep}"/></td> 
 
                         </tr>
                     </c:forEach>

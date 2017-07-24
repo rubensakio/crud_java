@@ -45,6 +45,14 @@ public class Aluno implements Serializable {
         this.codAluno = codAluno;
     }
 
+    public Aluno(Integer codAluno, String nome, Integer numMatricula) {
+        this.codAluno = codAluno;
+        this.nome = nome;
+        this.numMatricula = numMatricula;
+    }
+    
+    
+
     public Aluno() {
     }
 
