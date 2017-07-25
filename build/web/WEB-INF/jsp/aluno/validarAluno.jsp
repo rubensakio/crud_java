@@ -133,8 +133,8 @@
 
                     <fieldset class="grupo">
                         <div class="campo">
-                            <p>Código:</p>
-                            <input type="text" style="width: 2.5em" readonly="true" value="${aluno.codAluno}" name="codAluno"/>
+                            <label for="codAluno">Código:</label>
+                            <input type="text" style="width: 2.5em" readonly="true" value="${aluno.codAluno}" name="codAluno" id="codAluno"/>
                         </div>
                         <div class="campo">
                             <label for="nome">Nome:</label>
