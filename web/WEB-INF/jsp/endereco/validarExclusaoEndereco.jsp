@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title> Validando exclusão - Endereço </title>
+        <title> Validando atualização - Endereço </title>
         <style>
 
             * {
@@ -129,38 +129,73 @@
     <body onload="document.getElementById('alunos').selectedIndex = ${endereco.aluno.codAluno}">
         <div class="all-content">
             <form action="${pageContext.request.contextPath}/controller?command=endereco.validar-exclusao" method="post">
+                <fieldset>
+                    <fieldset class="grupo">
+                        <div class="campo">
+                            <label for="idEndereco">Código:</label>
+                            <input type="text" size="10" style="width: 2.5em" readonly="true" value="${endereco.idEndereco}" name="idEndereco" id="idEndereco"/>
+                        </div>
 
-                <p>Código:</p>
-                <input type="text" size="10" readonly="true" value="${endereco.idEndereco}" name="idEndereco"/>
-                <p>Endereço:</p>
-                <input type="text" name="nomeEndereco" readonly="true" value="${endereco.nomeEndereco}" required>
-                <p>Número:</p>
-                <input type="text" size="5" name="numero" readonly="true" value="${endereco.numero}" pattern="[0-9]+$" required>
-                <p>Complemento:</p>
-                <input type="text" name="complemento" readonly="true" value="${endereco.complemento}" size="10">
-                <p>Bairro</p>
-                <input type="text" value="${endereco.bairro}" readonly="true" name="bairro" required>
-                <p>Cidade</p>
-                <input type="text" readonly="true" value="${endereco.cidade}" name="cidade" required>
-                <p>UF</p>
-                <input type="text" readonly="true" value="${endereco.uf}" size="4" maxlength="2" name="uf" required>
-                <p>CEP</p>
-                <input type="text" readonly="true" value="${endereco.cep}" name="cep" pattern="[0-9]{5}-[0-9]{3}$" maxlength="9" OnKeyPress="formatar('#####-###', this)" required>
-                <p>Aluno</p>
-                <select name="alunos" readonly="readonly" id="alunos">
-                    <option value=""><c:out value="--Selecione--"/></option>
-                    <c:forEach var="aluno" items="${alunos}">
+                        <div class="campo">
+                            <label for="nomeEndereco">Endereço:</label>
+                            <input type="text" name="nomeEndereco" id="nomeEndereco" style="width: 20em" value="${endereco.nomeEndereco}" readonly="true">
+                        </div>
 
-                        <option value="${aluno.codAluno}">
-                            <c:out value="${aluno.nome}"/>
-                        </option>
-                    </c:forEach>
-                </select>
-                <br><br>
-                <input type="submit" value="Confirmar">
+                    </fieldset>
 
+                    <fieldset class="grupo">
+
+                        <div class="campo">
+                            <label for="numero">Número:</label>
+                            <input type="text" size="5" name="numero" id="numero" value="${endereco.numero}" pattern="[0-9]+$" readonly="true">
+                        </div>
+                        <div class="campo">
+                            <label for="complemento">Complemento:</label>
+                            <input type="text" name="complemento" style="width: 10em" id="complemento" value="${endereco.complemento}" readonly="true">
+                        </div>
+
+                    </fieldset>
+
+                    <div class="campo">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" value="${endereco.bairro}" style="width: 20em" name="bairro" id="bairro" required>
+                    </div>
+
+                    <fieldset class="grupo">
+
+                        <div class="campo">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" value="${endereco.cidade}" name="cidade" id="cidade" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="uf">UF</label>
+                            <input type="text" value="${endereco.uf}" size="4" maxlength="2" name="uf" id="uf" required>
+                        </div>
+
+                    </fieldset>
+
+                    <div class="campo">
+                        <label for="cep">CEP</label>
+                        <input type="text" value="${endereco.cep}" name="cep" id="cep" pattern="[0-9]{5}-[0-9]{3}$" maxlength="9" OnKeyPress="formatar('#####-###', this)" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="alunos">Aluno</label>
+                        <select name="alunos" id="alunos">
+                            <option value=""><c:out value="--Selecione--"/></option>
+                            <c:forEach var="aluno" items="${alunos}">
+                                <option value="${aluno.codAluno}">
+                                <c:out value="${aluno.nome}"/>
+                                </option>
+                            </c:forEach>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-send" name="submit">Excluir</button>
+                </fieldset>
             </form>
-            <br><br>
         </div>
     </body>
 </html>
+
