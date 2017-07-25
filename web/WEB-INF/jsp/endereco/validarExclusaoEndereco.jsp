@@ -10,25 +10,107 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title> Validando atualização </title>
+        <title> Validando exclusão - Endereço </title>
         <style>
-            .all-content{
-                padding: 10px;
-                position: absolute;
-                left: 490px;
-                top: 25px;
+
+            * {
+                margin: 0;
+                padding: 0;
             }
 
-        </style>
-        <style>
-            .all-content{
-                padding: 10px;
-                position: absolute;
-                left: 490px;
-                top: 25px;
+            html, body {
+                height: 100%;
+                min-height: 100%;
             }
-            #title h1{font-family: arial; color: #2E8B57;}
-     
+
+            body {
+                font: 15px arial;
+
+            }
+
+            .all-content{
+
+                min-height: 85%;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-align-items: center;
+                align-items: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+
+            }
+
+            fieldset {
+                border: 0;
+            }
+            body, input, select, textarea, button {
+                font-family: sans-serif;
+                font-size: 1em;
+            }
+            .grupo:before, .grupo:after {
+                content: " ";
+                display: table;
+            }
+            .grupo:after {
+                clear: both;
+            }
+            .campo {
+                margin-bottom: 1em;
+            }
+            campo label {
+                margin-bottom: 0.2em;
+                color: #666;
+                display: block;
+            }
+            fieldset.grupo .campo {
+                float:  left;
+                margin-right: 1em;
+            }
+            .campo input[type="text"],
+            .campo input[type="email"],
+            .campo input[type="url"],
+            .campo input[type="tel"],
+            .campo select,
+            .campo textarea {
+                padding: 0.2em;
+                border: 1px solid #CCC;
+                box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+                display: block;
+            }
+            campo select option {
+                padding-right: 1em;
+            }
+            campo input:focus, .campo select:focus, .campo textarea:focus {
+                background: #fff;
+            }
+            .campo label.checkbox {
+                color: #000;
+                display: inline-block;
+                margin-right: 1em;
+            }
+            .btn-send {
+                font-size: 1.3em;
+                background: #2E8B57;
+                border: 0 ;
+                margin-bottom: 1em;
+                color: #FFF;
+                padding: 0.2em 0.6em;
+                box-shadow: 2px 0px 2px rgba(0,0,0,0.5);
+                text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+
+
+            }
+
+            .btn-send:hover {
+                background: #3CB371;
+                box-shadow: none;
+                text-shadow: none;
+            }
+
+            .btn-send, select, label.checkbox {
+                cursor: pointer;
+            }
+            .banner{}
         </style>
 
         <script>
