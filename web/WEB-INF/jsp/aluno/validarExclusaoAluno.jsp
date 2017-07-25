@@ -133,29 +133,29 @@
                     <fieldset class="grupo">
                         <div class="campo">
                             <label for="codAluno">Código:</label>
-                            <input type="text" size="10" readonly="true" value="${aluno.codAluno}" name="codAluno" id="codAluno"/>
+                            <input type="text" style="width: 2.5em" readonly="true" value="${aluno.codAluno}" name="codAluno" id="codAluno"/>
                         </div>
 
                         <div class="campo">
                             <label for="nome">Nome:</label>
-                            <input type="text" name="nome" id="nome" value="${aluno.nome}" required>
+                            <input type="text" name="nome" style="width: 20em" id="nome" value="${aluno.nome}" required>
                         </div>
                     </fieldset>
 
                     <fieldset class="grupo">
                         <div class="campo">
                             <label for="cpf">CPF:</label>
-                            <input type="text" name="cpf" id="cpf" readonly="true" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" value="${aluno.cpf}" OnKeyPress="formatar('###.###.###-##', this)" required>
+                            <input type="text" name="cpf" id="cpf" style="width: 10em" readonly="true" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" value="${aluno.cpf}" OnKeyPress="formatar('###.###.###-##', this)" required>
                         </div>
 
                         <div class="campo">
                             <label for="rg">RG:</label>
-                            <input type="text" name="rg" id="rg" readonly="true" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" maxlength="12" value="${aluno.rg}" OnKeyPress="formatar('##.###.###-#', this)" required>
+                            <input type="text" name="rg" id="rg" style="width: 10em" readonly="true" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" maxlength="12" value="${aluno.rg}" OnKeyPress="formatar('##.###.###-#', this)" required>
                         </div>
                     </fieldset>
                     <div class="campo">
                         <label for="email">Email:</label>
-                        <input type="email" name="email" id="email" readonly="true" value="${aluno.email}" required>
+                        <input type="email" name="email" id="email" style="width: 20em" readonly="true" value="${aluno.email}" required>
                     </div>
 
                     <fieldset class="grupo">
