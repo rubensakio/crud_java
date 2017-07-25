@@ -149,7 +149,7 @@
 
                         <div class="campo">
                             <label for="complemento">Complemento</label>
-                            <input type="text" name="complemento" style="width: 10em" value="" id="complemento" size="10">
+                            <input type="text" name="complemento" style="width: 10em" value="" id="complemento" >
                         </div>
 
                     </fieldset>
