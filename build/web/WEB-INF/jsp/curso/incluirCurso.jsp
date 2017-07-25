@@ -133,24 +133,23 @@
 
         <div class="all-content">     
 
-            <form class="form" method="post" action="${pageContext.request.contextPath}/controller?command=aluno.inserir">
+            <form class="form" method="post" action="${pageContext.request.contextPath}/controller?command=curso.inserir">
                 <fieldset>
                     <div class="campo">
-                        <label for="nome">Nome completo</label><font color="red" size="2">*</font> 
-                        <input type="text" name="nome" id="nome" style="width: 20em" value="" required>
+                        <label for="nomeInstituicao">Nome da Instituição</label><font color="red" size="2">*</font> 
+                        <input type="text" name="nomeInstituicao" id="nomeInstituicao" style="width: 20em" value="" required>
                     </div>
-
 
                     <fieldset class="grupo">
 
                         <div class="campo">
-                            <label for="cpf">CPF</label><font color="red" size="2">*</font>
-                            <input type="text" name="cpf" id="cpf" style="width: 10em" value=""  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>
+                            <label for="nomeCurso">Curso</label><font color="red" size="2">*</font>
+                            <input type="text" name="nomeCurso" id="nomeCurso" style="width: 15em" value=""  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>
                         </div>
 
                         <div class="campo">
-                            <label for="rg">RG</label><font color="red" size="2">*</font>
-                            <input type="text" name="rg" style="width: 10em" value="" id="rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" maxlength="12" OnKeyPress="formatar('##.###.###-#', this)" required>
+                            <label for="semestreAtual">Semestre atual</label><font color="red" size="2">*</font>
+                            <input type="text" name="semestreAtual" style="width: 5em" value="" id="semestreAtual" required>
                         </div>
 
                     </fieldset>
