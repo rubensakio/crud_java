@@ -8,101 +8,93 @@
 <!DOCTYPE html>
 <html>
     <head>
-
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <title>Home</title>
-        <style>
-            * {
+        <style type="text/css">
+            body {
                 margin: 0;
                 padding: 0;
+                background: #ccc;
             }
 
-            .all-content{
-
-                margin-top: 60px;
-                margin-left: 90px;
-
-            }
-            
-            .links1{padding:10px;}
-            .links{
-
+            .nav ul {
                 list-style: none;
-                border: 1px solid #c0c0c0;
-                float:left; 
+                background-color: #444;
+                text-align: center;
+                padding: 0;
+                margin: 0;
             }
-            .links li{
-
-                position:relative; 
-                float:left; 
-                border-right:1px solid #c0c0c0; 
-
-            }
-
-            .links li a{
-                color:#333;
-                text-decoration:none;
-                padding:5px 10px;
-                display:block;
-
+            .nav li {
+                font-family: 'Oswald', sans-serif;
+                font-size: 1.2em;
+                line-height: 40px;
+                height: 40px;
+                border-bottom: 1px solid #888;
             }
 
-            .links li a:hover{
-
-                background:#333; 
-                color:#fff; 
-                -webkit-box-shadow:0 3px 10px 0 #ccc; 
-                text-shadow:0px 0px 5px #fff; 
-
+            .nav a {
+                text-decoration: none;
+                color: #fff;
+                display: block;
+                transition: .3s background-color;
             }
 
-            .links li ul{
-                position:absolute; 
-                top:25px; 
-                left:0;
-                background-color:#fff; 
-                display:none;
-
+            .nav a:hover {
+                background-color: #005f5f;
             }
 
-
-
-            .all-content{
-
-                margin-left: 400px;
-                margin-top: 25px;
-
+            .nav a.active {
+                background-color: #fff;
+                color: #444;
+                cursor: default;
             }
-            #link ul{list-style-type: none;}
 
-            #link ul li a{text-decoration:none;} 
+            @media screen and (min-width: 600px) {
+                .nav li {
+                    width: 120px;
+                    border-bottom: none;
+                    height: 50px;
+                    line-height: 50px;
+                    font-size: 1.4em;
+                }
 
-            #title h1{font-family: arial; color: #2E8B57;}
+                /* Option 1 - Display Inline */
+                .nav li {
+                    display: inline-block;
+                    margin-right: -4px;
+                }
+
+                /* Options 2 - Float
+                .nav li {
+                  float: left;
+                }
+                .nav ul {
+                  overflow: auto;
+                  width: 600px;
+                  margin: 0 auto;
+                }
+                .nav {
+                  background-color: #444;
+                }
+                */
+            }
 
         </style>
-
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <title>Home</title>
     </head>
     <body>
 
-        <div class="all-content">
 
-            <div id="title">
-                <h1> Olá bem vindo à página de cadastro </h1> 
-            </div>
 
-            <br><br>
-
-            <div class="links1">
-                <ul class="links">
-                    <li/><a href="/projLFS/controller?command=aluno.consultarClientes"> Aluno </a><br><br>
-                    <li/><a href="/projLFS/controller?command=curso.consultarCurso"> Curso </a><br><br>
-                    <li/><a href="/projLFS/controller?command=endereco.consultarEndereco"> Endereço </a><br><br>
-                </ul>  
-            </div>
-
-            <div class="instrucao">
-                <h3> Instrução </h3>
-            </div>
+        <div class="nav">
+            <ul>
+                <li class="aluno"/><a href="/projLFS/controller?command=aluno.consultarClientes"> Aluno </a><br><br>
+                <li class="curso"/><a href="/projLFS/controller?command=curso.consultarCurso"> Curso </a><br><br>
+                <li class="endereco"/><a href="/projLFS/controller?command=endereco.consultarEndereco"> Endereço </a><br><br>
+            </ul> 
         </div>
+        <!--<div class="instrucao">
+            <h3> Instrução </h3>
+    </div>-->
+
     </body>
 </html>
