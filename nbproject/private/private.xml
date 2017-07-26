@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/web/WEB-INF/jsp/endereco/validarEndereco.jsp</file>
-            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/web/WEB-INF/jsp/endereco/validarExclusaoEndereco.jsp</file>
-            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/web/WEB-INF/jsp/aluno/validarAluno.jsp</file>
-            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/web/WEB-INF/jsp/aluno/validarExclusaoAluno.jsp</file>
+            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/src/java/br/mackenzie/fci/lfs/servlet/EnderecoController.java</file>
+            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/src/java/br/mackenzie/fci/lfs/servlet/CursoController.java</file>
+            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/web/WEB-INF/jsp/curso/consultarCurso.jsp</file>
+            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/web/WEB-INF/jsp/curso/incluirCurso.jsp</file>
         </group>
     </open-files>
 </project-private>
