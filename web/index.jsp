@@ -8,43 +8,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <title>Home</title>
-        <style>
-
-            .all-content{
-                
-                margin-left: 400px;
-                margin-top: 25px;
-
-            }
-            #link ul{list-style-type: none;}
-
-            #link ul li a{text-decoration:none;} 
-
-            #title h1{font-family: arial; color: #2E8B57;}
+        <style type="text/css">
 
         </style>
-
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <title>Home</title>
     </head>
+
     <body>
+        <nav id="menu">
+            <ul>
+                <li/><a href="/projLFS/controller?command=aluno.consultarClientes"> Aluno </a><br><br>
+                <li/><a href="/projLFS/controller?command=curso.consultarCurso"> Curso </a><br><br>
+                <li><a href="/projLFS/controller?command=endereco.consultarEndereco"> Endereço </a><br><br>
+            </ul> 
+        </nav>
+        <!--<div class="instrucao">
+    <h3> Instrução </h3>
+</div>-->
 
-        <div class="all-content">
-
-            <div id="title">
-                <h1> Olá bem vindo à página de cadastro </h1> 
-            </div>
-
-            <br><br>
-
-            <div id="link">
-                <ul>
-                    <li/><a href="/projLFS/controller?command=aluno.consultarClientes"> Aluno </a><br><br>
-                    <li/><a href="/projLFS/controller?command=curso.consultarCurso"> Curso </a><br><br>
-                    <li/><a href="/projLFS/controller?command=endereco.consultarEndereco"> Endereço </a><br><br>
-                </ul>  
-            </div>
-        </div>
     </body>
 </html>

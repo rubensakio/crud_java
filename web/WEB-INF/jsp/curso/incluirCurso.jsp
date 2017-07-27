@@ -144,7 +144,7 @@
 
                         <div class="campo">
                             <label for="nomeCurso">Curso</label><font color="red" size="2">*</font>
-                            <input type="text" name="nomeCurso" id="nomeCurso" style="width: 15em" value=""  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>
+                            <input type="text" name="nomeCurso" id="nomeCurso" style="width: 15em" value="" required>
                         </div>
 
                         <div class="campo">
@@ -154,31 +154,18 @@
 
                     </fieldset>
 
-
-
                     <div class="campo">
-                        <label for="email">Email</label><font color="red" size="2">*</font>
-                        <input type="email" name="email" id="email" style="width: 20em" value="" required>
-
+                        <label for="alunos">Aluno</label>
+                        <select name="alunos" id="alunos">
+                            <option value=""><c:out value="--Selecione--"/></option>
+                            <c:forEach var="aluno" items="${alunos}">
+                                <option value="${aluno.codAluno}">
+                                    <c:out value="${aluno.nome}"/>
+                                </option>
+                            </c:forEach>
+                        </select>
                     </div>
 
-                    <fieldset class="grupo">
-                        <div class="campo">
-                            <label for="telcomercial">Telefone</label><font color="red" size="2">*</font>
-                            <input type="text" name="telcomercial" id="telcomercial" style="width: 10em" value="" pattern="[0-9]{2} [0-9]{4}-[0-9]{4}$" maxlength="12" OnKeyPress="formatar('## ####-####', this)" required>
-                        </div>
-                        <div class="campo">
-                            <label for="celular">Celular</label>
-                            <input type="text" name="celular" id="celular" style="width: 10em" value="" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}$"  maxlength="13" OnKeyPress="formatar('## #####-####', this)">
-                        </div>
-
-
-                    </fieldset>
-
-                    <div class="campo">
-                        <label for="numMatricula">Matricula</label><font color="red" size="2">*</font>
-                        <input type="text" maxlength="8" name="numMatricula" id="numMatricula" pattern="[0-9]+$" required>
-                    </div>
 
                     <button type="submit" class="btn-send" name="submit"> Enviar</button> &nbsp;
                     <button class="btn-send"  onclick="location.href = '${pageContext.request.contextPath}/controller?command=aluno.consultarClientes'"> Voltar para lista</button>
