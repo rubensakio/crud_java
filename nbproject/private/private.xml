@@ -5,6 +5,9 @@
         <group>
             <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/src/java/br/mackenzie/fci/lfs/servlet/EnderecoController.java</file>
             <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/src/java/br/mackenzie/fci/lfs/servlet/CursoController.java</file>
+            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/web/index.jsp</file>
+            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/web/WEB-INF/jsp/endereco/incluirEndereco.jsp</file>
+            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/src/java/br/mackenzie/fci/lfs/dao/CursoDAO.java</file>
             <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/web/WEB-INF/jsp/curso/consultarCurso.jsp</file>
             <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/web/WEB-INF/jsp/curso/incluirCurso.jsp</file>
         </group>

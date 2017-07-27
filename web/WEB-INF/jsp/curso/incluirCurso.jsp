@@ -144,7 +144,7 @@
 
                         <div class="campo">
                             <label for="nomeCurso">Curso</label><font color="red" size="2">*</font>
-                            <input type="text" name="nomeCurso" id="nomeCurso" style="width: 15em" value=""  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>
+                            <input type="text" name="nomeCurso" id="nomeCurso" style="width: 15em" value="" required>
                         </div>
 
                         <div class="campo">
