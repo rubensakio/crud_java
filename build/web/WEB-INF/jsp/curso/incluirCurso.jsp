@@ -126,7 +126,7 @@
         </script>
 
 
-        <title> Cadastro </title>
+        <title> Cadastro de curso </title>
     </head>
     <body>
 

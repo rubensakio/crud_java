@@ -125,7 +125,7 @@
         </script>
 
 
-        <title> Cadastro </title>
+        <title> Cadastro de endereços </title>
     </head>
     <body>
 

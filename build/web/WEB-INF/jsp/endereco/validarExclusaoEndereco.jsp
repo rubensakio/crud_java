@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title> Validando atualização - Endereço </title>
+        <title> Validando exclusão - Endereço </title>
         <style>
 
             * {
