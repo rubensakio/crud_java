@@ -158,7 +158,7 @@
 
                         <div class="campo">
                             <label for="semestreAtual">Semestre atual</label><font color="red" size="2">*</font>
-                            <input type="text" name="semestreAtual" pattern="[0-9]+$" style="width: 5em" value="" id="semestreAtual" required>
+                            <input type="text" name="semestreAtual" pattern="[0-9]+$" style="width: 5em" value="${curso.semestreAtual}" id="semestreAtual" required>
                         </div>
 
                     </fieldset>
