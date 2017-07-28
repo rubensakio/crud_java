@@ -43,14 +43,14 @@
             }
             #title h1{font-family: arial; color: #2E8B57;}
         </style>
-        <title> Excluir endereço </title>
+        <title> Exclusão de endereço </title>
     </head>
     <body>
 
         <div class="all-content">
 
             <div id="title">
-                <h1> Alterar endereço</h1>
+                <h1> Removendo endereço do aluno</h1>
             </div>
             <div id="form-select">
                 <form method="post" action="${pageContext.request.contextPath}/controller?command=endereco.validarExclusaoEndereco">

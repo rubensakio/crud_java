@@ -43,14 +43,14 @@
             }
             #title h1{font-family: arial; color: #2E8B57;}
         </style>
-        <title> Alterar endereço </title>
+        <title> Exclusão de curso </title>
     </head>
     <body>
 
         <div class="all-content">
 
             <div id="title">
-                <h1> Excluir curso</h1>
+                <h1> Removendo curso que o aluno está fazendo</h1>
             </div>
             <div id="form-select">
                 <form method="post" action="${pageContext.request.contextPath}/controller?command=curso.validarExclusaoCurso">

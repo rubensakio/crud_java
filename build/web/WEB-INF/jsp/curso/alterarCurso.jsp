@@ -43,7 +43,7 @@
             }
             #title h1{font-family: arial; color: #2E8B57;}
         </style>
-        <title> Alterar endereço </title>
+        <title> Alterar curso </title>
     </head>
     <body>
 
