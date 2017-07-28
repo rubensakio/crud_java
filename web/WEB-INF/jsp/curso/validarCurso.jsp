@@ -4,7 +4,7 @@
     Author     : LFS
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <style>
 
             * {
@@ -128,7 +128,7 @@
         </script>
 
 
-        <title> Validando atualizaÃ§Ã£o - Curso </title>
+        <title> Validando atualização - Curso </title>
     </head>
     <body onload="document.getElementById('alunos').selectedIndex = ${curso.aluno.codAluno}">
 
@@ -140,11 +140,11 @@
 
                     <fieldset class="grupo">
                         <div class="campo">
-                            <label for="idCurso">CÃ³digo</label> 
+                            <label for="idCurso">Código</label> 
                             <input type="text" name="idCurso" id="idCurso" readonly="true" style="width: 2.5em" value="${curso.idCurso}" required>
                         </div>
                         <div class="campo">
-                            <label for="nomeInstituicao">Nome da InstituiÃ§Ã£o</label><font color="red" size="2">*</font> 
+                            <label for="nomeInstituicao">Nome da Instituição</label><font color="red" size="2">*</font> 
                             <input type="text" name="nomeInstituicao" id="nomeInstituicao" style="width: 20em" value="${curso.nomeInstituicao}" required>
                         </div>
                     </fieldset>

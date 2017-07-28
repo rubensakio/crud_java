@@ -39,7 +39,7 @@
             #title h1{font-family: arial; color: #2E8B57;}
 
         </style>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <title> Exclusão de alunos na lista </title>
     </head>
     <body>
