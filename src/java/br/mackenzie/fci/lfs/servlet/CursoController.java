@@ -85,6 +85,33 @@ public class CursoController extends HttpServlet {
             request.getRequestDispatcher("WEB-INF/jsp/curso/consultarCurso.jsp").forward(request, response);
 
         }
+        if ("curso.excluir".equalsIgnoreCase(request.getParameter("command"))) {
+
+            request.setAttribute("cursos", new CursoDAO().consultar());
+            request.getRequestDispatcher("WEB-INF/jsp/curso/alterarCurso.jsp").forward(request, response);
+        }
+        
+        if ("curso.validarExclusaoCurso".equalsIgnoreCase(request.getParameter("command"))) {
+            Curso curso = new Curso();
+            curso.setIdCurso(Integer.parseInt(request.getParameter("cursos")));
+            curso = new CursoDAO().listarPorID(curso);
+            request.setAttribute("alunos", new AlunoDAO().consultar());
+            request.setAttribute("curso", curso);
+            request.getRequestDispatcher("WEB-INF/jsp/curso/validarExclusaoCurso.jsp").forward(request, response);
+        }
+        
+        if ("curso.validar-exclusao".equalsIgnoreCase(request.getParameter("command"))) {
+            Curso curso = new Curso();
+            curso.setIdCurso(Integer.parseInt(request.getParameter("idCurso")));
+            curso.setNomeInstituicao(request.getParameter("nomeInstituicao"));
+            curso.setNomeCurso(request.getParameter("nomeCurso"));
+            curso.setSemestreAtual(Integer.parseInt(request.getParameter("semestreAtual")));
+            curso.setAluno(new Aluno(Integer.parseInt(request.getParameter("alunos"))));
+            new CursoDAO().atualizar(curso);
+            request.setAttribute("cursos", new CursoDAO().consultar());
+            request.getRequestDispatcher("WEB-INF/jsp/curso/consultarCurso.jsp").forward(request, response);
+
+        }
 
     }
 
