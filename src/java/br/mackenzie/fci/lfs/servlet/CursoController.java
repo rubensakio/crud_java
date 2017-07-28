@@ -37,29 +37,41 @@ public class CursoController extends HttpServlet {
             throws ServletException, IOException {
 
         if ("curso.consultarCurso".equalsIgnoreCase(request.getParameter("command"))) {
-            
+
             request.setAttribute("cursos", new CursoDAO().consultar());
             request.getRequestDispatcher("WEB-INF/jsp/curso/consultarCurso.jsp").forward(request, response);
         }
         if ("curso.formulario".equalsIgnoreCase(request.getParameter("command"))) {
-            
+
             request.setAttribute("alunos", new AlunoDAO().consultar());
             request.getRequestDispatcher("WEB-INF/jsp/curso/incluirCurso.jsp").forward(request, response);
         }
         if ("curso.inserir".equalsIgnoreCase(request.getParameter("command"))) {
-            
+
             Curso curso = new Curso();
             curso.setNomeInstituicao(request.getParameter("nomeInstituicao"));
             curso.setNomeCurso(request.getParameter("nomeCurso"));
             curso.setSemestreAtual(Integer.parseInt(request.getParameter("semestreAtual")));
             curso.setAluno(new Aluno(Integer.parseInt(request.getParameter("alunos"))));
-            
+
             new CursoDAO().inserir(curso);
-            
+
             request.setAttribute("cursos", new CursoDAO().consultar());
             request.getRequestDispatcher("WEB-INF/jsp/curso/consultarCurso.jsp").forward(request, response);
-            
 
+        }
+        if ("curso.atualizar".equalsIgnoreCase(request.getParameter("command"))) {
+
+            request.setAttribute("cursos", new CursoDAO().consultar());
+            request.getRequestDispatcher("WEB-INF/jsp/curso/alterarCurso.jsp").forward(request, response);
+        }
+        if ("curso.validarCurso".equalsIgnoreCase(request.getParameter("command"))) {
+            Curso curso = new Curso();
+            curso.setIdCurso(Integer.parseInt(request.getParameter("cursos")));
+            curso = new CursoDAO().listarPorID(curso);
+            request.setAttribute("alunos", new AlunoDAO().consultar());
+            request.setAttribute("curso", curso);
+            request.getRequestDispatcher("WEB-INF/jsp/curso/validarCurso.jsp").forward(request, response);
         }
 
     }
