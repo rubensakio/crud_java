@@ -137,7 +137,7 @@
                 <fieldset>
                     <div class="campo">
                         <label for="nome">Nome completo</label><font color="red" size="2">*</font> 
-                        <input type="text" name="nome" id="nome" style="width: 20em" value="" required>
+                        <input type="text" name="nome" placeholder="Nome Completo" id="nome" style="width: 20em" value="" required>
                     </div>
 
 
@@ -145,12 +145,12 @@
 
                         <div class="campo">
                             <label for="cpf">CPF</label><font color="red" size="2">*</font>
-                            <input type="text" name="cpf" id="cpf" style="width: 10em" value=""  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>
+                            <input type="text" name="cpf" placeholder="000.000.000-00" id="cpf" style="width: 10em" value=""  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>
                         </div>
 
                         <div class="campo">
                             <label for="rg">RG</label><font color="red" size="2">*</font>
-                            <input type="text" name="rg" style="width: 10em" value="" id="rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" maxlength="12" OnKeyPress="formatar('##.###.###-#', this)" required>
+                            <input type="text" name="rg" style="width: 10em" placeholder="00.000.000-0" value="" id="rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" maxlength="12" OnKeyPress="formatar('##.###.###-#', this)" required>
                         </div>
 
                     </fieldset>
@@ -166,18 +166,18 @@
 
                     <div class="campo">
                         <label for="email">Email</label><font color="red" size="2">*</font>
-                        <input type="email" name="email" id="email" style="width: 20em" value="" required>
+                        <input type="email" name="email" placeholder="Seu email" id="email" style="width: 20em" value="" required>
 
                     </div>
 
                     <fieldset class="grupo">
                         <div class="campo">
                             <label for="telcomercial">Telefone</label><font color="red" size="2">*</font>
-                            <input type="text" name="telcomercial" id="telcomercial" style="width: 10em" value="" pattern="[0-9]{2} [0-9]{4}-[0-9]{4}$" maxlength="12" OnKeyPress="formatar('## ####-####', this)" required>
+                            <input type="text" name="telcomercial" placeholder="00 0000-0000" id="telcomercial" style="width: 10em" value="" pattern="[0-9]{2} [0-9]{4}-[0-9]{4}$" maxlength="12" OnKeyPress="formatar('## ####-####', this)" required>
                         </div>
                         <div class="campo">
                             <label for="celular">Celular</label>
-                            <input type="text" name="celular" id="celular" style="width: 10em" value="" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}$"  maxlength="13" OnKeyPress="formatar('## #####-####', this)">
+                            <input type="text" name="celular" id="celular" style="width: 10em" placeholder="00 00000-0000" value="" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}$"  maxlength="13" OnKeyPress="formatar('## #####-####', this)">
                         </div>
 
 
@@ -185,7 +185,7 @@
 
                     <div class="campo">
                         <label for="numMatricula">Matricula</label><font color="red" size="2">*</font>
-                        <input type="text" maxlength="8" name="numMatricula" id="numMatricula" pattern="[0-9]+$" required>
+                        <input type="text" maxlength="8" name="numMatricula" placeholder="00000000" id="numMatricula" pattern="[0-9]{8}$" required>
                     </div>
 
                     <button type="submit" class="btn-send" name="submit"> Enviar</button> &nbsp;

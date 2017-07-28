@@ -81,7 +81,7 @@
                 padding-right: 1em;
             }
             campo input:focus, .campo select:focus, .campo textarea:focus {
-                background: blue;
+                background: #fff;
             }
             .campo label.checkbox {
                 color: #000;
@@ -137,19 +137,19 @@
                 <fieldset>
                     <div class="campo">
                         <label for="nomeInstituicao">Nome da Instituição</label><font color="red" size="2">*</font> 
-                        <input type="text" name="nomeInstituicao" id="nomeInstituicao" style="width: 20em" value="" required>
+                        <input type="text" name="nomeInstituicao" placeholder="Instituição" id="nomeInstituicao" style="width: 20em" value="" required>
                     </div>
 
                     <fieldset class="grupo">
 
                         <div class="campo">
                             <label for="nomeCurso">Curso</label><font color="red" size="2">*</font>
-                            <input type="text" name="nomeCurso" id="nomeCurso" style="width: 15em" value="" required>
+                            <input type="text" placeholder="Seu curso" name="nomeCurso" id="nomeCurso" style="width: 15em" value="" required>
                         </div>
 
                         <div class="campo">
                             <label for="semestreAtual">Semestre atual</label><font color="red" size="2">*</font>
-                            <input type="text" name="semestreAtual" style="width: 5em" value="" id="semestreAtual" required>
+                            <input type="text" name="semestreAtual" pattern="[0-9]+$" style="width: 5em" value="" id="semestreAtual" required>
                         </div>
 
                     </fieldset>
@@ -168,7 +168,7 @@
 
 
                     <button type="submit" class="btn-send" name="submit"> Enviar</button> &nbsp;
-                    <button class="btn-send"  onclick="location.href = '${pageContext.request.contextPath}/controller?command=aluno.consultarClientes'"> Voltar para lista</button>
+                    <button class="btn-send"  onclick="location.href = '${pageContext.request.contextPath}/controller?command=curso.consultarCurso'"> Voltar para lista</button>
                 </fieldset>
             </form>
 

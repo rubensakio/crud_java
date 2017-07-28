@@ -137,7 +137,7 @@
 
                     <div class="campo">
                         <label for="nomeEndereco">Endereço</label><font color="red" size="2">*</font> 
-                        <input type="text" name="nomeEndereco" id="nomeEndereco" style="width: 20em" value="" id="nomeEndereco" required>
+                        <input type="text" name="nomeEndereco" placeholder="Seu endereço" id="nomeEndereco" style="width: 20em" value="" id="nomeEndereco" required>
                     </div>
 
                     <fieldset class="grupo">
@@ -149,32 +149,32 @@
 
                         <div class="campo">
                             <label for="complemento">Complemento</label>
-                            <input type="text" name="complemento" style="width: 10em" value="" id="complemento" >
+                            <input type="text" name="complemento" placeholder="Complemento"  style="width: 10em" value="" id="complemento" >
                         </div>
 
                     </fieldset>
 
                     <div class="campo">
                         <label for="bairro">Bairro</label><font color="red" size="2">*</font>
-                        <input type="text" name="bairro" id="bairro" style="width: 20em" value="" required>
+                        <input type="text" name="bairro" placeholder="Bairro" id="bairro" style="width: 20em" value="" required>
                     </div>
 
                     <fieldset class="grupo">
 
                         <div class="campo">
                             <label for="cidade">Cidade</label><font color="red" size="2">*</font>
-                            <input type="text" name="cidade" id="cidade" required>
+                            <input type="text" name="cidade" placeholder="Cidade" id="cidade" required>
                         </div>
 
                         <div class="campo">
                             <label for="uf">UF</label><font color="red" size="2">*</font>
-                            <input type="text" size="4" maxlength="2" name="uf" id="uf" required>
+                            <input type="text" size="4" placeholder="UF" maxlength="2" name="uf" id="uf" required>
                         </div>
 
                     </fieldset>
                     <div class="campo">
                         <label for="cep">CEP</label><font color="red" size="2">*</font>
-                        <input type="text" name="cep" id="cep" pattern="[0-9]{5}-[0-9]{3}$" maxlength="9" OnKeyPress="formatar('#####-###', this)" required>
+                        <input type="text" name="cep" placeholder="00000-000" id="cep" pattern="[0-9]{5}-[0-9]{3}$" maxlength="9" OnKeyPress="formatar('#####-###', this)" required>
                     </div>
 
                     <div class="campo">
