@@ -127,7 +127,7 @@
         </script>
 
 
-        <title> Validando atualização - Curso </title>
+        <title> Validando exclusão - Curso </title>
     </head>
     <body onload="document.getElementById('alunos').selectedIndex = ${curso.aluno.codAluno}">
 
