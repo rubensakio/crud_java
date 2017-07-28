@@ -80,6 +80,9 @@ public class CursoController extends HttpServlet {
             curso.setNomeCurso(request.getParameter("nomeCurso"));
             curso.setSemestreAtual(Integer.parseInt(request.getParameter("semestreAtual")));
             curso.setAluno(new Aluno(Integer.parseInt(request.getParameter("alunos"))));
+            new CursoDAO().atualizar(curso);
+            request.setAttribute("cursos", new CursoDAO().consultar());
+            request.getRequestDispatcher("WEB-INF/jsp/curso/consultarCurso.jsp").forward(request, response);
 
         }
 
