@@ -73,6 +73,15 @@ public class CursoController extends HttpServlet {
             request.setAttribute("curso", curso);
             request.getRequestDispatcher("WEB-INF/jsp/curso/validarCurso.jsp").forward(request, response);
         }
+        if ("curso.validar-atualizacao".equalsIgnoreCase(request.getParameter("command"))) {
+            Curso curso = new Curso();
+            curso.setIdCurso(Integer.parseInt(request.getParameter("idCurso")));
+            curso.setNomeInstituicao(request.getParameter("nomeInstituicao"));
+            curso.setNomeCurso(request.getParameter("nomeCurso"));
+            curso.setSemestreAtual(Integer.parseInt(request.getParameter("semestreAtual")));
+            curso.setAluno(new Aluno(Integer.parseInt(request.getParameter("alunos"))));
+
+        }
 
     }
 
