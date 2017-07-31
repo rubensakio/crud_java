@@ -134,7 +134,7 @@
 
         <div class="all-content">     
 
-            <form class="form" method="post" action="${pageContext.request.contextPath}/controller?command=curso.validar-atualizacao">
+            <form class="form" method="post" action="${pageContext.request.contextPath}/controller?command=curso.validar-exclusao">
                 <fieldset>
 
                     <fieldset class="grupo">
