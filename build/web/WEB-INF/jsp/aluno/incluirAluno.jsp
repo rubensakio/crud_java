@@ -163,6 +163,14 @@
                             </label>
                         </c:forEach>
                     </div>
+                    <div class="campo">
+                        <label></label>
+                        <c:forEach var="sexo" items="${sexos}">
+                            <label class="checkbox">
+                                <input type="radio" name="gender" value="${sexo.idSexo}" required> ${sexo.sexo}
+                            </label>
+                        </c:forEach>
+                    </div>
 
                     <div class="campo">
                         <label for="email">Email</label><font color="red" size="2">*</font>

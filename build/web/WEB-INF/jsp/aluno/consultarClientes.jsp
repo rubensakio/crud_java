@@ -156,7 +156,7 @@
 
                             <td><c:out value="${aluno.sexo.sexo}"/></td> 
                             
-                            <td><c:out value="${aluno.estadoCivil.sexo}"/></td> 
+                            <td><c:out value="${aluno.estadoCivil.status}"/></td> 
 
                         </tr>
                     </c:forEach>

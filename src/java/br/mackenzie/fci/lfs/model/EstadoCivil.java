@@ -12,8 +12,36 @@ import java.io.Serializable;
  * @author LFS
  */
 public class EstadoCivil implements Serializable {
-    
+
     private Integer idEstadoCivil;
     private String status;
-    
+
+    public EstadoCivil() {
+    }
+
+    public EstadoCivil(Integer idEstadoCivil) {
+        this.idEstadoCivil = idEstadoCivil;
+    }
+
+    public EstadoCivil(Integer idEstadoCivil, String status) {
+        this.idEstadoCivil = idEstadoCivil;
+        this.status = status;
+    }
+
+    public Integer getIdEstadoCivil() {
+        return idEstadoCivil;
+    }
+
+    public void setIdEstadoCivil(Integer idEstadoCivil) {
+        this.idEstadoCivil = idEstadoCivil;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
 }
