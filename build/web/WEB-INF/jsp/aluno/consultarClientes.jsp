@@ -131,8 +131,9 @@
                         <th>Telefone</th> 
                         <th>Celular</th> 
                         <th>Matricula</th> 
-                        <th>Sexo</th> 
-                    </tr>
+                        <th>Sexo</th>
+                        <th>Estado Civil</th>
+                      </tr>
 
                     <c:forEach var="aluno" items="${alunos}">
                         <tr>
@@ -154,6 +155,8 @@
                             <td><c:out value="${aluno.numMatricula}"/></td> 
 
                             <td><c:out value="${aluno.sexo.sexo}"/></td> 
+                            
+                            <td><c:out value="${aluno.estadoCivil.sexo}"/></td> 
 
                         </tr>
                     </c:forEach>
