@@ -73,7 +73,7 @@
                 left: 20%;
                 margin-right: -50%;
                 font-family: sans-serif;
-                
+
             }
             .instrucao #sub-title h3{
                 text-align: center;
@@ -102,7 +102,6 @@
                 <div id="menu">
                     <ul>
                         <li><a href="/projLFS/controller?command=aluno.consultarClientes"> Aluno </a></li>
-                        <li><a href="/projLFS/controller?command=endereco.consultarEndereco"> Endereço </a></li>
                         <li><a href="/projLFS/controller?command=curso.consultarCurso"> Curso </a></li>
 
                     </ul>
@@ -117,8 +116,7 @@
                     <div id="text-essay">
                         <p> Siga as instruções em ordem </p><br>
                             <p> <b>Primeiro passo:</b> clique em Alunos e cadastre-se com seus dados pessoais</p>
-                            <p> <b>Segundo passo:</b> clique em Endereço e informe seu endereço residencial </p>
-                            <p> <b>Terceiro passo:</b> cadastre o seu curso em Curso </p>
+                            <p> <b>Segundo passo:</b> cadastre o seu curso em Curso </p>
                     </div>
             </div>
         </div>
