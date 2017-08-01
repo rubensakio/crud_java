@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/src/java/br/mackenzie/fci/lfs/dao/SexoDAO.java</file>
-            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/web/index.jsp</file>
-            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/web/WEB-INF/jsp/aluno/consultarClientes.jsp</file>
-            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/src/java/br/mackenzie/fci/lfs/model/Aluno.java</file>
-            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/src/java/br/mackenzie/fci/lfs/dao/EstadoCivilDAO.java</file>
-            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/web/WEB-INF/jsp/aluno/incluirAluno.jsp</file>
-            <file>file:/C:/Users/LFS/Desktop/Rubens/projLFS/src/java/br/mackenzie/fci/lfs/model/EstadoCivil.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
