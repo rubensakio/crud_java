@@ -191,7 +191,7 @@
                             <input type="text" name="naturalidade" placeholder="Naturalidade" id="naturalidade" style="width: 10em" value="" required>
                         </div>
                         <div class="campo">
-                            <label for="uf">UF</label>
+                            <label for="uf">UF</label><font color="red" size="2">*</font>
                             <input type="text" name="uf" id="uf" style="width: 2.5em" placeholder="UF" value="" required>
                         </div>                        
                     </fieldset>
