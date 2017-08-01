@@ -24,9 +24,8 @@ public class Aluno implements Serializable {
     private String uf;
     private Integer numMatricula;
     private Sexo sexo;
-    private EstadoCivil estadoCivil;
 
-    public Aluno(Integer codAluno, String nome, String cpf, String rg, String email, String celular, String telefone, String naturalidade, String uf, Integer numMatricula, Sexo sexo, EstadoCivil estadoCivil) {
+    public Aluno(Integer codAluno, String nome, String cpf, String rg, String email, String celular, String telefone, String naturalidade, String uf, Integer numMatricula, Sexo sexo) {
         this.codAluno = codAluno;
         this.nome = nome;
         this.cpf = cpf;
@@ -38,7 +37,7 @@ public class Aluno implements Serializable {
         this.uf = uf;
         this.numMatricula = numMatricula;
         this.sexo = sexo;
-        this.estadoCivil = estadoCivil;
+
     }
 
     public Aluno(Integer codAluno, String nome) {
@@ -130,14 +129,6 @@ public class Aluno implements Serializable {
 
     public void setNumMatricula(Integer numMatricula) {
         this.numMatricula = numMatricula;
-    }
-
-    public EstadoCivil getEstadoCivil() {
-        return estadoCivil;
-    }
-
-    public void setEstadoCivil(EstadoCivil estadoCivil) {
-        this.estadoCivil = estadoCivil;
     }
 
     public String getUf() {

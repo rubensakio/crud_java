@@ -29,7 +29,7 @@
             }
 
             .all-content{
-                
+
                 min-height: 85%;
                 display: -webkit-flex;
                 display: flex;
@@ -132,7 +132,7 @@
 
 
         <div class="all-content">     
-          
+
             <form class="form" method="post" action="${pageContext.request.contextPath}/controller?command=aluno.inserir">
                 <fieldset>
                     <div class="campo">
@@ -155,16 +155,9 @@
 
                     </fieldset>
 
+
                     <div class="campo">
                         <label>Sexo</label>
-                        <c:forEach var="sexo" items="${sexos}">
-                            <label class="checkbox">
-                                <input type="radio" name="gender" value="${sexo.idSexo}" required> ${sexo.sexo}
-                            </label>
-                        </c:forEach>
-                    </div>
-                    <div class="campo">
-                        <label></label>
                         <c:forEach var="sexo" items="${sexos}">
                             <label class="checkbox">
                                 <input type="radio" name="gender" value="${sexo.idSexo}" required> ${sexo.sexo}
@@ -189,6 +182,18 @@
                         </div>
 
 
+                    </fieldset>
+
+                    <fieldset class="grupo">
+
+                        <div class="campo">
+                            <label for="naturalidade">Naturalidade</label><font color="red" size="2">*</font>
+                            <input type="text" name="naturalidade" placeholder="Naturalidade" id="naturalidade" style="width: 10em" value="" required>
+                        </div>
+                        <div class="campo">
+                            <label for="uf">UF</label>
+                            <input type="text" name="uf" id="uf" style="width: 2.5em" placeholder="UF" value="" required>
+                        </div>                        
                     </fieldset>
 
                     <div class="campo">

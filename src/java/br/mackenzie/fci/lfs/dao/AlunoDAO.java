@@ -6,7 +6,6 @@
 package br.mackenzie.fci.lfs.dao;
 
 import br.mackenzie.fci.lfs.model.Aluno;
-import br.mackenzie.fci.lfs.model.EstadoCivil;
 import br.mackenzie.fci.lfs.model.Sexo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -28,7 +27,7 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
     public void inserir(Aluno aluno) {
 
         try {
-            String sql = "INSERT INTO lfs.aluno (nome,cpf,rg,email,celular,telefone,naturalidade,uf,numMatricula,idSexo,idEstadoCivil) values(?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO lfs.aluno (nome,cpf,rg,email,celular,telefone,naturalidade,uf,numMatricula,idSexo) values(?,?,?,?,?,?,?,?,?,?)";
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, aluno.getNome());
@@ -41,7 +40,6 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
             ps.setString(8, aluno.getUf());
             ps.setInt(9, aluno.getNumMatricula());
             ps.setInt(10, aluno.getSexo().getIdSexo());
-            ps.setInt(11, aluno.getEstadoCivil().getIdEstadoCivil());
             ps.execute();
             c.close();
         } catch (SQLException | ClassNotFoundException ex) {
@@ -53,7 +51,7 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
     @Override
     public void atualizar(Aluno aluno) {
         try {
-            String sql = "UPDATE lfs.aluno SET nome=?, cpf=?, rg=?, email=?, celular=?, telefone=?, naturalidade=?,uf=?, numMatricula=?, idSexo=?,idEstadoCivil=? WHERE idAluno=?";
+            String sql = "UPDATE lfs.aluno SET nome=?, cpf=?, rg=?, email=?, celular=?, telefone=?, naturalidade=?, uf=?, numMatricula=?, idSexo=?, WHERE idAluno=?";
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, aluno.getNome());
@@ -66,8 +64,7 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
             ps.setString(8, aluno.getUf());
             ps.setInt(9, aluno.getNumMatricula());
             ps.setInt(10, aluno.getSexo().getIdSexo());
-            ps.setInt(11, aluno.getEstadoCivil().getIdEstadoCivil());
-            ps.setInt(12, aluno.getCodAluno());
+            ps.setInt(11, aluno.getCodAluno());
             ps.execute();
             c.close();
         } catch (ClassNotFoundException | SQLException ex) {
@@ -97,7 +94,7 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
                 aluno.setUf(rs.getString("uf"));
                 aluno.setNumMatricula(rs.getInt("numMatricula"));
                 aluno.setSexo(new Sexo(rs.getInt("idSexo")));
-                aluno.setEstadoCivil(new EstadoCivil(rs.getInt("idEstadoCivil")));
+
             }
 
         } catch (SQLException | ClassNotFoundException ex) {
@@ -128,11 +125,11 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
         try {
             Connection connection = Conexao.getInstance().getConnection();
             Statement statement = connection.createStatement();
-            ResultSet result = statement.executeQuery("select * from lfs.aluno as a INNER JOIN lfs.sexo as s ON a.idSexo = s.idSexo order by a.idAluno");
+            ResultSet result = statement.executeQuery("select * from lfs.aluno as A INNER JOIN lfs.sexo as S ON A.idSexo = S.idSexo ORDER BY A.idAluno");
 
             while (result.next()) {
 
-                alunos.add(new Aluno(result.getInt("idAluno"),
+                /*alunos.add(new Aluno(result.getInt("idAluno"),
                         result.getString("nome"),
                         new Sexo(result.getInt("idSexo"),
                                 result.getString("sexo")),
@@ -141,8 +138,19 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
                         result.getString("email"),
                         result.getString("celular"),
                         result.getString("telefone"),
-                        result.getInt("numMatricula")));
-
+                        result.getInt("numMatricula"))); */
+                alunos.add(new Aluno(result.getInt("idAluno"),
+                        result.getString("nome"),
+                        result.getString("cpf"),
+                        result.getString("rg"),
+                        result.getString("email"),
+                        result.getString("celular"),
+                        result.getString("telefone"),
+                        result.getString("naturalidade"),
+                        result.getString("uf"),
+                        result.getInt("numMatricula"),
+                        new Sexo(result.getInt("idSexo"),
+                                result.getString("sexo"))));
             }
         } catch (ClassNotFoundException | SQLException ex) {
 
