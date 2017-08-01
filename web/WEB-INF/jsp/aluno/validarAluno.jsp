@@ -166,7 +166,7 @@
                             </c:forEach>
                         </select>
                     </div>
-                            
+
                     <div class="campo">
                         <label for="email">Email:</label>
                         <input type="email" name="email" style="width: 20em" value="${aluno.email}" required>
@@ -184,6 +184,17 @@
                         </div>
                     </fieldset>
 
+                    <fieldset class="grupo">
+
+                        <div class="campo">
+                            <label for="naturalidade">Naturalidade</label><font color="red" size="2">*</font>
+                            <input type="text" name="naturalidade" id="naturalidade" style="width: 10em" value="${aluno.naturalidade}" required>
+                        </div>
+                        <div class="campo">
+                            <label for="uf">UF</label><font color="red" size="2">*</font>
+                            <input type="text" name="uf" id="uf" style="width: 2.5em"  value="${aluno.uf}" required>
+                        </div>                        
+                    </fieldset>
 
                     <div class="campo">
                         <label for="numMatricula">Matricula:</label>

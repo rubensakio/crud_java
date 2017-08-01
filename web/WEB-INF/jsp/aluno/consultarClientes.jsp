@@ -128,11 +128,13 @@
                         <th>CPF</th> 
                         <th>R.G.</th> 
                         <th>Usuário</th>
-                        <th>Telefone</th> 
                         <th>Celular</th> 
+                        <th>Telefone</th> 
+                        <th>Naturalidade</th> 
+                        <th>UF</th> 
                         <th>Matricula</th> 
                         <th>Sexo</th>
-                        <th>Estado Civil</th>
+                        
                     </tr>
 
                     <c:forEach var="aluno" items="${alunos}">
