@@ -6,6 +6,7 @@
 package br.mackenzie.fci.lfs.dao;
 
 import br.mackenzie.fci.lfs.model.Aluno;
+import br.mackenzie.fci.lfs.model.EstadoCivil;
 import br.mackenzie.fci.lfs.model.Sexo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,7 +28,7 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
     public void inserir(Aluno aluno) {
 
         try {
-            String sql = "INSERT INTO lfs.aluno (nome,cpf,rg,email,celular,telefone,numMatricula,idSexo) values(?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO lfs.aluno (nome,cpf,rg,email,celular,telefone,naturalidade,uf,numMatricula,idSexo,idEstadoCivil) values(?,?,?,?,?,?,?,?,?,?,?)";
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, aluno.getNome());
@@ -36,8 +37,11 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
             ps.setString(4, aluno.getEmail());
             ps.setString(5, aluno.getCelular());
             ps.setString(6, aluno.getTelefone());
-            ps.setInt(7, aluno.getNumMatricula());
-            ps.setInt(8, aluno.getSexo().getIdSexo());
+            ps.setString(7, aluno.getNaturalidade());
+            ps.setString(8, aluno.getUf());
+            ps.setInt(9, aluno.getNumMatricula());
+            ps.setInt(10, aluno.getSexo().getIdSexo());
+            ps.setInt(11, aluno.getEstadoCivil().getIdEstadoCivil());
             ps.execute();
             c.close();
         } catch (SQLException | ClassNotFoundException ex) {
@@ -49,7 +53,7 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
     @Override
     public void atualizar(Aluno aluno) {
         try {
-            String sql = "UPDATE lfs.aluno SET nome=?, cpf=?, rg=?, email=?, celular=?, telefone=?, numMatricula=?, idSexo=? WHERE idAluno=?";
+            String sql = "UPDATE lfs.aluno SET nome=?, cpf=?, rg=?, email=?, celular=?, telefone=?, naturalidade=?,uf=?, numMatricula=?, idSexo=?,idEstadoCivil=? WHERE idAluno=?";
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, aluno.getNome());
@@ -58,9 +62,12 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
             ps.setString(4, aluno.getEmail());
             ps.setString(5, aluno.getCelular());
             ps.setString(6, aluno.getTelefone());
-            ps.setInt(7, aluno.getNumMatricula());
-            ps.setInt(8, aluno.getSexo().getIdSexo());
-            ps.setInt(9, aluno.getCodAluno());
+            ps.setString(7, aluno.getNaturalidade());
+            ps.setString(8, aluno.getUf());
+            ps.setInt(9, aluno.getNumMatricula());
+            ps.setInt(10, aluno.getSexo().getIdSexo());
+            ps.setInt(11, aluno.getEstadoCivil().getIdEstadoCivil());
+            ps.setInt(12, aluno.getCodAluno());
             ps.execute();
             c.close();
         } catch (ClassNotFoundException | SQLException ex) {
@@ -86,8 +93,11 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
                 aluno.setEmail(rs.getString("email"));
                 aluno.setCelular(rs.getString("celular"));
                 aluno.setTelefone(rs.getString("telefone"));
+                aluno.setNaturalidade(rs.getString("naturalidade"));
+                aluno.setUf(rs.getString("uf"));
                 aluno.setNumMatricula(rs.getInt("numMatricula"));
                 aluno.setSexo(new Sexo(rs.getInt("idSexo")));
+                aluno.setEstadoCivil(new EstadoCivil(rs.getInt("idEstadoCivil")));
             }
 
         } catch (SQLException | ClassNotFoundException ex) {

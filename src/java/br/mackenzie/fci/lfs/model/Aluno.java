@@ -15,25 +15,29 @@ public class Aluno implements Serializable {
 
     private Integer codAluno;
     private String nome;
-    private Sexo sexo;
     private String cpf;
     private String rg;
     private String email;
     private String celular;
     private String telefone;
+    private String naturalidade;
+    private String uf;
     private Integer numMatricula;
+    private Sexo sexo;
     private EstadoCivil estadoCivil;
 
-    public Aluno(Integer codAluno, String nome, Sexo sexo, String cpf, String rg, String email, String celular, String telefone, Integer numMatricula, EstadoCivil estadoCivil) {
+    public Aluno(Integer codAluno, String nome, String cpf, String rg, String email, String celular, String telefone, String naturalidade, String uf, Integer numMatricula, Sexo sexo, EstadoCivil estadoCivil) {
         this.codAluno = codAluno;
         this.nome = nome;
-        this.sexo = sexo;
         this.cpf = cpf;
         this.rg = rg;
         this.email = email;
         this.celular = celular;
         this.telefone = telefone;
+        this.naturalidade = naturalidade;
+        this.uf = uf;
         this.numMatricula = numMatricula;
+        this.sexo = sexo;
         this.estadoCivil = estadoCivil;
     }
 
@@ -134,6 +138,22 @@ public class Aluno implements Serializable {
 
     public void setEstadoCivil(EstadoCivil estadoCivil) {
         this.estadoCivil = estadoCivil;
+    }
+
+    public String getUf() {
+        return uf;
+    }
+
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
+
+    public String getNaturalidade() {
+        return naturalidade;
+    }
+
+    public void setNaturalidade(String naturalidade) {
+        this.naturalidade = naturalidade;
     }
 
 }
