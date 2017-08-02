@@ -142,7 +142,7 @@
                     
                     <div class="campo">
                         <label for="dataNascimento">Data de nascimento</label><font color="red" size="2">*</font> 
-                        <input type="text" name="dataNascimento" placeholder="01/01/1900" id="nome" style="width: 10em" value="" required>
+                        <input type="text" name="dataNascimento" placeholder="01/01/1900" OnKeyPress="formatar('##/##/####', this)"  id="dataNascimento" style="width: 10em" value="" required>
                     </div>
                     
 

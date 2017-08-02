@@ -30,7 +30,7 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
     public void inserir(Aluno aluno) {
 
         try {
-            String sql = "INSERT INTO lfs.aluno (nome,dataNascimento,cpf,rg,email,celular,telefone,naturalidade,uf,numMatricula,idSexo) values(?,?,?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO lfs.aluno (nome,dataNascimento,cpf,rg,email,celular,telefone,naturalidade,uf,numMatricula,idSexo) values(?,?,?,?,?,?,?,?,?,?,?)";
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, aluno.getNome());

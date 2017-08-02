@@ -11,6 +11,11 @@ import br.mackenzie.fci.lfs.model.Aluno;
 import br.mackenzie.fci.lfs.model.Sexo;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -115,17 +120,45 @@ public class AlunoController extends HttpServlet {
             }
 
             if ("aluno.inserir".equals(request.getParameter("command"))) {
+
+                String nome = request.getParameter("nome");
+
+                String dataNascimento = request.getParameter("dataNascimento");
+
+                Calendar dtNascimento = null;
+
+                try {
+                    Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dataNascimento);
+                    dtNascimento = Calendar.getInstance();
+                    dtNascimento.setTime(date);
+                } catch (ParseException e) {
+                    System.out.println("Erro de conversão da data");
+                    return; //para a execução do método
+                }
+
+                String cpf = request.getParameter("cpf");
+                String rg = request.getParameter("rg");
+                Sexo sexo = new Sexo(Integer.parseInt(request.getParameter("gender")));
+                String email = request.getParameter("email");
+                String celular = request.getParameter("celular");
+                String telefone = request.getParameter("telcomercial");
+                String naturalidade = request.getParameter("naturalidade");
+                String uf = request.getParameter("uf");
+                Integer numMatricula = Integer.parseInt(request.getParameter("numMatricula"));
+
                 Aluno aluno = new Aluno();
-                aluno.setNome(request.getParameter("nome"));
-                aluno.setCpf(request.getParameter("cpf"));
-                aluno.setRg(request.getParameter("rg"));
-                aluno.setSexo(new Sexo(Integer.parseInt(request.getParameter("gender"))));
-                aluno.setEmail(request.getParameter("email"));
-                aluno.setCelular(request.getParameter("celular"));
-                aluno.setTelefone(request.getParameter("telcomercial"));
-                aluno.setNaturalidade(request.getParameter("naturalidade"));
-                aluno.setUf(request.getParameter("uf"));
-                aluno.setNumMatricula(Integer.parseInt(request.getParameter("numMatricula")));
+
+                aluno.setNome(nome);
+                aluno.setDataNascimento(dtNascimento);
+                aluno.setCpf(cpf);
+                aluno.setRg(rg);
+                aluno.setSexo(sexo);
+                aluno.setEmail(email);
+                aluno.setCelular(celular);
+                aluno.setTelefone(telefone);
+                aluno.setNaturalidade(naturalidade);
+                aluno.setUf(uf);
+                aluno.setNumMatricula(numMatricula);
 
                 new AlunoDAO().inserir(aluno);
 
