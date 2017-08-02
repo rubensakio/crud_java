@@ -124,7 +124,8 @@
                 <table width="95%" border="1">
                     <tr>
                         <th>ID</th> 
-                        <th>Nome do Aluno</th> 
+                        <th>Nome do Aluno</th>
+                        <th> Data de Nascimento</th>
                         <th>CPF</th> 
                         <th>R.G.</th> 
                         <th>Usuário</th>
@@ -143,6 +144,8 @@
                             <td><b><c:out value="${aluno.codAluno}"/></b></td> 
 
                             <td><c:out value="${aluno.nome}"/></td> 
+                            
+                            <td><c:out value="${aluno.dataNascimento.time}"/></td> 
 
                             <td><c:out value="${aluno.cpf}"/></td> 
 
