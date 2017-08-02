@@ -139,6 +139,12 @@
                         <label for="nome">Nome completo</label><font color="red" size="2">*</font> 
                         <input type="text" name="nome" placeholder="Nome Completo" id="nome" style="width: 20em" value="" required>
                     </div>
+                    
+                    <div class="campo">
+                        <label for="dataNascimento">Data de nascimento</label><font color="red" size="2">*</font> 
+                        <input type="text" name="dataNascimento" placeholder="01/01/1900" id="nome" style="width: 10em" value="" required>
+                    </div>
+                    
 
 
                     <fieldset class="grupo">

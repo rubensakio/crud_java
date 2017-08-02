@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -135,7 +136,7 @@
                         <th>UF</th> 
                         <th>Matricula</th> 
                         <th>Sexo</th>
-                        
+
                     </tr>
 
                     <c:forEach var="aluno" items="${alunos}">
@@ -145,7 +146,7 @@
 
                             <td><c:out value="${aluno.nome}"/></td> 
                             
-                            <td><c:out value="${aluno.dataNascimento.time}"/></td> 
+                            <td><fmt:formatDate value="${aluno.dataNascimento.time}" pattern="dd/MM/yyyy"/></td>
 
                             <td><c:out value="${aluno.cpf}"/></td> 
 
@@ -164,7 +165,7 @@
                             <td><c:out value="${aluno.numMatricula}"/></td> 
 
                             <td><c:out value="${aluno.sexo.sexo}"/></td> 
-                          
+
 
                         </tr>
                     </c:forEach>

@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -56,6 +57,7 @@
                             <option value="${aluno.codAluno}">
 
                                 <c:out value="${aluno.nome}"/> &nbsp;
+                                <fmt:formatDate value="${aluno.dataNascimento.time}" pattern="dd/MM/yyyy"/> &nbsp;
                                 <c:out value="${aluno.cpf}"/> &nbsp;
                                 <c:out value="${aluno.rg}"/> &nbsp;
                                 <c:out value="${aluno.email}"/> &nbsp;
