@@ -6,6 +6,7 @@
 package br.mackenzie.fci.lfs.model;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 /**
  *
@@ -15,6 +16,7 @@ public class Aluno implements Serializable {
 
     private Integer codAluno;
     private String nome;
+    private Calendar dataNascimento;
     private String cpf;
     private String rg;
     private String email;
@@ -25,9 +27,10 @@ public class Aluno implements Serializable {
     private Integer numMatricula;
     private Sexo sexo;
 
-    public Aluno(Integer codAluno, String nome, String cpf, String rg, String email, String celular, String telefone, String naturalidade, String uf, Integer numMatricula, Sexo sexo) {
+    public Aluno(Integer codAluno, String nome, Calendar dataNascimento, String cpf, String rg, String email, String celular, String telefone, String naturalidade, String uf, Integer numMatricula, Sexo sexo) {
         this.codAluno = codAluno;
         this.nome = nome;
+        this.dataNascimento = dataNascimento;
         this.cpf = cpf;
         this.rg = rg;
         this.email = email;
@@ -73,6 +76,14 @@ public class Aluno implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Calendar getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(Calendar dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     public Sexo getSexo() {
