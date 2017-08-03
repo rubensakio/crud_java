@@ -142,6 +142,7 @@
                         </div>
                     </fieldset>
 
+
                     <fieldset class="grupo">
                         <div class="campo">
                             <label for="cpf">CPF:</label>
@@ -182,7 +183,7 @@
                             <input type="text" name="uf" id="uf" style="width: 2.5em" readonly="true" value="${aluno.uf}" required>
                         </div>                        
                     </fieldset>
-                        
+
                     <div class="campo">
                         <label for="numMatricula">Matricula:</label>
                         <input type="text" maxlength="8" readonly="true" name="numMatricula" id="numMatricula" value="${aluno.numMatricula}" pattern="[0-9]+$" required>

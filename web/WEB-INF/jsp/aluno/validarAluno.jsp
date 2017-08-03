@@ -5,6 +5,7 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@page contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -138,7 +139,7 @@
                         </div>
                         <div class="campo">
                             <label for="nome">Nome:</label>
-                            <input type="text" name="nome" id="nome" style="width: 20em" value="${aluno.nome}" required>
+                            <input type="text" name="nome" readonly="true" id="nome" style="width: 20em" value="${aluno.nome}" required>
                         </div>
                     </fieldset>
 
@@ -147,11 +148,11 @@
 
                         <div class="campo"> 
                             <label for="cpf">CPF:</label>
-                            <input type="text" name="cpf" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" style="width: 10em"  value="${aluno.cpf}" OnKeyPress="formatar('###.###.###-##', this)" required>
+                            <input type="text" name="cpf" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" readonly="true" maxlength="14" style="width: 10em"  value="${aluno.cpf}" OnKeyPress="formatar('###.###.###-##', this)" required>
                         </div>
                         <div class="campo">
                             <label for="rg">RG:</label>
-                            <input type="text" name="rg" id="rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" maxlength="12" style="width: 10em"  value="${aluno.rg}" OnKeyPress="formatar('##.###.###-#', this)" required>
+                            <input type="text" name="rg" id="rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" readonly="true" maxlength="12" style="width: 10em"  value="${aluno.rg}" OnKeyPress="formatar('##.###.###-#', this)" required>
                         </div>
 
                     </fieldset>
@@ -188,11 +189,11 @@
 
                         <div class="campo">
                             <label for="naturalidade">Naturalidade</label><font color="red" size="2">*</font>
-                            <input type="text" name="naturalidade" id="naturalidade" style="width: 10em" value="${aluno.naturalidade}" required>
+                            <input type="text" name="naturalidade" readonly="true" id="naturalidade" style="width: 10em" value="${aluno.naturalidade}" required>
                         </div>
                         <div class="campo">
                             <label for="uf">UF</label><font color="red" size="2">*</font>
-                            <input type="text" name="uf" id="uf" style="width: 2.5em"  value="${aluno.uf}" required>
+                            <input type="text" readonly="true" name="uf" id="uf" style="width: 2.5em"  value="${aluno.uf}" required>
                         </div>                        
                     </fieldset>
 
