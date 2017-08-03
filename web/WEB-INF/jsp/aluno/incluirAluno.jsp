@@ -123,7 +123,12 @@
                 }
 
             }
+        
+        $("#dataNascimento").datepicker();
+        
         </script>
+        
+           
 
 
         <title> Cadastro de alunos </title>
