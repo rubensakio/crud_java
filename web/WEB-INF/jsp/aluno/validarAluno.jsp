@@ -188,11 +188,11 @@
                     <fieldset class="grupo">
 
                         <div class="campo">
-                            <label for="naturalidade">Naturalidade</label><font color="red" size="2">*</font>
+                            <label for="naturalidade">Naturalidade</label>
                             <input type="text" name="naturalidade" readonly="true" id="naturalidade" style="width: 10em" value="${aluno.naturalidade}" required>
                         </div>
                         <div class="campo">
-                            <label for="uf">UF</label><font color="red" size="2">*</font>
+                            <label for="uf">UF</label>
                             <input type="text" readonly="true" name="uf" id="uf" style="width: 2.5em"  value="${aluno.uf}" required>
                         </div>                        
                     </fieldset>

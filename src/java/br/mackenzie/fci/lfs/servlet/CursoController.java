@@ -88,7 +88,7 @@ public class CursoController extends HttpServlet {
         if ("curso.excluir".equalsIgnoreCase(request.getParameter("command"))) {
 
             request.setAttribute("cursos", new CursoDAO().consultar());
-            request.getRequestDispatcher("WEB-INF/jsp/curso/alterarCurso.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/jsp/curso/excluirCurso.jsp").forward(request, response);
         }
         
         if ("curso.validarExclusaoCurso".equalsIgnoreCase(request.getParameter("command"))) {

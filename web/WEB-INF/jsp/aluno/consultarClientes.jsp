@@ -34,10 +34,10 @@
             .all-content #table1 table{
 
                 text-align: center;
-                font-size: 17px;
+                font-size: 15px;
                 margin-top: 110px;
                 border-collapse: collapse;
-                padding: 10px;
+                padding: 20px;
 
             }
 

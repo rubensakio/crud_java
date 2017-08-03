@@ -55,13 +55,12 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
     @Override
     public void atualizar(Aluno aluno) {
         try {
-            String sql = "UPDATE lfs.aluno SET nome=?, dataNascimento=?, cpf=?, rg=?, email=?, celular=?, telefone=?, naturalidade=?, uf=?, numMatricula=?, idSexo=? WHERE idAluno=?";
+            String sql = "UPDATE lfs.aluno SET nome=?, cpf=?, rg=?, email=?, celular=?, telefone=?, naturalidade=?, uf=?, numMatricula=?, idSexo=? WHERE idAluno=?";
             Connection c = Conexao.getInstance().getConnection();
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, aluno.getNome());
-            ps.setDate(2, new Date(aluno.getDataNascimento().getTimeInMillis()));
-            ps.setString(3, aluno.getCpf());
-            ps.setString(4, aluno.getRg());
+            ps.setString(2, aluno.getCpf());
+            ps.setString(3, aluno.getRg());
             ps.setString(4, aluno.getEmail());
             ps.setString(5, aluno.getCelular());
             ps.setString(6, aluno.getTelefone());
@@ -155,7 +154,8 @@ public class AlunoDAO implements GenericoDAO<Aluno> {
                 aluno.setNaturalidade(rs.getString("naturalidade"));
                 aluno.setUf(rs.getString("uf"));
                 aluno.setNumMatricula(rs.getInt("numMatricula"));
-                aluno.setSexo(new Sexo(rs.getInt("idSexo")));
+                aluno.setSexo(new Sexo(rs.getInt("idSexo"),
+                        rs.getString("sexo")));
 
                 alunos.add(aluno);
             }
