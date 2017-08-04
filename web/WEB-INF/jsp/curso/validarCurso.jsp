@@ -144,7 +144,7 @@
                             <input type="text" name="idCurso" id="idCurso" readonly="true" style="width: 2.5em" value="${curso.idCurso}" required>
                         </div>
                         <div class="campo">
-                            <label for="nomeInstituicao">Nome da Instituição</label><font color="red" size="2">*</font> 
+                            <label for="nomeInstituicao"><b>Nome da Instituição</b></label><font color="red" size="2">*</font> 
                             <input type="text" name="nomeInstituicao" id="nomeInstituicao" style="width: 20em" value="${curso.nomeInstituicao}" required>
                         </div>
                     </fieldset>
@@ -152,12 +152,12 @@
                     <fieldset class="grupo">
 
                         <div class="campo">
-                            <label for="nomeCurso">Curso</label><font color="red" size="2">*</font>
+                            <label for="nomeCurso"><b>Curso</b></label><font color="red" size="2">*</font>
                             <input type="text" name="nomeCurso" id="nomeCurso" style="width: 15em" value="${curso.nomeCurso}" required>
                         </div>
 
                         <div class="campo">
-                            <label for="semestreAtual">Semestre atual</label><font color="red" size="2">*</font>
+                            <label for="semestreAtual"><b>Semestre atual</b></label><font color="red" size="2">*</font>
                             <input type="text" name="semestreAtual" pattern="[0-9]+$" style="width: 5em" value="${curso.semestreAtual}" id="semestreAtual" required>
                         </div>
 

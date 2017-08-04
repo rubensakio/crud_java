@@ -158,7 +158,7 @@
                     </fieldset>
                     <div class="campo">
                         <label for="gender">Sexo:</label>
-                        <select name="gender" id="gender">
+                        <select name="gender" id="gender" required>
                             <option value=""><c:out value="--Selecione--"/></option>
                             <c:forEach var="sexo" items="${sexos}">
                                 <option  value="${sexo.idSexo}"> 
@@ -169,18 +169,18 @@
                     </div>
 
                     <div class="campo">
-                        <label for="email">Email:</label>
+                        <label for="email"><b>Email:</b></label>
                         <input type="email" name="email" style="width: 20em" value="${aluno.email}" required>
                     </div>
 
                     <fieldset class="grupo">
                         <div class="campo">
-                            <label for="telcomercial">Telefone:</label>
+                            <label for="telcomercial"><b>Telefone:</b></label>
                             <input type="text" name="telcomercial" id="telcomercial" pattern="[0-9]{2} [0-9]{4}-[0-9]{4}$" value="${aluno.telefone}" maxlength="12" OnKeyPress="formatar('## ####-####', this)" required>
                         </div>
 
                         <div class="campo">
-                            <label for="celular">Celular:</label>
+                            <label for="celular"><b>Celular:</b></label>
                             <input type="text" name="celular" id="celular" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}$" value="${aluno.celular}" maxlength="13" OnKeyPress="formatar('## #####-####', this)" required>
                         </div>
                     </fieldset>
@@ -198,7 +198,7 @@
                     </fieldset>
 
                     <div class="campo">
-                        <label for="numMatricula">Matricula:</label>
+                        <label for="numMatricula"><b>Matricula:</b></label>
                         <input type="text" maxlength="8" name="numMatricula" id="numMatricula" value="${aluno.numMatricula}" pattern="[0-9]+$" required>
                     </div>
 

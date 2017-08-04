@@ -117,6 +117,7 @@
                         <p> Siga as instruções em ordem </p><br>
                             <p> <b>Primeiro passo:</b> clique em Alunos e cadastre-se com seus dados pessoais</p>
                             <p> <b>Segundo passo:</b> cadastre o seu curso em Curso </p>
+                            <p> <b>Terceiro passo:</b> Retorne ao primeiro passo e repita o procedimento caso queira adicionar cadastro de alunos e cursos </p>
                     </div>
             </div>
         </div>
