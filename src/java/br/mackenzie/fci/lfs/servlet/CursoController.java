@@ -66,14 +66,17 @@ public class CursoController extends HttpServlet {
             request.getRequestDispatcher("WEB-INF/jsp/curso/alterarCurso.jsp").forward(request, response);
         }
         if ("curso.validarCurso".equalsIgnoreCase(request.getParameter("command"))) {
+
+            Integer idCurso = Integer.parseInt(request.getParameter("cursos"));
             Curso curso = new Curso();
-            curso.setIdCurso(Integer.parseInt(request.getParameter("cursos")));
+            curso.setIdCurso(idCurso);
             curso = new CursoDAO().listarPorID(curso);
             request.setAttribute("alunos", new AlunoDAO().consultar());
             request.setAttribute("curso", curso);
             request.getRequestDispatcher("WEB-INF/jsp/curso/validarCurso.jsp").forward(request, response);
         }
         if ("curso.validar-atualizacao".equalsIgnoreCase(request.getParameter("command"))) {
+
             Curso curso = new Curso();
             curso.setIdCurso(Integer.parseInt(request.getParameter("idCurso")));
             curso.setNomeInstituicao(request.getParameter("nomeInstituicao"));
@@ -90,7 +93,7 @@ public class CursoController extends HttpServlet {
             request.setAttribute("cursos", new CursoDAO().consultar());
             request.getRequestDispatcher("WEB-INF/jsp/curso/excluirCurso.jsp").forward(request, response);
         }
-        
+
         if ("curso.validarExclusaoCurso".equalsIgnoreCase(request.getParameter("command"))) {
             Curso curso = new Curso();
             curso.setIdCurso(Integer.parseInt(request.getParameter("cursos")));
@@ -99,7 +102,7 @@ public class CursoController extends HttpServlet {
             request.setAttribute("curso", curso);
             request.getRequestDispatcher("WEB-INF/jsp/curso/validarExclusaoCurso.jsp").forward(request, response);
         }
-        
+
         if ("curso.validar-exclusao".equalsIgnoreCase(request.getParameter("command"))) {
             Curso curso = new Curso();
             curso.setIdCurso(Integer.parseInt(request.getParameter("idCurso")));

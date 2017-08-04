@@ -142,6 +142,10 @@
                             <input type="text" name="nome" readonly="true" id="nome" style="width: 20em" value="${aluno.nome}" required>
                         </div>
                     </fieldset>
+                    <div class="campo">
+                        <label for="dataNascimento">Data de nascimento:</label>
+                        <input type="text" name="dataNascimento" readonly="true" id="aluno.dataNascimento" style="width: 20em" value="<fmt:formatDate value="${aluno.dataNascimento.time}" pattern="dd/MM/yyyy"/>" required>
+                    </div>
 
 
                     <fieldset class="grupo">

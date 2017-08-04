@@ -5,6 +5,7 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@page contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -142,6 +143,11 @@
                         </div>
                     </fieldset>
 
+                               <div class="campo">
+                        <label for="dataNascimento">Data de nascimento:</label>
+                        <input type="text" name="dataNascimento" readonly="true" id="aluno.dataNascimento" style="width: 20em" value="<fmt:formatDate value="${aluno.dataNascimento.time}" pattern="dd/MM/yyyy"/>" required>
+                    </div>
+
 
                     <fieldset class="grupo">
                         <div class="campo">
@@ -175,11 +181,11 @@
                     <fieldset class="grupo">
 
                         <div class="campo">
-                            <label for="naturalidade">Naturalidade</label><font color="red" size="2">*</font>
+                            <label for="naturalidade">Naturalidade</label>
                             <input type="text" name="naturalidade" readonly="true" id="naturalidade" style="width: 10em" value="${aluno.naturalidade}" required>
                         </div>
                         <div class="campo">
-                            <label for="uf">UF</label><font color="red" size="2">*</font>
+                            <label for="uf">UF</label>
                             <input type="text" name="uf" id="uf" style="width: 2.5em" readonly="true" value="${aluno.uf}" required>
                         </div>                        
                     </fieldset>
